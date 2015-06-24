@@ -12,4 +12,40 @@
  *
  *= require_tree .
  *= require_self
+ *= require semantic-ui
  */
+
+.section{
+  text-align:center;
+}
+
+#header, #footer{
+  position:fixed;
+  height: 50px;
+  display:block;
+  width: 100%;
+  background: transparent;
+  z-index:9;
+  text-align:right;
+  color: #f2f2f2;
+  padding: 20px 0 0 0;
+}
+
+#header{
+  top:0px;
+}
+#footer{
+  bottom:0px;
+}
+
+#section1{
+  background: -webkit-gradient(linear, top left, bottom left, from(#4bbfc3), to(#7baabe));
+  background: -webkit-linear-gradient(#4BBFC3, #7BAABE);
+  background: linear-gradient(#4BBFC3,#7BAABE);
+}
+
+#section2{
+  background: -webkit-gradient(linear, top left, bottom left, from(#969ac6), to(#636F8F));
+  background: -webkit-linear-gradient(#969AC6, #636F8F);
+  background: linear-gradient(#969AC6,#636F8F);
+}

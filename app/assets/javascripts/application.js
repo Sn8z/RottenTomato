@@ -13,4 +13,17 @@
 //= require jquery
 //= require jquery_ujs
 //= require turbolinks
+// Loads all Semantic javascripts
+//= require semantic-ui
 //= require_tree .
+
+$(document).ready(function() {
+    $('#fullpage').fullpage({
+      sectionsColor: ['#1bbc9b', '#4BBFC3', '#7BAABE', 'whitesmoke', '#ccddff'],
+      navigation: true,
+      navigationPosition: 'right'
+    });
+    $('#showContact').click(function(){
+      $('#modalContact').modal('show');    
+    });
+});
