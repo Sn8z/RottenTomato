@@ -13,4 +13,16 @@
 //= require jquery
 //= require jquery_ujs
 //= require turbolinks
+// Loads all Semantic javascripts
+//= require semantic-ui
 //= require_tree .
+
+$(document).ready(function() {
+    $('#fullpage').fullpage({
+      navigation: true,
+      navigationPosition: 'right'
+    });
+    $('#showContact').click(function(){
+      $('#modalContact').modal('show');    
+    });
+});
