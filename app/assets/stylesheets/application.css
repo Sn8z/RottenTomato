@@ -49,3 +49,9 @@
   background: -webkit-linear-gradient(#969AC6, #636F8F);
   background: linear-gradient(#969AC6,#636F8F);
 }
+
+#data_grid {
+  margin-left: 20px !important;
+  margin-right: 20px !important;
+  margin-top: 70px !important;
+}
