@@ -15,43 +15,54 @@
  *= require semantic-ui
  */
 
-.section{
-  text-align:center;
-}
+ .section{
+   text-align:center;
+ }
 
-#header, #footer{
-  position:fixed;
-  height: 50px;
-  display:block;
-  width: 100%;
-  background: black;
-  z-index:9;
-  text-align:right;
-  color: #f2f2f2;
-  padding: 20px 0 0 0;
-}
+ .blackop{
+   background-color:rgba(0, 0, 0, 0.5);
+ }
 
-#header{
-  top:0px;
-}
-#footer{
-  bottom:0px;
-}
+ .whiteop{
+   background-color:rgba(255, 255, 255, 0.5);
+ }
 
-#section1{
-  background: -webkit-gradient(linear, top left, bottom left, from(#4bbfc3), to(#7baabe));
-  background: -webkit-linear-gradient(#4BBFC3, #7BAABE);
-  background: linear-gradient(#4BBFC3,#7BAABE);
-}
+ #section1{
+   background-image: url("http://cdn2.geckoandfly.com/wp-content/uploads/2014/10/dota_2___windranger_reworked_by_sheron1030-d7ft06k.jpg");
+   background-size: cover;
+   background-repeat: no-repeat;
+ }
 
-#section2{
-  background: -webkit-gradient(linear, top left, bottom left, from(#969ac6), to(#636F8F));
-  background: -webkit-linear-gradient(#969AC6, #636F8F);
-  background: linear-gradient(#969AC6,#636F8F);
-}
+ #section2{
+   background-image: url("http://cdn.geckoandfly.com/wp-content/uploads/2014/10/frosty_diet_by_dcneil-d6s293j.jpg");
+   background-size: cover;
+   background-repeat: no-repeat;
+ }
 
-#data_grid {
-  margin-left: 20px !important;
-  margin-right: 20px !important;
-  margin-top: 70px !important;
-}
+ #header, #footer{
+   position:fixed;
+   height: 50px;
+   display:block;
+   width: 100%;
+   z-index:9;
+   color: #f2f2f2;
+   padding: 20px 0 0 0;
+ }
+
+ #header{
+   top:0px;
+   text-align:left;
+ }
+
+ #footer{
+   bottom:0px;
+   text-align:right;
+   background-color:rgba(0, 0, 0, 0.5);
+ }
+
+ #data_grid {
+   margin-left: 20px !important;
+   margin-right: 20px !important;
+   margin-top: 70px !important;
+   margin-bottom: 70px !important;
+ }

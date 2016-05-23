@@ -23,7 +23,13 @@ $(document).ready(function() {
       navigationPosition: 'right',
       scrollOverflow: true
     });
+    $('#showAbout').click(function(){
+      $('#modalAbout').modal('show');
+    });
     $('#showContact').click(function(){
-      $('#modalContact').modal('show');    
+      $('#modalContact').modal('show');
+    });
+    $('#showSupport').click(function(){
+      $('#modalSupport').modal('show');
     });
 });
