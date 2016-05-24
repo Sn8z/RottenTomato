@@ -18,11 +18,6 @@
 //= require_tree .
 
 $(document).ready(function() {
-    $('#fullpage').fullpage({
-      navigation: true,
-      navigationPosition: 'right',
-      scrollOverflow: true
-    });
     $('#showAbout').click(function(){
       $('#modalAbout').modal('show');
     });

@@ -1,3 +1,3 @@
 Rails.application.routes.draw do
- root "start#index"
+ root "dota#index"
 end

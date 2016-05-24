@@ -1,16 +1,99 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <title>RottenTomato</title>
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-  <%= stylesheet_link_tag 'https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/2.6.6/jquery.fullPage.css', media: 'all', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag 'https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/2.6.6/jquery.fullPage.js', 'data-turbolinks-track' => true %>
-  <%= csrf_meta_tags %>
-</head>
-<body>
+    <head>
+        <title>RottenTomato</title>
+        <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+        <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+        <%= csrf_meta_tags %>
+    </head>
+    <body>
+        <!-- Header -->
+        <div id="header"></div>
 
-<%= yield %>
+        <%= yield %>
 
-</body>
+        <!-- Footer -->
+        <div id="footer">
+            <div class="ui divided inverted horizontal list">
+                <div class="item">
+                    <a href="#" id="showAbout">About Us</a>
+                </div>
+                <div class="item">
+                    <a href="#" id="showContact">Contact</a>
+                </div>
+                <div class="item">
+                    <a href="#" id="showSupport">Support</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- About us -->
+        <div class="ui modal" id="modalAbout">
+            <i class="close icon"></i>
+            <div class="header">
+                ~ About Us ~
+            </div>
+            <div class="content">
+                <div class="description">
+                    <div class="ui header">We've auto-chosen a profile image for you.</div>
+                    <p>We've grabbed the following image from the
+                        <a href="https://www.gravatar.com" target="_blank">gravatar</a>
+                        image associated with your registered e-mail address.</p>
+                    <p>Is it okay to use this photo?</p>
+                </div>
+            </div>
+            <div class="actions">
+                <div class="ui positive right labeled icon button">
+                    Send
+                    <i class="checkmark icon"></i>
+                </div>
+            </div>
+        </div>
+
+        <!-- Contact Form should be here -->
+        <div class="ui modal" id="modalContact">
+            <i class="close icon"></i>
+            <div class="header">
+                ~ Contact ~
+            </div>
+            <div class="content">
+                <div class="description">
+                    <div class="ui header">We've auto-chosen a profile image for you.</div>
+                    <p>We've grabbed the following image from the
+                        <a href="https://www.gravatar.com" target="_blank">gravatar</a>
+                        image associated with your registered e-mail address.</p>
+                    <p>Is it okay to use this photo?</p>
+                </div>
+            </div>
+            <div class="actions">
+                <div class="ui positive right labeled icon button">
+                    Send
+                    <i class="checkmark icon"></i>
+                </div>
+            </div>
+        </div>
+
+        <!-- Support -->
+        <div class="ui modal" id="modalSupport">
+            <i class="close icon"></i>
+            <div class="header">
+                ~ Support ~
+            </div>
+            <div class="content">
+                <div class="description">
+                    <div class="ui header">We've auto-chosen a profile image for you.</div>
+                    <p>We've grabbed the following image from the
+                        <a href="https://www.gravatar.com" target="_blank">gravatar</a>
+                        image associated with your registered e-mail address.</p>
+                    <p>Is it okay to use this photo?</p>
+                </div>
+            </div>
+            <div class="actions">
+                <div class="ui positive right labeled icon button">
+                    Send
+                    <i class="checkmark icon"></i>
+                </div>
+            </div>
+        </div>
+    </body>
 </html>

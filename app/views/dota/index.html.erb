@@ -1,0 +1,68 @@
+<div class="section" id="section1">
+    <div class="searchbox">
+        <form method="get" action="https://www.google.com/search" target="_blank">
+            <div class="ui icon input">
+                <input type="text" name="q" size="80" placeholder="Search..." autofocus/>
+                <button class="ui button">Search</button>
+            </div>
+        </form>
+    </div>
+</div>
+
+<div class="section" id="section2">
+    <div class="ui stackable padded grid">
+        <div class="three column row">
+            <div class="blackop column">
+                <div class="ui inverted divider"></div>
+                <h1 class="ui inverted header">News</h1>
+                <div class="ui inverted divider"></div>
+                <% @rssNews.each do |news|%>
+                <a href=<%= news.link %> target="_blank">
+                    <h2><%= news.title %></h2>
+                </a>
+                <div class="ui inverted divider"></div>
+                <% end %>
+                <h1 class="ui inverted header">/r/DotA2</h1>
+                <div class="ui inverted divider"></div>
+                <script src="http://www.reddit.com/r/dota2/hot/.embed?limit=5&target=blank" type="text/javascript"></script>
+                <div class="ui inverted divider"></div>
+            </div>
+
+            <div class="whiteop column">
+                <div class="ui divider"></div>
+                <h1 class="ui header">Featured videos</h1>
+                <div class="ui divider"></div>
+                <iframe width="100%" height="auto" src="https://www.youtube.com/embed/NpmzP4Zsa3o" frameborder="0" allowfullscreen></iframe>
+                <div class="ui divider"></div>
+                <iframe width="100%" height="auto" src="https://www.youtube.com/embed/lG1Ge2xL_-8" frameborder="0" allowfullscreen></iframe>
+                <div class="ui divider"></div>
+                <iframe width="100%" height="auto" src="https://www.youtube.com/embed/oS7czEEF3gQ" frameborder="0" allowfullscreen></iframe>
+                <div class="ui divider"></div>
+            </div>
+
+            <div class="blackop column">
+                <div class="ui stackable grid">
+                    <% @streamersJSON["streams"].each_slice(2) do |streamers|%>
+                    <div class="two column row">
+                        <% streamers.each do |streamer| %>
+                        <div class="column">
+
+                            <a href=<%= streamer["channel"]["url"] %> target="_blank">
+                                <div class="ui fluid medium image rounded centered">
+                                    <div class="ui top left attached label">
+                                        <%= streamer["channel"]["display_name"] %>
+                                    </div>
+                                    <img src=<%= streamer["channel"]["logo"] %>>
+                                    <p><%= streamer["channel"]["status"] %></p>
+                                </div>
+                            </a>
+
+                        </div>
+                        <% end %>
+                    </div>
+                    <% end %>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

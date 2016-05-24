@@ -1,4 +1,4 @@
-class StartController < ApplicationController
+class DotaController < ApplicationController
   def index
     require 'open-uri'
     streamers = open("https://api.twitch.tv/kraken/streams?game=DotA%202&limit=8").read

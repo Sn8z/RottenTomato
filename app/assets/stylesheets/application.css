@@ -15,54 +15,47 @@
  *= require semantic-ui
  */
 
- .section{
-   text-align:center;
- }
-
- .blackop{
-   background-color:rgba(0, 0, 0, 0.5);
- }
-
- .whiteop{
-   background-color:rgba(255, 255, 255, 0.5);
- }
-
- #section1{
-   background-image: url("http://cdn2.geckoandfly.com/wp-content/uploads/2014/10/dota_2___windranger_reworked_by_sheron1030-d7ft06k.jpg");
-   background-size: cover;
-   background-repeat: no-repeat;
- }
-
- #section2{
-   background-image: url("http://cdn.geckoandfly.com/wp-content/uploads/2014/10/frosty_diet_by_dcneil-d6s293j.jpg");
-   background-size: cover;
-   background-repeat: no-repeat;
- }
-
- #header, #footer{
-   position:fixed;
-   height: 50px;
-   display:block;
-   width: 100%;
-   z-index:9;
-   color: #f2f2f2;
-   padding: 20px 0 0 0;
- }
-
- #header{
-   top:0px;
-   text-align:left;
- }
-
- #footer{
-   bottom:0px;
-   text-align:right;
-   background-color:rgba(0, 0, 0, 0.5);
- }
-
- #data_grid {
-   margin-left: 20px !important;
-   margin-right: 20px !important;
-   margin-top: 70px !important;
-   margin-bottom: 70px !important;
- }
+body {
+    background-color: black !important;
+    background: url("http://i.imgur.com/50IHFZP.png") !important;
+    background-size: cover !important;
+    background-position: center !important;
+    background-repeat: no-repeat !important;
+    background-attachment: fixed !important;
+}
+.blackop {
+    background-color: rgba(0, 0, 0, 0.5);
+}
+.whiteop {
+    background-color: rgba(255, 255, 255, 0.5);
+}
+.section {
+    text-align: center;
+}
+#section1 {
+    height: 100vh;
+}
+.searchbox{
+  padding-top: 45vh;
+}
+#section2 {
+    height: auto;
+}
+#header, #footer {
+    position: fixed;
+    height: 50px;
+    display: block;
+    width: 100%;
+    z-index: 9;
+    color: #f2f2f2;
+    padding: 20px 0 0 0;
+}
+#header {
+    top: 0px;
+    text-align: left;
+}
+#footer {
+    bottom: 0px;
+    text-align: right;
+    background-color: rgba(0, 0, 0, 0.5);
+}
