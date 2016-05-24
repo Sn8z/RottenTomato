@@ -25,9 +25,8 @@ body {
 }
 .blackop {
     background-color: rgba(0, 0, 0, 0.5);
-}
-.whiteop {
-    background-color: rgba(255, 255, 255, 0.5);
+    padding-top: 15px;
+    padding-bottom: 15px;
 }
 .section {
     text-align: center;
@@ -37,9 +36,12 @@ body {
 }
 .searchbox{
   padding-top: 45vh;
+  margin-left: 35vh;
+  margin-right: 35vh;
 }
 #section2 {
     height: auto;
+    min-height: 100vh;
 }
 #header, #footer {
     position: fixed;
@@ -58,4 +60,7 @@ body {
     bottom: 0px;
     text-align: right;
     background-color: rgba(0, 0, 0, 0.5);
+}
+.reddit-header, .reddit-voting-arrows {
+    display:none !important;
 }

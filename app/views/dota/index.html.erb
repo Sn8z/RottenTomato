@@ -1,8 +1,8 @@
 <div class="section" id="section1">
     <div class="searchbox">
         <form method="get" action="https://www.google.com/search" target="_blank">
-            <div class="ui icon input">
-                <input type="text" name="q" size="80" placeholder="Search..." autofocus/>
+            <div class="ui fluid huge action input">
+                <input type="text" name="q" placeholder="Search..." autofocus>
                 <button class="ui button">Search</button>
             </div>
         </form>
@@ -13,54 +13,87 @@
     <div class="ui stackable padded grid">
         <div class="three column row">
             <div class="blackop column">
-                <div class="ui inverted divider"></div>
-                <h1 class="ui inverted header">News</h1>
-                <div class="ui inverted divider"></div>
-                <% @rssNews.each do |news|%>
-                <a href=<%= news.link %> target="_blank">
-                    <h2><%= news.title %></h2>
-                </a>
-                <div class="ui inverted divider"></div>
-                <% end %>
-                <h1 class="ui inverted header">/r/DotA2</h1>
-                <div class="ui inverted divider"></div>
-                <script src="http://www.reddit.com/r/dota2/hot/.embed?limit=5&target=blank" type="text/javascript"></script>
-                <div class="ui inverted divider"></div>
+
+                <div class="ui inverted segment">
+                    <div class="ui inverted relaxed divided list">
+                        <div class="item">
+                            <img class="ui tiny centered image" src="http://logonoid.com/images/the-score-logo.png">
+                        </div>
+                        <% @rssNews.each do |news|%>
+                        <div class="item">
+                            <a href=<%= news.link %> target="_blank">
+                                <div class="content">
+                                    <div class="ui medium header"><%= news.title %></div>
+                                </div>
+                            </a>
+                        </div>
+                        <% end %>
+                    </div>
+                </div>
+                <div class="ui inverted segment">
+                    <div class="ui inverted relaxed divided list">
+                        <div class="item">
+                            <h3 class="ui header">
+                                <img
+                                    class="ui image"
+                                    src="https://camo.githubusercontent.com/b13830f5a9baecd3d83ef5cae4d5107d25cdbfbe/68747470733a2f2f662e636c6f75642e6769746875622e636f6d2f6173736574732f3732313033382f313732383830352f35336532613364382d363262352d313165332d383964312d3934376632373062646430332e706e67">
+                                <div class="content">
+                                    /r/DotA2
+                                </div>
+                            </h3>
+                        </div>
+                        <% @redditJSON.each do |post| %>
+                        <div class="item">
+                            <a href=<%= "https://www.reddit.com" + post["data"]["permalink"] %> target="_blank">
+                                <div class="content">
+                                    <div class="ui medium header"><%= post["data"]["title"] %></div>
+                                </div>
+                                <div class="extra">
+                                    <%= post["data"]["ups"] %> upvotes | <%= post["data"]["num_comments"] %> comments <i class="comments outline icon"></i>
+                                </div>
+                            </a>
+                        </div>
+                        <% end %>
+                    </div>
+                </div>
             </div>
 
-            <div class="whiteop column">
-                <div class="ui divider"></div>
-                <h1 class="ui header">Featured videos</h1>
-                <div class="ui divider"></div>
+            <div class="blackop column">
                 <iframe width="100%" height="auto" src="https://www.youtube.com/embed/NpmzP4Zsa3o" frameborder="0" allowfullscreen></iframe>
                 <div class="ui divider"></div>
                 <iframe width="100%" height="auto" src="https://www.youtube.com/embed/lG1Ge2xL_-8" frameborder="0" allowfullscreen></iframe>
                 <div class="ui divider"></div>
                 <iframe width="100%" height="auto" src="https://www.youtube.com/embed/oS7czEEF3gQ" frameborder="0" allowfullscreen></iframe>
-                <div class="ui divider"></div>
             </div>
 
             <div class="blackop column">
-                <div class="ui stackable grid">
-                    <% @streamersJSON["streams"].each_slice(2) do |streamers|%>
-                    <div class="two column row">
-                        <% streamers.each do |streamer| %>
-                        <div class="column">
-
-                            <a href=<%= streamer["channel"]["url"] %> target="_blank">
-                                <div class="ui fluid medium image rounded centered">
-                                    <div class="ui top left attached label">
-                                        <%= streamer["channel"]["display_name"] %>
-                                    </div>
-                                    <img src=<%= streamer["channel"]["logo"] %>>
-                                    <p><%= streamer["channel"]["status"] %></p>
-                                </div>
-                            </a>
-
+                <div class="ui inverted segment">
+                    <div class="ui inverted relaxed divided list">
+                        <div class="item">
+                            <img class="ui tiny centered image" src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/26/Twitch_logo.svg/2000px-Twitch_logo.svg.png">
                         </div>
+                        <% @streamersJSON["streams"].each do |streamer|%>
+                        <div class="item">
+                            <div class="right floated content">
+                                <i class="user red icon"></i>
+                                <%= streamer["viewers"] %>
+                            </div>
+                            <img class="ui avatar image" src=<%= streamer["channel"]["logo"] %>>
+                            <div class="content">
+                                <a href=<%= streamer["channel"]["url"] %> target="_blank" class="header">
+                                    <b><%= streamer["channel"]["display_name"] %></b>
+                                </a>
+                                <div class="description">
+                                    <a href=<%= streamer["channel"]["url"] %> target="_blank">
+                                        <%= streamer["channel"]["status"].size > 40 ? streamer["channel"]["status"][0..39] + "..." : streamer["channel"]["status"] %>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+
                         <% end %>
+
                     </div>
-                    <% end %>
                 </div>
             </div>
         </div>
