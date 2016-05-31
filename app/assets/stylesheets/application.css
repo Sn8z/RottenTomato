@@ -55,12 +55,11 @@ body {
 #header {
     top: 0px;
     text-align: left;
+    padding-left: 10px;
 }
 #footer {
     bottom: 0px;
     text-align: right;
     background-color: rgba(0, 0, 0, 0.5);
-}
-.reddit-header, .reddit-voting-arrows {
-    display:none !important;
+    padding-right: 10px;
 }
