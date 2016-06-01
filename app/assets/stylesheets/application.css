@@ -23,6 +23,9 @@ body {
     background-repeat: no-repeat !important;
     background-attachment: fixed !important;
 }
+.wrapper {
+    padding-left: 260px;
+}
 .blackop {
     background-color: rgba(0, 0, 0, 0.5);
     padding-top: 15px;
@@ -34,33 +37,20 @@ body {
 #section1 {
     height: 100vh;
 }
-.searchbox{
-  padding-top: 45vh;
-  margin-left: 35vh;
-  margin-right: 35vh;
+.searchbox {
+    padding-top: 45vh;
+    margin-left: 35vh;
+    margin-right: 35vh;
 }
 #section2 {
     height: auto;
     min-height: 100vh;
 }
-#header, #footer {
-    position: fixed;
-    height: 50px;
-    display: block;
+#sidebar_footer {
     width: 100%;
     z-index: 9;
-    color: #f2f2f2;
-    padding: 20px 0 0 0;
-}
-#header {
-    top: 0px;
-    text-align: left;
-}
-#footer {
+    display: block;
+    position: fixed;
     bottom: 0px;
-    text-align: right;
-    background-color: rgba(0, 0, 0, 0.5);
-}
-.reddit-header, .reddit-voting-arrows {
-    display:none !important;
+    padding: 5px;
 }
