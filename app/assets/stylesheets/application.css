@@ -63,3 +63,7 @@ body {
     bottom: 0px;
     padding: 5px;
 }
+.userbox{
+  max-width: 500px;
+  margin-top: 80px;
+}
