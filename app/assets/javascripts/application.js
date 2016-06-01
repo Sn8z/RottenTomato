@@ -18,13 +18,10 @@
 //= require_tree .
 
 $(document).ready(function() {
-    $('#showAbout').click(function(){
-      $('#modalAbout').modal('show');
-    });
-    $('#showContact').click(function(){
-      $('#modalContact').modal('show');
-    });
-    $('#showSupport').click(function(){
-      $('#modalSupport').modal('show');
-    });
+    $('.message .close')
+        .on('click', function() {
+            $(this)
+                .closest('.message')
+                .transition('fade');
+        });
 });
