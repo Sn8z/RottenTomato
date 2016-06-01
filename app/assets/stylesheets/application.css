@@ -25,6 +25,8 @@ body {
 }
 .wrapper {
     padding-left: 260px;
+    min-height: 100vh;
+    position: relative;
 }
 .blackop {
     background-color: rgba(0, 0, 0, 0.5);
@@ -45,6 +47,13 @@ body {
 #section2 {
     height: auto;
     min-height: 100vh;
+}
+#footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    border-radius: 0 !important;
+    -moz-border-radius: 0 !important;
 }
 #sidebar_footer {
     width: 100%;

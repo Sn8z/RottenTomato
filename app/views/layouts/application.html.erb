@@ -10,7 +10,7 @@
         <div class="ui vertical inverted left visible sidebar menu overlay">
             <div class="item">
                 <center>
-                    <h1>Dirr.gg</h1>
+                    <h1>RottenTomato</h1>
                 </center>
             </div>
             <a class="item">
@@ -22,21 +22,42 @@
             <a class="item">
                 League Of Legends
             </a>
-            <div id="sidebar_footer">
-                <button class="ui inverted fluid green button">Login</button>
+            <div class="item">
+                <% if user_signed_in? %>
+                Logged in as
+                <strong><%= current_user.username %></strong>.
+                <br>
+                <%= link_to 'Edit profile', edit_user_registration_path, :class => 'navbar-link' %>
+                |
+                <%= link_to "Logout", destroy_user_session_path, method: :delete, :class => 'navbar-link'  %>
+            <% else %>
+                <a class="ui inverted fluid green button" href="<%= new_user_session_path %>">Login</a>
                 <div class="ui horizontal inverted divider">
                     Or
                 </div>
-                <button class="ui inverted fluid orange button">Sign up</button>
+                <a class="ui inverted fluid orange button" href="<%= new_user_registration_path %>">Sign up</a>
+                <% end %>
             </div>
         </div>
         <div class="pusher">
             <div class="wrapper">
+                <% if notice %>
+                <div class="ui info message">
+                    <i class="close icon"></i>
+                    <p><%= notice %></p>
+                </div>
+                <% end %>
+                <% if alert %>
+                <div class="ui negative message">
+                    <i class="close icon"></i>
+                    <p><%= alert %></p>
+                </div>
+                <% end %>
                 <%= yield %>
-                <div class="ui inverted vertical footer segment">
+                <div class="ui inverted vertical footer segment" id="footer">
                     <div class="ui divided inverted horizontal list">
                         <div class="item">
-                            <h4>Dirr.gg</h4>
+                            <h4>RottenTomato</h4>
                         </div>
                         <div class="item">
                             <a href="#">About Us</a>
