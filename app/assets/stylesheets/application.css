@@ -17,7 +17,7 @@
 
 body {
     background-color: black !important;
-    background: url("http://i.imgur.com/50IHFZP.png") !important;
+    background: url("https://images2.alphacoders.com/474/474206.jpg") !important;
     background-size: cover !important;
     background-position: center !important;
     background-repeat: no-repeat !important;
@@ -25,6 +25,7 @@ body {
 }
 .wrapper {
     padding-left: 260px;
+    padding-bottom: 40px;
     min-height: 100vh;
     position: relative;
 }
@@ -33,35 +34,12 @@ body {
     padding-top: 15px;
     padding-bottom: 15px;
 }
-.section {
-    text-align: center;
-}
-#section1 {
-    height: 100vh;
-}
-.searchbox {
-    padding-top: 45vh;
-    margin-left: 35vh;
-    margin-right: 35vh;
-}
-#section2 {
-    height: auto;
-    min-height: 100vh;
-}
 #footer {
     position: fixed;
     bottom: 0;
     width: 100%;
     border-radius: 0 !important;
     -moz-border-radius: 0 !important;
-}
-#sidebar_footer {
-    width: 100%;
-    z-index: 9;
-    display: block;
-    position: fixed;
-    bottom: 0px;
-    padding: 5px;
 }
 .userbox{
   max-width: 500px;

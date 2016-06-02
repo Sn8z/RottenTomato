@@ -1,26 +1,39 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>RottenTomato</title>
+        <title>Dirr</title>
         <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
         <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+        <%= favicon_link_tag 'favicon.ico' %>
         <%= csrf_meta_tags %>
     </head>
     <body>
         <div class="ui vertical inverted left visible sidebar menu overlay">
             <div class="item">
-                <center>
-                    <h1>RottenTomato</h1>
-                </center>
+                <h1 class="ui orange inverted center aligned header">
+                    <%= link_to image_tag("logo_white.png", :class => 'ui middle aligned tiny image') %>
+                    <span>
+                        irr
+                    </span>
+                </h1>
+            </div>
+            <div class="item">
+                <iframe src="https://duckduckgo.com/search.html?prefill=Search the web" style="overflow:hidden;margin:0;padding:0;width:235px;height:40px;" frameborder="0"></iframe>
             </div>
             <a class="item">
-                Counterstrike
+                <center>
+                    Counterstrike
+                </center>
             </a>
             <a class="item">
-                DotA 2
+                <center>
+                    DotA 2
+                </center>
             </a>
             <a class="item">
-                League Of Legends
+                <center>
+                    League Of Legends
+                </center>
             </a>
             <div class="item">
                 <% if user_signed_in? %>
@@ -57,10 +70,16 @@
                 <div class="ui inverted vertical footer segment" id="footer">
                     <div class="ui divided inverted horizontal list">
                         <div class="item">
-                            <h4>RottenTomato</h4>
+                            <h4 class="ui orange inverted header">Dirr</h4>
                         </div>
                         <div class="item">
                             <a href="#">About Us</a>
+                        </div>
+                        <div class="item">
+                            <a href="#">Facebook</a>
+                        </div>
+                        <div class="item">
+                            <a href="#">Twitter</a>
                         </div>
                         <div class="item">
                             <a href="#">Contact</a>
