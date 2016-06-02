@@ -1,10 +1,9 @@
 <div class="ui stackable padded grid">
     <div class="two column row" style="margin-left:10px;">
         <div class="column">
-
             <div class="ui inverted segment">
-                <a class="ui blue big ribbon label" href="#">
-                    <img class="ui small centered image" src="http://www.csgoleague.com/wp-content/uploads/2016/05/NEW-theScore-esports-logo-WHITE-320x46.png">
+                <a class="ui blue big ribbon label" href="http://www.thescoreesports.com/dota2/news" target="_blank">
+                    <%= image_tag("thescore_logo.png", :class => 'ui small centered image') %>
                 </a>
                 <div class="ui inverted relaxed divided list">
                     <% @rssNews.each do |news|%>
@@ -19,7 +18,7 @@
                 </div>
             </div>
             <div class="ui inverted segment">
-                <a class="ui red big ribbon label" href="#">
+                <a class="ui red big ribbon label" href="https://www.reddit.com/r/dota2" target="_blank">
                     <h3 class="ui header">
                         <img
                             class="ui image"
@@ -48,11 +47,62 @@
                     <% end %>
                 </div>
             </div>
+            <div class="ui inverted segment">
+                <a class="ui green big ribbon label">
+                    <h3 class="ui header">
+                        Useful links
+                    </h3>
+                </a>
+                <div class="ui inverted relaxed divided list">
+                    <div class="item">
+                        <a href="#" target="_blank">
+                            <div class="content">
+                                <div class="ui medium header">Dotabuff</div>
+                            </div>
+                            <div class="extra">
+                                <span>Small description</span>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="item">
+                        <a href="#" target="_blank">
+                            <div class="content">
+                                <div class="ui medium header">Trackdota</div>
+                            </div>
+                            <div class="extra">
+                                <span>Small description</span>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="item">
+                        <a href="#" target="_blank">
+                            <div class="content">
+                                <div class="ui medium header">GosuGamers</div>
+                            </div>
+                            <div class="extra">
+                                <span>Small description</span>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
         </div>
         <div class="column">
             <div class="ui inverted segment">
-                <a class="ui purple big ribbon label" href="#">
-                    <img class="ui small centered image" src="http://twitchstarter.com/blog/wp-content/uploads/2016/01/twitch-logo.png">
+                <a class="ui green big ribbon label">
+                    <h3 class="ui header">
+                        Tips & Tricks
+                    </h3>
+                </a>
+                <div class="ui inverted relaxed divided list">
+                    <div class="item">
+                        <p>Coming soon...</p>
+                    </div>
+                </div>
+            </div>
+            <div class="ui inverted segment">
+                <a class="ui purple big ribbon label" href="https://www.twitch.tv/" target="_blank">
+                    <%= image_tag("twitch_logo.png", :class => 'ui small centered image') %>
                 </a>
                 <div class="ui inverted relaxed divided list">
                     <% @streamersJSON["streams"].each do |streamer|%>

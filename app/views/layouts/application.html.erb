@@ -17,15 +17,12 @@
                     </span>
                 </h1>
             </div>
-            <div class="item">
-                <iframe src="https://duckduckgo.com/search.html?prefill=Search the web" style="overflow:hidden;margin:0;padding:0;width:235px;height:40px;" frameborder="0"></iframe>
-            </div>
             <a class="item">
                 <center>
                     Counterstrike
                 </center>
             </a>
-            <a class="item">
+            <a  href="/dota2" class="item">
                 <center>
                     DotA 2
                 </center>
@@ -38,7 +35,7 @@
             <div class="item">
                 <% if user_signed_in? %>
                 Logged in as
-                <strong><%= current_user.username %></strong>.
+                <span style="color:orange"><%= current_user.username %></span>.
                 <br>
                 <%= link_to 'Edit profile', edit_user_registration_path, :class => 'navbar-link' %>
                 |

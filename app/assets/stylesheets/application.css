@@ -45,3 +45,7 @@ body {
   max-width: 500px;
   margin-top: 80px;
 }
+.contentbox{
+  max-width: 800px;
+  margin-top: 40px;
+}
