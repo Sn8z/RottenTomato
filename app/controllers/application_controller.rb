@@ -11,4 +11,16 @@ class ApplicationController < ActionController::Base
     devise_parameter_sanitizer.permit :sign_up, keys: added_attrs
     devise_parameter_sanitizer.permit :account_update, keys: added_attrs
   end
+
+  def is_admin?
+    if current_user && current_user.role.eql?("Admin")
+        puts "Admin restricted page accessed by " + current_user.email
+      else
+        redirect_to root_url
+      end
+  end
+
+  def time_diff(start, finish)
+    (finish - start) * 1000.0
+  end
 end
