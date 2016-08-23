@@ -6,6 +6,7 @@
         <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
         <%= favicon_link_tag 'favicon.ico' %>
         <%= csrf_meta_tags %>
+        <%= render partial: "partials/google_analytics" %>
     </head>
     <body>
         <div class="ui vertical inverted left visible sidebar menu overlay">
@@ -80,5 +81,6 @@
                 </div>
             </div>
         </div>
+        <%= render partial: "partials/google_analytics_pageview" %>
     </body>
 </html>
