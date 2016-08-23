@@ -1,11 +1,12 @@
 source 'https://rubygems.org'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '4.2.0'
+gem 'rails', '4.2.3'
 #Use postgres for as database
 gem 'pg'
 # Use SCSS for stylesheets
-gem 'sass-rails', '~> 4.0.3'
+gem 'sass-rails'
+gem 'bourbon'
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'
 # Use CoffeeScript for .js.coffee assets and views
@@ -33,6 +34,8 @@ gem 'semantic-ui-sass', github: 'doabit/semantic-ui-sass'
 # Use debugger
 # gem 'debugger', group: [:development, :test]
 gem 'devise'
+
+gem 'administrate', '~> 0.2.2'
 
 gem 'rails_12factor', group: :production
 
