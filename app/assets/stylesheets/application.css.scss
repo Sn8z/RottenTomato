@@ -1,0 +1,70 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or vendor/assets/stylesheets of plugins, if any, can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any styles
+ * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
+ * file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ *= require semantic-ui
+ */
+
+.wrapper {
+    padding-left: 260px;
+    padding-bottom: 40px;
+    min-height: 100vh;
+    position: relative;
+    background-color: #A0A0A0;
+    background: url(asset-path('bg.jpg')) no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+.blackop {
+    background-color: rgba(0, 0, 0, 0.5);
+    padding-top: 15px;
+    padding-bottom: 15px;
+}
+
+.frontimage:hover {
+  -webkit-filter: grayscale(0%);
+  -webkit-transition: .5s ease-in-out;
+  -moz-filter: grayscale(0%);
+  -moz-transition: .5s ease-in-out;
+  -o-filter: grayscale(0%);
+  -o-transition: .5s ease-in-out;
+  filter: grayscale(0%);
+}
+
+.frontimage {
+  -webkit-filter: grayscale(100%);
+  -webkit-transition: .5s ease-in-out;
+  -moz-filter: grayscale(100%);
+  -moz-transition: .5s ease-in-out;
+  -o-filter: grayscale(100%);
+  -o-transition: .5s ease-in-out;
+  filter: grayscale(100%);
+}
+
+#footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    border-radius: 0 !important;
+    -moz-border-radius: 0 !important;
+}
+.userbox{
+  max-width: 500px;
+  margin-top: 80px;
+}
+.contentbox{
+  max-width: 800px;
+  margin-top: 40px;
+}
