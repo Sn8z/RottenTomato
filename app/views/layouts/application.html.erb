@@ -1,12 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Dirr</title>
-        <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-        <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
-        <%= favicon_link_tag 'favicon.ico' %>
-        <%= csrf_meta_tags %>
-        <%= render partial: "partials/google_analytics" %>
+        <%= render 'layouts/header' %>
     </head>
     <body>
         <div class="ui vertical inverted left visible sidebar menu overlay">
@@ -33,8 +28,8 @@
                 <span style="color:orange"><%= current_user.username %></span>.
                 <br>
                 <% if current_user.is_admin? %>
-                <span style="color:orange"><%= current_user.role %></span>
-                <br>
+                  <span style="color:orange"><%= current_user.role %></span>
+                  <br>
                 <% end %>
                 <%= link_to 'Edit profile', edit_user_registration_path, :class => 'navbar-link' %>
                 |
@@ -63,22 +58,7 @@
                 </div>
                 <% end %>
                 <%= yield %>
-                <div class="ui inverted vertical footer segment" id="footer">
-                    <div class="ui divided inverted horizontal list">
-                        <div class="item">
-                            <h4 class="ui orange inverted header">Dirr</h4>
-                        </div>
-                        <div class="item">
-                            <a href="#">About Us</a>
-                        </div>
-                        <div class="item">
-                            <a href="#">Contact</a>
-                        </div>
-                        <div class="item">
-                            <a href="#">Donate</a>
-                        </div>
-                    </div>
-                </div>
+                <%= render 'layouts/footer' %>
             </div>
         </div>
         <%= render partial: "partials/google_analytics_pageview" %>
