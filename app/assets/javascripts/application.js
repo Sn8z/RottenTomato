@@ -16,12 +16,3 @@
 // Loads all Semantic javascripts
 //= require semantic-ui
 //= require_tree .
-
-$(document).ready(function() {
-    $('.message .close')
-        .on('click', function() {
-            $(this)
-                .closest('.message')
-                .transition('fade');
-        });
-});
