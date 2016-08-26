@@ -17,7 +17,7 @@
 
 body {
   background-color: gray !important;
-  background: url("bg_pattern.jpg") repeat center center fixed !important;
+  background: asset-data-url("bg_pattern.jpg") repeat center center fixed !important;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
