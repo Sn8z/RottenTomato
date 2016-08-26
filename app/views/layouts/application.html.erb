@@ -1,66 +1,75 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <%= render 'layouts/header' %>
-    </head>
-    <body>
-        <div class="ui vertical inverted left visible sidebar menu overlay">
-            <div class="item">
-                <a href=<%= root_url %>>
-                    <h1 class="ui orange inverted center aligned header">
-                        <%= image_tag("logo_white.png", :class => 'ui middle aligned tiny image') %>
-                    </h1>
-                </a>
+<head>
+  <%= render 'layouts/header' %>
+</head>
+<body>
+  <!-- Menu -->
+  <header>
+    <div class="ui stackable inverted vertical center aligned segment shadow">
+      <div class="ui container">
+        <div class="ui large secondary inverted menu">
+          <div class="item">
+            <a href="<%= root_url %>">
+              <%= image_tag('logo_white.png', :class => "ui tiny image") %>
+            </a>
+          </div>
+          <a href="/csgo" class="item">Counterstrike</a>
+          <a href="/dota2" class="item">DotA 2</a>
+          <div class="right item">
+            <% if user_signed_in? %>
+            <div class="ui dropdown">
+
+              <div class="text">
+                <%= current_user.username %>
+              </div>
+              <i class="dropdown icon"></i>
+              <div class="menu">
+                <div class="item"><%= link_to 'Settings', edit_user_registration_path, :class => "ui"  %></div>
+                <div class="item"><%= link_to "Logout", destroy_user_session_path, method: :delete, :class => "ui" %></div>
+              </div>
             </div>
-            <a href="/csgo" class="item">
-                <center>
-                    Counterstrike
-                </center>
-            </a>
-            <a href="/dota2" class="item">
-                <center>
-                    DotA 2
-                </center>
-            </a>
-            <div class="item">
-                <% if user_signed_in? %>
-                Logged in as
-                <span style="color:orange"><%= current_user.username %></span>.
-                <br>
-                <% if current_user.is_admin? %>
-                  <span style="color:orange"><%= current_user.role %></span>
-                  <br>
-                <% end %>
-                <%= link_to 'Edit profile', edit_user_registration_path, :class => 'navbar-link' %>
-                |
-                <%= link_to "Logout", destroy_user_session_path, method: :delete, :class => 'navbar-link'  %>
             <% else %>
-                <a class="ui inverted fluid green button" href="<%= new_user_session_path %>">Login</a>
-                <div class="ui horizontal inverted divider">
-                    Or
-                </div>
-                <a class="ui inverted fluid orange button" href="<%= new_user_registration_path %>">Sign up</a>
-                <% end %>
+            <div class="ui buttons">
+              <a class="ui green button" href="<%= new_user_session_path %>">Login</a>
+              <div class="or"></div>
+              <a class="ui orange button" href="<%= new_user_registration_path %>">Sign up</a>
             </div>
+            <% end %>
+          </div>
         </div>
-        <div class="pusher">
-            <div class="wrapper">
-                <% if notice %>
-                <div class="ui info message">
-                    <i class="close icon"></i>
-                    <p><%= notice %></p>
-                </div>
-                <% end %>
-                <% if alert %>
-                <div class="ui negative message">
-                    <i class="close icon"></i>
-                    <p><%= alert %></p>
-                </div>
-                <% end %>
-                <%= yield %>
-                <%= render 'layouts/footer' %>
-            </div>
+      </div>
+    </header>
+
+    <!-- Content -->
+    <main>
+      <%= yield %>
+    </main>
+    <!-- Footer -->
+    <footer>
+      <div class="ui inverted vertical footer segment shadow">
+        <div class="ui center aligned container">
+          <%= image_tag('logo_white.png', :class => "ui centered mini image") %>
+          <div class="ui horizontal inverted small divided link list">
+            <a class="item" href="#">About</a>
+            <a class="item" href="#">Contact</a>
+            <a class="item" href="#">FAQ</a>
+            <a class="item" href="#">Donate</a>
+          </div>
         </div>
-        <%= render partial: "partials/google_analytics_pageview" %>
-    </body>
+      </div>
+    </footer>
+
+
+  <!-- Analytics -->
+  <%= render partial: "partials/google_analytics_pageview" %>
+  <script>
+  $('.ui.dropdown').dropdown();
+  $('.ui.image')
+  .dimmer({
+    on: 'hover'
+  })
+;
+  </script>
+</body>
 </html>

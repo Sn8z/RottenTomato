@@ -1,132 +1,175 @@
-<div class="ui stackable padded grid">
-    <div class="two column row" style="margin-left:10px;">
-        <div class="column">
-            <div class="ui inverted segment">
-                <a class="ui blue big ribbon label" href="http://www.thescoreesports.com/dota2/news" target="_blank">
-                    <%= image_tag("thescore_logo.png", :class => 'ui small centered image') %>
-                </a>
-                <div class="ui inverted relaxed divided list">
-                    <% DotaNews.last(5).each do |news|%>
-                    <div class="item">
-                        <a href=<%= news.url %> target="_blank">
-                            <div class="content">
-                                <div class="ui medium header"><%= news.title %></div>
-                            </div>
-                        </a>
-                    </div>
-                    <% end %>
-                </div>
-            </div>
-            <div class="ui inverted segment">
-                <a class="ui red big ribbon label" href="https://www.reddit.com/r/dota2" target="_blank">
-                    <h3 class="ui header">
-                        <img
-                            class="ui image"
-                            src="https://camo.githubusercontent.com/b13830f5a9baecd3d83ef5cae4d5107d25cdbfbe/68747470733a2f2f662e636c6f75642e6769746875622e636f6d2f6173736574732f3732313033382f313732383830352f35336532613364382d363262352d313165332d383964312d3934376632373062646430332e706e67">
-                        <div class="content">
-                            /r/DotA2
-                        </div>
-                    </h3>
-                </a>
-                <div class="ui inverted relaxed divided list">
-                    <% DotaReddit.last(5).each do |post| %>
-                    <div class="item">
-                        <a href=<%= post.url %> target="_blank">
-                            <div class="content">
-                                <div class="ui medium header"><%= post.title %></div>
-                            </div>
-                            <div class="extra">
-                                <%= post.upvotes %>
-                                upvotes |
-                                <%= post.comments %>
-                                comments
-                                <i class="comments outline icon"></i>
-                            </div>
-                        </a>
-                    </div>
-                    <% end %>
-                </div>
-            </div>
-            <div class="ui inverted segment">
-                <div class="ui green big ribbon label">
-                    <h3 class="ui header">
-                        Useful links
-                    </h3>
-                </div>
-                <div class="ui inverted relaxed divided list">
-                    <div class="item">
-                        <a href="#" target="_blank">
-                            <div class="content">
-                                <div class="ui medium header">Dotabuff</div>
-                            </div>
-                            <div class="extra">
-                                <span>Small description</span>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="item">
-                        <a href="#" target="_blank">
-                            <div class="content">
-                                <div class="ui medium header">Trackdota</div>
-                            </div>
-                            <div class="extra">
-                                <span>Small description</span>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="item">
-                        <a href="#" target="_blank">
-                            <div class="content">
-                                <div class="ui medium header">GosuGamers</div>
-                            </div>
-                            <div class="extra">
-                                <span>Small description</span>
-                            </div>
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="column">
-            <div class="ui inverted segment">
-                <div class="ui inverted relaxed divided list">
-                    <div class="item">
-                        <form method="get" action="https://www.google.com/search" target="_blank">
-                            <div class="ui action fluid inverted left icon input">
-                                <input type="text" name="q" placeholder="Search..." autofocus>
-                                <i class="search icon"></i>
-                                <button class="ui orange button">Search</button>
-                            </div>
-                        </form>
-                    </div>
-                </div>
-            </div>
-            <div class="ui inverted segment">
-                <a class="ui purple big ribbon label" href="https://www.twitch.tv/" target="_blank">
-                    <%= image_tag("twitch_logo.png", :class => 'ui small centered image') %>
-                </a>
-                <div class="ui inverted relaxed divided list">
-                    <% DotaStreamer.last(8).each do |streamer|%>
-                    <div class="item">
-                        <div class="right floated content">
-                            <i class="user red icon"></i>
-                            <%= streamer.viewers %>
-                        </div>
-                        <img class="ui avatar image" src=<%= streamer.logo_src %>>
-                        <div class="content">
-                            <a href=<%= streamer.url %> target="_blank" class="header">
-                                <b><%= streamer.name %></b>
-                            </a>
-                            <div class="description">
-                                <a href=<%= streamer.url %> target="_blank">
-                                    <%= streamer.description %>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                    <% end %>
-                </div>
-            </div>
-        </div>
+<div class="ui three column stackable grid padded">
+  <div class="column">
+    <div class="row">
+      <div class="item shadow">
+        <form method="get" action="https://www.google.com/search" target="_blank">
+          <div class="ui big action fluid inverted left icon input">
+            <input type="text" name="q" placeholder="Google" autofocus>
+            <i class="search icon"></i>
+            <button class="ui orange button">Search</button>
+          </div>
+        </form>
+      </div>
     </div>
+    <div class="row">
+      <div class="ui blue segment shadow">
+        <%= image_tag("thescore_logo.png", :class => 'ui small centered image') %>
+        <div class="ui relaxed divided list">
+          <% DotaNews.last(5).each do |news|%>
+          <div class="item">
+            <a href=<%= news.url %> target="_blank">
+              <div class="content">
+                <div class="ui medium header"><%= news.title %></div>
+              </div>
+            </a>
+          </div>
+          <% end %>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="ui green segment shadow">
+        <h1>Useful resources</h1>
+        <ul>
+          <li>lorem ipsum</li>
+          <li>1 2 3</li>
+          <li>ett två tre</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="column">
+    <div class="row">
+      <div class="ui red segment shadow">
+        <img class="ui middle aligned mini image" src="https://camo.githubusercontent.com/b13830f5a9baecd3d83ef5cae4d5107d25cdbfbe/68747470733a2f2f662e636c6f75642e6769746875622e636f6d2f6173736574732f3732313033382f313732383830352f35336532613364382d363262352d313165332d383964312d3934376632373062646430332e706e67">
+        <span>/r/DotA2</span>
+        <div class="ui relaxed divided list">
+          <% DotaReddit.last(5).each do |post| %>
+          <div class="item">
+            <a href=<%= post.url %> target="_blank">
+              <div class="content">
+                <div class="ui medium header"><%= post.title %></div>
+              </div>
+              <div class="extra">
+                <%= post.upvotes %>
+                upvotes |
+                <%= post.comments %>
+                comments
+                <i class="comments outline icon"></i>
+              </div>
+            </a>
+          </div>
+          <% end %>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="ui purple segment shadow">
+        <%= image_tag("twitch_logo_purple.png", :class => 'ui small centered image') %>
+        <div class="ui relaxed divided list">
+          <% DotaStreamer.last(8).each do |streamer|%>
+          <div class="item">
+            <div class="right floated content">
+              <i class="user red icon"></i>
+              <%= streamer.viewers %>
+            </div>
+            <img class="ui avatar image" src=<%= streamer.logo_src %>>
+            <div class="content">
+              <a href=<%= streamer.url %> target="_blank" class="header">
+                <b><%= streamer.name %></b>
+              </a>
+              <div class="description">
+                <a href=<%= streamer.url %> target="_blank">
+                  <%= streamer.description %>
+                </a>
+              </div>
+            </div>
+          </div>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="column">
+    <div class="row">
+      <div class="ui purple segment shadow">
+        <%= image_tag("twitch_logo_purple.png", :class => 'ui small centered image') %>
+        <div class="ui relaxed divided list">
+          <% DotaStreamer.last(8).each do |streamer|%>
+          <div class="item">
+            <div class="right floated content">
+              <i class="user red icon"></i>
+              <%= streamer.viewers %>
+            </div>
+            <img class="ui avatar image" src=<%= streamer.logo_src %>>
+            <div class="content">
+              <a href=<%= streamer.url %> target="_blank" class="header">
+                <b><%= streamer.name %></b>
+              </a>
+              <div class="description">
+                <a href=<%= streamer.url %> target="_blank">
+                  <%= streamer.description %>
+                </a>
+              </div>
+            </div>
+          </div>
+          <% end %>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="ui purple segment shadow">
+        <%= image_tag("twitch_logo_purple.png", :class => 'ui small centered image') %>
+        <div class="ui relaxed divided list">
+          <% DotaStreamer.last(8).each do |streamer|%>
+          <div class="item">
+            <div class="right floated content">
+              <i class="user red icon"></i>
+              <%= streamer.viewers %>
+            </div>
+            <img class="ui avatar image" src=<%= streamer.logo_src %>>
+            <div class="content">
+              <a href=<%= streamer.url %> target="_blank" class="header">
+                <b><%= streamer.name %></b>
+              </a>
+              <div class="description">
+                <a href=<%= streamer.url %> target="_blank">
+                  <%= streamer.description %>
+                </a>
+              </div>
+            </div>
+          </div>
+          <% end %>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="ui purple segment shadow">
+        <%= image_tag("twitch_logo_purple.png", :class => 'ui small centered image') %>
+        <div class="ui relaxed divided list">
+          <% DotaStreamer.last(8).each do |streamer|%>
+          <div class="item">
+            <div class="right floated content">
+              <i class="user red icon"></i>
+              <%= streamer.viewers %>
+            </div>
+            <img class="ui avatar image" src=<%= streamer.logo_src %>>
+            <div class="content">
+              <a href=<%= streamer.url %> target="_blank" class="header">
+                <b><%= streamer.name %></b>
+              </a>
+              <div class="description">
+                <a href=<%= streamer.url %> target="_blank">
+                  <%= streamer.description %>
+                </a>
+              </div>
+            </div>
+          </div>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
