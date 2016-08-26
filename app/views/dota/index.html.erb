@@ -1,6 +1,17 @@
 <div class="ui three column stackable grid padded">
   <div class="column">
     <div class="row">
+      <div class="item shadow">
+        <form method="get" action="https://www.google.com/search" target="_blank">
+          <div class="ui big action fluid inverted left icon input">
+            <input type="text" name="q" placeholder="Google" autofocus>
+            <i class="search icon"></i>
+            <button class="ui orange button">Search</button>
+          </div>
+        </form>
+      </div>
+    </div>
+    <div class="row">
       <div class="ui blue segment shadow">
         <%= image_tag("thescore_logo.png", :class => 'ui small centered image') %>
         <div class="ui relaxed divided list">
@@ -53,18 +64,85 @@
         </div>
       </div>
     </div>
+    <div class="row">
+      <div class="ui purple segment shadow">
+        <%= image_tag("twitch_logo_purple.png", :class => 'ui small centered image') %>
+        <div class="ui relaxed divided list">
+          <% DotaStreamer.last(8).each do |streamer|%>
+          <div class="item">
+            <div class="right floated content">
+              <i class="user red icon"></i>
+              <%= streamer.viewers %>
+            </div>
+            <img class="ui avatar image" src=<%= streamer.logo_src %>>
+            <div class="content">
+              <a href=<%= streamer.url %> target="_blank" class="header">
+                <b><%= streamer.name %></b>
+              </a>
+              <div class="description">
+                <a href=<%= streamer.url %> target="_blank">
+                  <%= streamer.description %>
+                </a>
+              </div>
+            </div>
+          </div>
+          <% end %>
+        </div>
+      </div>
+    </div>
   </div>
 
   <div class="column">
     <div class="row">
-      <div class="item shadow">
-        <form method="get" action="https://www.google.com/search" target="_blank">
-          <div class="ui big action fluid inverted left icon input">
-            <input type="text" name="q" placeholder="Google" autofocus>
-            <i class="search icon"></i>
-            <button class="ui orange button">Search</button>
+      <div class="ui purple segment shadow">
+        <%= image_tag("twitch_logo_purple.png", :class => 'ui small centered image') %>
+        <div class="ui relaxed divided list">
+          <% DotaStreamer.last(8).each do |streamer|%>
+          <div class="item">
+            <div class="right floated content">
+              <i class="user red icon"></i>
+              <%= streamer.viewers %>
+            </div>
+            <img class="ui avatar image" src=<%= streamer.logo_src %>>
+            <div class="content">
+              <a href=<%= streamer.url %> target="_blank" class="header">
+                <b><%= streamer.name %></b>
+              </a>
+              <div class="description">
+                <a href=<%= streamer.url %> target="_blank">
+                  <%= streamer.description %>
+                </a>
+              </div>
+            </div>
           </div>
-        </form>
+          <% end %>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="ui purple segment shadow">
+        <%= image_tag("twitch_logo_purple.png", :class => 'ui small centered image') %>
+        <div class="ui relaxed divided list">
+          <% DotaStreamer.last(8).each do |streamer|%>
+          <div class="item">
+            <div class="right floated content">
+              <i class="user red icon"></i>
+              <%= streamer.viewers %>
+            </div>
+            <img class="ui avatar image" src=<%= streamer.logo_src %>>
+            <div class="content">
+              <a href=<%= streamer.url %> target="_blank" class="header">
+                <b><%= streamer.name %></b>
+              </a>
+              <div class="description">
+                <a href=<%= streamer.url %> target="_blank">
+                  <%= streamer.description %>
+                </a>
+              </div>
+            </div>
+          </div>
+          <% end %>
+        </div>
       </div>
     </div>
     <div class="row">
