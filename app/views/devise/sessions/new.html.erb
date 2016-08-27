@@ -1,9 +1,8 @@
-<div class="ui middle aligned center aligned grid padded">
-    <div class="column userbox">
+<br>
+<div class="ui raised very padded text container segment">
         <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-        <div class="ui inverted stacked segment">
             <div class="field">
-                <h1 class="ui inverted header">Login</h1>
+                <h1 class="ui header">Login</h1>
             </div>
             <br>
             <div class="field">
@@ -28,11 +27,7 @@
             </div>
             <br>
             <%= f.submit "Log in",:class=>'ui fluid large green submit button' %>
-        </div>
         <% end %>
 
-        <div class="ui inverted message">
-            <%= link_to "Forgot your password?", new_password_path(resource_name) %>
-        </div>
+        <%= link_to "Forgot your password?", new_password_path(resource_name) %>
     </div>
-</div>
