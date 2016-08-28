@@ -140,11 +140,6 @@ figure.effect-lily img {
 	max-width: none;
 	width: -webkit-calc(100%);
 	width: calc(100%);
-  -webkit-filter: blur(0px);
-  -moz-filter: blur(0px);
-  -o-filter: blur(0px);
-  -ms-filter: blur(0px);
-  filter: blur(0px);
 	-webkit-transition: 0.3s;
 	transition: 0.3s;
 }
@@ -182,11 +177,11 @@ figure.effect-lily p {
 }
 
 figure.effect-lily:hover img {
-  -webkit-filter: blur(3px);
-  -moz-filter: blur(3px);
-  -o-filter: blur(3px);
-  -ms-filter: blur(3px);
-  filter: blur(3px);
+  -webkit-filter: brightness(50%);
+  -moz-filter: brightness(50%);
+  -o-filter: brightness(50%);
+  -ms-filter: brightness(50%);
+  filter: brightness(50%);
 }
 
 figure.effect-lily:hover p {
