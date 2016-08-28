@@ -6,42 +6,6 @@
 <body>
   <!-- Menu -->
   <header>
-    <!--
-    <div class="ui stackable inverted vertical center aligned segment shadow">
-      <div class="ui container">
-        <div class="ui large secondary inverted menu">
-          <div class="item">
-            <a href="<%= root_url %>">
-              <%= image_tag('logo_white.png', :class => "ui tiny image") %>
-            </a>
-          </div>
-          <a href="/csgo" class="item">Counterstrike</a>
-          <a href="/dota2" class="item">DotA 2</a>
-          <div class="right item">
-            <% if user_signed_in? %>
-            <div class="ui dropdown">
-
-              <div class="text">
-                <%= current_user.username %>
-              </div>
-              <i class="dropdown icon"></i>
-              <div class="menu">
-                <div class="item"><%= link_to 'Settings', edit_user_registration_path, :class => "ui"  %></div>
-                <div class="item"><%= link_to "Logout", destroy_user_session_path, method: :delete, :class => "ui" %></div>
-              </div>
-            </div>
-            <% else %>
-            <div class="ui buttons">
-              <a class="ui green button" href="<%= new_user_session_path %>">Login</a>
-              <div class="or"></div>
-              <a class="ui orange button" href="<%= new_user_registration_path %>">Sign up</a>
-            </div>
-            <% end %>
-          </div>
-        </div>
-      </div>
-    -->
-
     <nav class="navbar navbar-inverse navbar-static-top">
   <div class="container-fluid">
     <div class="navbar-header">
