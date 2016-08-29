@@ -1,19 +1,75 @@
 <div class="container">
   <div class="col-sm-4">
-    <div class="row hidden-xs">
-      <form method="get" action="https://www.google.com/search" target="_blank">
-        <div class="input-group input-group-lg">
-          <input type="text" class="form-control" name="q" placeholder="Google" autofocus>
-          <span class="input-group-btn">
-            <button class="btn btn-warning">Search</button>
-          </span>
-        </div>
-      </form>
-      <div class="spacer"></div>
-    </div>
+    <%= render 'partials/search' %>
     <div class="row">
-      <iframe src="https://discordapp.com/widget?id=219772393655107584&theme=light" width="100%" height="500" allowtransparency="true" frameborder="0"></iframe>
+      <ul class="list-group">
+        <li class="list-group-item">
+          <h4>Upcoming matches</h4>
+        </li>
+
+        <% 5.times do %>
+        <li class="list-group-item">
+          <div class="media">
+            <div class="media-left">
+              Alliance
+            </div>
+
+            <div class="media-body">
+              <center>
+              <h5 class="media-heading">
+                <b style="color:black;">
+                  vs.
+                </b>
+              </h5>
+              WCA Qualifier
+              <br>
+              3h 53m
+            </center>
+            </div>
+
+            <div class="media-right">
+              NaVi
+            </div>
+
+          </div>
+        </li>
+        <% end %>
+        <li class="list-group-item">
+          <h3>Recent results</h3>
+        </li>
+        <% for x in 1..5 do %>
+        <li class="list-group-item">
+          <div class="media">
+            <div class="media-left">
+              Alliance
+            </div>
+
+            <div class="media-body">
+              <center>
+              <h5 class="media-heading">
+
+                <button class="btn btn-warning" data-toggle="collapse" data-target="#<%= x %>">Show</button>
+
+                  <div id="<%= x %>" class="collapse">
+                    <span><b style="color:black;">
+                      2 - 0
+                    </b></span>
+                    </div>
+              </h5>
+              <p>WCA Qualifier</p>
+            </center>
+            </div>
+
+            <div class="media-right">
+              NaVi
+            </div>
+
+          </div>
+        </li>
+        <% end %>
+      </ul>
     </div>
+    <%= render 'partials/discord' %>
   </div>
 
   <div class="col-sm-4">
