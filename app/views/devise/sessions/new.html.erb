@@ -1,5 +1,5 @@
 <br>
-<div class="ui raised very padded text container segment">
+<div class="well" style="width:60%;margin: 0 auto;">
         <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
             <div class="field">
                 <h1 class="ui header">Login</h1>
@@ -8,14 +8,14 @@
             <div class="field">
                 <div class="ui fluid left icon input">
                     <i class="user icon"></i>
-                    <%= f.email_field :email, autofocus: true, :placeholder => 'Email' %>
+                    <%= f.email_field :email, autofocus: true, :placeholder => 'Email', :class => 'form-control' %>
                 </div>
             </div>
             <br>
             <div class="field">
                 <div class="ui fluid left icon input">
                     <i class="lock icon"></i>
-                    <%= f.password_field :password, autocomplete: "off", :placeholder => 'Password' %>
+                    <%= f.password_field :password, autocomplete: "off", :placeholder => 'Password', :class => 'form-control' %>
                 </div>
             </div>
             <br>
@@ -26,7 +26,7 @@
                 <% end %>
             </div>
             <br>
-            <%= f.submit "Log in",:class=>'ui fluid large green submit button' %>
+            <%= f.submit "Log in",:class=>'btn btn-primary' %>
         <% end %>
 
         <%= link_to "Forgot your password?", new_password_path(resource_name) %>
