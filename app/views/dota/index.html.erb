@@ -1,6 +1,28 @@
 <div class="container">
   <div class="col-sm-4">
     <%= render 'partials/search' %>
+    <div class="row">
+    <ul class="list-group">
+      <li class="list-group-item">
+        <h4>Live Matches</h4>
+      </li>
+      <li class="list-group-item">
+        <% if @live_matches.empty? %>
+        No matches
+        <% else %>
+        <table class="table" style="width:100%">
+          <% @live_matches.each do |match| %>
+          <tr>
+            <td width="40%" align="left"><%= match.radiant.name %></td>
+            <td width="20%" align="center"><%= match.radiant.score %> - <%= match.dire.score %></td>
+            <td width="40%" align="right"><%= match.dire.name %></td>
+          </tr>
+          <% end %>
+        <% end %>
+        </table>
+      </li>
+    </ul>
+  </div>
     <%= render 'partials/discord' %>
   </div>
 

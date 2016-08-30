@@ -36,6 +36,9 @@ gem 'devise'
 
 gem 'administrate', '~> 0.2.2'
 
+# Used to access the Steam API
+gem 'dota'
+
 gem 'rails_12factor', group: :production
 
 ruby '2.2.1'
