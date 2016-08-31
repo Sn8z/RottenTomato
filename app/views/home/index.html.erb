@@ -1,43 +1,91 @@
+<!-- Page Content -->
 <div class="container">
-  <div class="row">
-    <div class="col-sm-4">
-      <figure class="effect-lily">
-            <%= image_tag('csgo.jpg') %>
-						<figcaption>
-							<div>
-								<h2>Counterstrike</h2>
-                <p>
-                  <a href="/csgo" type="button" class="btn btn-warning">Rush B</a>
-                </p>
-              </div>
-						</figcaption>
-					</figure>
+    <div class="row" style="margin-top:-20px;">
+      <div class="col-sm-2">
+      </div>
+      <div class="col-sm-8">
+          <h2 style="color:white;">What We Do</h2>
+          <p style="color:white;">Dirr.com is your starting point on the web.</p>
+          <p style="color:white;">We gather news, rumours, matches and more for the most
+             popular e-sports out there in one place. Registered users will also have
+           the possibility to customize your view and save links to your favourite websites
+           making it a breeze to surf the web.</p>
+           <p style="color:white;">Below you can find some of the games that we cover!</p>
+      </div>
+      <div class="col-sm-2">
+      </div>
     </div>
-    <div class="col-sm-4">
 
-      <figure class="effect-lily">
-            <%= image_tag('alch.jpg') %>
-						<figcaption>
-							<div>
-								<h2>DotA 2</h2>
-								<p>
-                  <a href="/dota2" type="button" class="btn btn-warning">Mid or Meepo</a>
-                </p>
-							</div>
-            </figcaption>
-					</figure>
+<hr>
+    <!-- Mobile -->
+    <div class="row visible-xs-block">
+      <div class="col-sm-3">
+        <a href="/csgo">
+          <%= image_tag('csgo_small.jpg', :class => "img-responsive img-rounded") %>
+        </a>
+      </div>
+      <div class="col-sm-3">
+        <a href="/dota2">
+          <%= image_tag('alch_small.jpg', :class => "img-responsive img-rounded") %>
+        </a>
+      </div>
+      <div class="col-sm-3">
+        <%= image_tag('controller_small.jpg', :class => "img-responsive img-rounded") %>
+      </div>
+      <div class="col-sm-3">
+        <%= image_tag('controller_small.jpg', :class => "img-responsive img-rounded") %>
+      </div>
     </div>
-    <div class="col-sm-4">
-      <figure class="effect-lily">
-            <%= image_tag('controller.jpg') %>
-            <figcaption>
-              <div>
-                <h2>?????</h2>
-                <p>More games will come...</p>
-              </div>
-            </figcaption>
-          </figure>
+
+    <!-- Desktop and tablet -->
+    <div class="row hidden-xs">
+        <div class="col-sm-3">
+          <figure class="effect-lily">
+                     <%= image_tag('csgo.jpg', :class => "shadow") %>
+         						<figcaption>
+         							<div>
+                         <p>
+                           Counterstrike
+                         </p>
+                       </div>
+         						</figcaption>
+         					</figure>
+                </div>
+        <div class="col-sm-3">
+          <figure class="effect-lily">
+                     <%= image_tag('alch.jpg', :class => "shadow") %>
+         						<figcaption>
+         							<div>
+                         <p>
+                           DotA 2
+                         </p>
+                       </div>
+         						</figcaption>
+         					</figure>        </div>
+        <div class="col-sm-3">
+          <figure class="effect-lily">
+                     <%= image_tag('controller.jpg', :class => "shadow") %>
+         						<figcaption>
+         							<div>
+                         <p>
+                           More to come...
+                         </p>
+                       </div>
+         						</figcaption>
+         					</figure>
+                </div>
+                <div class="col-sm-3">
+                  <figure class="effect-lily">
+                             <%= image_tag('controller.jpg', :class => "shadow") %>
+                            <figcaption>
+                              <div>
+                                 <p>
+                                   More to come...
+                                 </p>
+                               </div>
+                            </figcaption>
+                          </figure>
+                        </div>
     </div>
+    <hr>
   </div>
-</div>
-<div class="spacer"></div>
