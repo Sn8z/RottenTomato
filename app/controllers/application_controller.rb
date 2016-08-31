@@ -19,8 +19,4 @@ class ApplicationController < ActionController::Base
         redirect_to root_url
       end
   end
-
-  def time_diff(start, finish)
-    (finish - start) * 1000.0
-  end
 end

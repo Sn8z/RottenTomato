@@ -13,9 +13,19 @@
         <table class="table" style="width:100%">
           <% @live_matches.each do |match| %>
           <tr>
-            <td width="40%" align="left"><%= match.radiant.name %></td>
-            <td width="20%" align="center"><%= match.radiant.score %> - <%= match.dire.score %></td>
-            <td width="40%" align="right"><%= match.dire.name %></td>
+            <td width="40%" align="left">
+              <b><%= match.radiant.name %></b><br>
+              <% league = get_dota_league(match.league_id) %>
+              <a href="<%= league[1] %>" target="_blank" ><%= league[0] %></a>
+            </td>
+            <td width="20%" align="center">
+              Best of <%= match.series_type * 2 + 1 %><br>
+              (<%= match.radiant.series_wins %> - <%= match.dire.series_wins %>)
+            </td>
+            <td width="40%" align="right">
+              <b><%= match.dire.name %></b><br>
+              <a href="http://www.trackdota.com/matches/<%= match.id %>" target="_blank">Trackdota</a>
+            </td>
           </tr>
           <% end %>
         <% end %>
