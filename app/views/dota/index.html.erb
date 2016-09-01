@@ -1,286 +1,117 @@
 <div class="container">
-  <div class="col-sm-4">
-    <%= render 'partials/search' %>
-    <div class="row">
-    <ul class="list-group">
-      <li class="list-group-item">
-        <h4>Live Matches</h4>
-      </li>
-      <li class="list-group-item">
-        <% if @live_matches.empty? %>
-        No matches
-        <% else %>
-        <table class="table" style="width:100%">
-          <% @live_matches.each do |match| %>
-          <tr>
-            <td width="40%" align="left">
-              <b><%= match.radiant.name %></b><br>
-              <% league = get_dota_league(match.league_id) %>
-              <a href="<%= league[1] %>" target="_blank" ><%= league[0] %></a>
-            </td>
-            <td width="20%" align="center">
-              Best of <%= match.series_type * 2 + 1 %><br>
-              (<%= match.radiant.series_wins %> - <%= match.dire.series_wins %>)
-            </td>
-            <td width="40%" align="right">
-              <b><%= match.dire.name %></b><br>
-              <a href="http://www.trackdota.com/matches/<%= match.id %>" target="_blank">Trackdota</a>
-            </td>
-          </tr>
-          <% end %>
-        <% end %>
-        </table>
-      </li>
-    </ul>
-  </div>
-</div>
-
-  <div class="col-sm-4">
-    <div class="row">
-      <ul class="list-group">
-        <li class="list-group-item">
-          <%= image_tag('reddit_logo.png', :class => "img-header") %>
-        </li>
-        <% DotaReddit.last(5).each do |post| %>
-        <li class="list-group-item">
-          <a href="<%= post.url %>" target="_blank">
-          <div class="media">
-            <div class="media-body">
-              <h5 class="media-heading"><b style="color:black;"><%= post.title %></b></h5>
-              <%= post.upvotes %> upvotes | <%= post.comments %> comments
-            </div>
+    <div class="col-sm-4">
+        <%= render 'partials/search' %>
+        <div class="row">
+          <div class="col-lg-12">
+              <h3 class="page-header" style="color:white;">Live</h3>
           </div>
-        </a>
-        </li>
-        <% end %>
-      </ul>
-    </div>
-    <div class="row">
-        <ul class="list-group">
-          <li class="list-group-item">
-            <%= image_tag('thescore_logo.png', :class => "img-header") %>
-          </li>
-          <% DotaNews.last(5).each do |news| %>
-            <li class="list-group-item">
-              <a href="<%= news.url %>" target="_blank">
-              <div class="media">
-                <div class="media-body">
-                  <h5 class="media-heading">
-                    <b style="color:black;"><%= news.title %></b>
-                  </h5>
-                </div>
+          <div class="col-lg-6 col-md-6">
+          <% if @live_matches.empty? %>
+              <p style="color:white;">No matches</p>
+          <% else %>
+              <table class="table" style="width:100%">
+                  <% @live_matches.each do |match| %>
+                  <tr>
+                      <td width="40%" align="left">
+                          <b><%= match.radiant.name %></b><br>
+                          <% league = get_dota_league(match.league_id) %>
+                          <a href="<%= league[1] %>" target="_blank"><%= league[0] %></a>
+                      </td>
+                      <td width="20%" align="center">
+                          Best of
+                          <%= match.series_type * 2 + 1 %><br>
+                          (<%= match.radiant.series_wins %>
+                          -
+                          <%= match.dire.series_wins %>)
+                      </td>
+                      <td width="40%" align="right">
+                          <b><%= match.dire.name %></b><br>
+                          <a href="http://www.trackdota.com/matches/<%= match.id %>" target="_blank">Trackdota</a>
+                      </td>
+                  </tr>
+                  <% end %>
+                <% end %>
               </div>
+        </div>
+
+        <div class="row hidden-xs">
+            <div class="col-lg-12">
+                <h4 class="page-header" style="color:white;">Highlights</h4>
+            </div>
+            <% @highlights.each do |highlight| %>
+            <div class="col-lg-6 col-md-6">
+                <a href="<%= highlight["url"] %>" target="_blank">
+                    <img class="img-responsive shadow" src="<%= highlight["preview"] %>">
+                    <p><%= highlight["title"] %></p>
+                </a>
+            </div>
+            <% end %>
+        </div>
+    </div>
+
+    <div class="col-sm-4">
+        <div class="row">
+            <ul class="list-group">
+                <li class="list-group-item">
+                    <%= image_tag('reddit_logo.png', :class => "img-header") %>
+                </li>
+                <% DotaReddit.last(5).each do |post| %>
+                <li class="list-group-item">
+                    <a href="<%= post.url %>" target="_blank">
+                        <div class="media">
+                            <div class="media-body">
+                                <h5 class="media-heading">
+                                    <b style="color:black;"><%= post.title %></b>
+                                </h5>
+                                <%= post.upvotes %>
+                                upvotes |
+                                <%= post.comments %>
+                                comments
+                            </div>
+                        </div>
+                    </a>
+                </li>
+                <% end %>
+            </ul>
+        </div>
+        <div class="row">
+            <ul class="list-group">
+                <li class="list-group-item">
+                    <%= image_tag('thescore_logo.png', :class => "img-header") %>
+                </li>
+                <% DotaNews.last(5).each do |news| %>
+                <li class="list-group-item">
+                    <a href="<%= news.url %>" target="_blank">
+                        <div class="media">
+                            <div class="media-body">
+                                <h5 class="media-heading">
+                                    <b style="color:black;"><%= news.title %></b>
+                                </h5>
+                            </div>
+                        </div>
+                    </a>
+                </li>
+                <% end %>
+            </ul>
+            <div class="spacer"></div>
+        </div>
+    </div>
+
+    <div class="col-sm-4">
+      <div class="row">
+        <%= image_tag('twitch_logo_purple.png', :class => "img-header") %>
+        <hr>
+        <% DotaStreamer.last(9).each do |streamer|%>
+          <div class="col-lg-4 col-md-4">
+            <a href="<%= streamer.url %>" target="_blank">
+                <img class="img-responsive shadow" src="<%= streamer.logo_src %>">
+                <p>
+                  <b><%= streamer.name %></b><br>
+                  <%= streamer.viewers %> viewers
+                </p>
             </a>
-            </li>
-          <% end %>
-        </ul>
-        <div class="spacer"></div>
-    </div>
-  </div>
-
-  <div class="col-sm-4">
-    <div class="row">
-      <ul class="list-group">
-        <li class="list-group-item">
-          <%= image_tag('twitch_logo_purple.png', :class => "img-header") %>
-        </li>
-        <% DotaStreamer.last(8).each do |streamer|%>
-        <li class="list-group-item">
-          <a href="<%= streamer.url %>" target="_blank">
-          <div class="media">
-            <div class="media-left">
-                <%= image_tag(streamer.logo_src, :class => "media-object img-twitch") %>
-            </div>
-            <div class="media-body">
-              <h5 class="media-heading"><b style="color:black;"><%= streamer.name %></b></h5>
-               <%= streamer.viewers %> viewers
-               <br>
-              <%= streamer.description %>
-            </div>
           </div>
-        </a>
-        </li>
         <% end %>
-      </ul>
+      </div>
     </div>
-  </div>
 </div>
-
-
-<!--
-<div class="ui three column stackable grid padded">
-<div class="column">
-<div class="row">
-<div class="item shadow">
-<form method="get" action="https://www.google.com/search" target="_blank">
-<div class="ui big action fluid inverted left icon input">
-<input type="text" name="q" placeholder="Google" autofocus>
-<i class="search icon"></i>
-<button class="ui orange button">Search</button>
-</div>
-</form>
-</div>
-</div>
-<div class="row">
-<div class="ui blue segment shadow">
-<%= image_tag("thescore_logo.png", :class => 'ui small centered image') %>
-<div class="ui relaxed divided list">
-<% DotaNews.last(5).each do |news|%>
-<div class="item">
-<a href=<%= news.url %> target="_blank">
-<div class="content">
-<div class="ui medium header"><%= news.title %></div>
-</div>
-</a>
-</div>
-<% end %>
-</div>
-</div>
-</div>
-<div class="row">
-<div class="ui green segment shadow">
-<h1>Useful resources</h1>
-<ul>
-<li>lorem ipsum</li>
-<li>1 2 3</li>
-<li>ett två tre</li>
-</ul>
-</div>
-</div>
-</div>
-
-<div class="column">
-<div class="row">
-<div class="ui red segment shadow">
-<img class="ui middle aligned mini image" src="https://camo.githubusercontent.com/b13830f5a9baecd3d83ef5cae4d5107d25cdbfbe/68747470733a2f2f662e636c6f75642e6769746875622e636f6d2f6173736574732f3732313033382f313732383830352f35336532613364382d363262352d313165332d383964312d3934376632373062646430332e706e67">
-<span>/r/DotA2</span>
-<div class="ui relaxed divided list">
-<% DotaReddit.last(5).each do |post| %>
-<div class="item">
-<a href=<%= post.url %> target="_blank">
-<div class="content">
-<div class="ui medium header"><%= post.title %></div>
-</div>
-<div class="extra">
-<%= post.upvotes %>
-upvotes |
-<%= post.comments %>
-comments
-<i class="comments outline icon"></i>
-</div>
-</a>
-</div>
-<% end %>
-</div>
-</div>
-</div>
-<div class="row">
-<div class="ui purple segment shadow">
-<%= image_tag("twitch_logo_purple.png", :class => 'ui small centered image') %>
-<div class="ui relaxed divided list">
-<% DotaStreamer.last(8).each do |streamer|%>
-<div class="item">
-<div class="right floated content">
-<i class="user red icon"></i>
-<%= streamer.viewers %>
-</div>
-<img class="ui avatar image" src=<%= streamer.logo_src %>>
-<div class="content">
-<a href=<%= streamer.url %> target="_blank" class="header">
-<b><%= streamer.name %></b>
-</a>
-<div class="description">
-<a href=<%= streamer.url %> target="_blank">
-<%= streamer.description %>
-</a>
-</div>
-</div>
-</div>
-<% end %>
-</div>
-</div>
-</div>
-</div>
-
-<div class="column">
-<div class="row">
-<div class="ui purple segment shadow">
-<%= image_tag("twitch_logo_purple.png", :class => 'ui small centered image') %>
-<div class="ui relaxed divided list">
-<% DotaStreamer.last(8).each do |streamer|%>
-<div class="item">
-<div class="right floated content">
-<i class="user red icon"></i>
-<%= streamer.viewers %>
-</div>
-<img class="ui avatar image" src=<%= streamer.logo_src %>>
-<div class="content">
-<a href=<%= streamer.url %> target="_blank" class="header">
-<b><%= streamer.name %></b>
-</a>
-<div class="description">
-<a href=<%= streamer.url %> target="_blank">
-<%= streamer.description %>
-</a>
-</div>
-</div>
-</div>
-<% end %>
-</div>
-</div>
-</div>
-<div class="row">
-<div class="ui purple segment shadow">
-<%= image_tag("twitch_logo_purple.png", :class => 'ui small centered image') %>
-<div class="ui relaxed divided list">
-<% DotaStreamer.last(8).each do |streamer|%>
-<div class="item">
-<div class="right floated content">
-<i class="user red icon"></i>
-<%= streamer.viewers %>
-</div>
-<img class="ui avatar image" src=<%= streamer.logo_src %>>
-<div class="content">
-<a href=<%= streamer.url %> target="_blank" class="header">
-<b><%= streamer.name %></b>
-</a>
-<div class="description">
-<a href=<%= streamer.url %> target="_blank">
-<%= streamer.description %>
-</a>
-</div>
-</div>
-</div>
-<% end %>
-</div>
-</div>
-</div>
-<div class="row">
-<div class="ui purple segment shadow">
-<%= image_tag("twitch_logo_purple.png", :class => 'ui small centered image') %>
-<div class="ui relaxed divided list">
-<% DotaStreamer.last(8).each do |streamer|%>
-<div class="item">
-<div class="right floated content">
-<i class="user red icon"></i>
-<%= streamer.viewers %>
-</div>
-<img class="ui avatar image" src=<%= streamer.logo_src %>>
-<div class="content">
-<a href=<%= streamer.url %> target="_blank" class="header">
-<b><%= streamer.name %></b>
-</a>
-<div class="description">
-<a href=<%= streamer.url %> target="_blank">
-<%= streamer.description %>
-</a>
-</div>
-</div>
-</div>
-<% end %>
-</div>
-</div>
-</div>
-</div>
-</div>
--->
