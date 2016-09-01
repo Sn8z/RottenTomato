@@ -9,7 +9,7 @@
               <hr>
               <p style="color:white;">No matches</p>
           <% else %>
-              <table class="table" style="width:100%;">
+              <table class="table shadow" style="width:100%;background:black;">
                   <% @live_matches.each do |match| %>
                   <tr>
                       <td width="40%" align="left">
@@ -78,7 +78,6 @@
     </div>
 
     <div class="col-sm-4">
-
         <div class="row">
             <ul class="list-group">
                 <li class="list-group-item">
@@ -103,7 +102,7 @@
         <%= image_tag('twitch_logo_purple.png', :class => "img-header") %>
         <hr>
         <% DotaStreamer.last(9).each do |streamer|%>
-          <div class="col-lg-4 col-md-4">
+          <div class="col-lg-4 col-md-4 col-xs-4">
             <a href="<%= streamer.url %>" target="_blank">
                 <img class="img-responsive shadow" src="<%= streamer.logo_src %>">
                 <p>
