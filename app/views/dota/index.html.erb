@@ -3,40 +3,41 @@
         <%= render 'partials/search' %>
         <div class="row">
           <div class="col-lg-12">
-              <h3 class="page-header" style="color:white;">Live</h3>
+              <h3 style="color:white;">Live</h3>
           </div>
-          <div class="col-lg-6 col-md-6">
           <% if @live_matches.empty? %>
+              <hr>
               <p style="color:white;">No matches</p>
           <% else %>
-              <table class="table" style="width:100%">
+              <table class="table" style="width:100%;">
                   <% @live_matches.each do |match| %>
                   <tr>
                       <td width="40%" align="left">
-                          <b><%= match.radiant.name %></b><br>
+                          <b style="color: white;"><%= match.radiant.name %></b><br>
                           <% league = get_dota_league(match.league_id) %>
                           <a href="<%= league[1] %>" target="_blank"><%= league[0] %></a>
                       </td>
                       <td width="20%" align="center">
-                          Best of
-                          <%= match.series_type * 2 + 1 %><br>
-                          (<%= match.radiant.series_wins %>
+                          <i style="color: white;">Best of
+                          <%= match.series_type * 2 + 1 %></i><br>
+                          <b style="color: white;">(<%= match.radiant.series_wins %>
                           -
-                          <%= match.dire.series_wins %>)
+                          <%= match.dire.series_wins %>)</b>
                       </td>
                       <td width="40%" align="right">
-                          <b><%= match.dire.name %></b><br>
+                          <b style="color: white;"><%= match.dire.name %></b><br>
                           <a href="http://www.trackdota.com/matches/<%= match.id %>" target="_blank">Trackdota</a>
                       </td>
                   </tr>
                   <% end %>
                 <% end %>
-              </div>
+              </table>
         </div>
 
         <div class="row hidden-xs">
             <div class="col-lg-12">
-                <h4 class="page-header" style="color:white;">Highlights</h4>
+                <h4 style="color:white;">Highlights</h4>
+                <hr>
             </div>
             <% @highlights.each do |highlight| %>
             <div class="col-lg-6 col-md-6">
@@ -50,30 +51,34 @@
     </div>
 
     <div class="col-sm-4">
-        <div class="row">
-            <ul class="list-group">
-                <li class="list-group-item">
-                    <%= image_tag('reddit_logo.png', :class => "img-header") %>
-                </li>
-                <% DotaReddit.last(5).each do |post| %>
-                <li class="list-group-item">
-                    <a href="<%= post.url %>" target="_blank">
-                        <div class="media">
-                            <div class="media-body">
-                                <h5 class="media-heading">
-                                    <b style="color:black;"><%= post.title %></b>
-                                </h5>
-                                <%= post.upvotes %>
-                                upvotes |
-                                <%= post.comments %>
-                                comments
-                            </div>
-                        </div>
-                    </a>
-                </li>
-                <% end %>
-            </ul>
-        </div>
+      <div class="row">
+          <ul class="list-group">
+              <li class="list-group-item">
+                  <%= image_tag('reddit_logo.png', :class => "img-header") %>
+              </li>
+              <% DotaReddit.last(5).each do |post| %>
+              <li class="list-group-item">
+                  <a href="<%= post.url %>" target="_blank">
+                      <div class="media">
+                          <div class="media-body">
+                              <h5 class="media-heading">
+                                  <b style="color:black;"><%= post.title %></b>
+                              </h5>
+                              <%= post.upvotes %>
+                              upvotes |
+                              <%= post.comments %>
+                              comments
+                          </div>
+                      </div>
+                  </a>
+              </li>
+              <% end %>
+          </ul>
+      </div>
+    </div>
+
+    <div class="col-sm-4">
+
         <div class="row">
             <ul class="list-group">
                 <li class="list-group-item">
@@ -93,11 +98,7 @@
                 </li>
                 <% end %>
             </ul>
-            <div class="spacer"></div>
         </div>
-    </div>
-
-    <div class="col-sm-4">
       <div class="row">
         <%= image_tag('twitch_logo_purple.png', :class => "img-header") %>
         <hr>
