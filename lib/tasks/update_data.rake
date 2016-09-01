@@ -7,7 +7,7 @@ task :update_data => :environment do
   streamers["streams"].each do |streamer|
     dota_streamer = DotaStreamer.new
     dota_streamer.url = streamer["channel"]["url"]
-    dota_streamer.logo_src = streamer["channel"]["logo"]
+    dota_streamer.logo_src = streamer["preview"]["medium"]
     dota_streamer.name = streamer["channel"]["display_name"]
     dota_streamer.description = streamer["channel"]["status"].size > 40 ? streamer["channel"]["status"][0..39] + "..." : streamer["channel"]["status"]
     dota_streamer.viewers = streamer["viewers"]
