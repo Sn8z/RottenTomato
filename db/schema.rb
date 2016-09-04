@@ -11,10 +11,29 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160604214614) do
+ActiveRecord::Schema.define(version: 20160904095753) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "dota_highlights", force: :cascade do |t|
+    t.string   "url"
+    t.string   "img"
+    t.string   "title"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "dota_matches", force: :cascade do |t|
+    t.string   "team_1"
+    t.string   "team_2"
+    t.integer  "score_1"
+    t.integer  "score_2"
+    t.datetime "time"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string   "tournament"
+  end
 
   create_table "dota_news", force: :cascade do |t|
     t.string   "url"
