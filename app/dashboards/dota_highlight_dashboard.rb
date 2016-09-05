@@ -10,7 +10,6 @@ class DotaHighlightDashboard < Administrate::BaseDashboard
   ATTRIBUTE_TYPES = {
     id: Field::Number,
     url: Field::String,
-    img: Field::String,
     title: Field::String,
     created_at: Field::DateTime,
     updated_at: Field::DateTime,
@@ -24,8 +23,8 @@ class DotaHighlightDashboard < Administrate::BaseDashboard
   COLLECTION_ATTRIBUTES = [
     :id,
     :url,
-    :img,
     :title,
+    :created_at,
   ].freeze
 
   # SHOW_PAGE_ATTRIBUTES
@@ -33,7 +32,6 @@ class DotaHighlightDashboard < Administrate::BaseDashboard
   SHOW_PAGE_ATTRIBUTES = [
     :id,
     :url,
-    :img,
     :title,
     :created_at,
     :updated_at,
@@ -44,7 +42,6 @@ class DotaHighlightDashboard < Administrate::BaseDashboard
   # on the model's form (`new` and `edit`) pages.
   FORM_ATTRIBUTES = [
     :url,
-    :img,
     :title,
   ].freeze
 
