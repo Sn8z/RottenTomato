@@ -41,9 +41,7 @@
           <% DotaYoutube.last(5).reverse.each do |video| %>
             <div class="col-lg-12 col-md-12 col-xs-12">
               <div class="embed-responsive embed-responsive-16by9">
-                <iframe class="embed-responsive-item" src="<%= video.embed %>" allowfullscreen>
-
-                </iframe>
+                <iframe class="embed-responsive-item" src="<%= video.embed %>" allowfullscreen></iframe>
               </div>
             </div>
           <% end %>
@@ -53,7 +51,7 @@
     <div class="col-sm-4">
       <div class="row">
         <a href="https://www.reddit.com/r/DotA2/" target="_blank">
-          <%= image_tag('dota_reddit.png', :class => "img-header") %>
+          <%= image_tag('dota_reddit_logo.png', :class => "img-header") %>
         </a>
         <hr>
               <% DotaReddit.last(5).each do |post| %>
@@ -71,7 +69,7 @@
       </div>
       <div class="row">
         <a href="http://www.thescoreesports.com/dota2/news" target="_blank">
-          <%= image_tag('thescore_logo.png', :class => "img-header") %>
+          <%= image_tag('thescore_logo_orange.png', :class => "img-header") %>
         </a>
         <hr>
         <ul>
@@ -143,7 +141,7 @@
     <div class="col-sm-4">
       <div class="row">
         <a href="https://www.twitch.tv/directory/game/Dota%202" target="_blank">
-          <%= image_tag('twitch_logo_purple.png', :class => "img-header") %>
+          <%= image_tag('twitch_livestreams_logo.png', :class => "img-header") %>
         </a>
         <hr>
         <% DotaStreamer.last(9).each do |streamer|%>
@@ -159,7 +157,8 @@
         <% end %>
       </div>
       <div class="row hidden-xs">
-        <h4 style="color:white;">Highlights</h4>
+        <hr>
+        <%= image_tag('twitch_clips_logo.png', :class => "img-header") %>
         <hr>
       </div>
       <div class="row hidden-xs">
