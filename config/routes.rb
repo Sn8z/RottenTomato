@@ -6,6 +6,7 @@ Rails.application.routes.draw do
     resources :dota_streamers
     resources :dota_highlights
     resources :dota_youtubes
+    resources :dota_guides
 
     root to: "users#index"
   end

@@ -65,7 +65,6 @@
               <% end %>
               <hr>
       </div>
-      <div class="spacer"></div>
       <div class="row">
         <%= image_tag('thescore_logo.png', :class => "img-header") %>
         <hr>
@@ -78,6 +77,59 @@
         </a>
         <% end %>
       </ul>
+      <hr>
+      </div>
+      <div class="row">
+        <h4 style="color:white;">Useful resources</h4>
+        <hr>
+        <ul>
+          <a href="http://www.dotabuff.com/" target="_blank" style="color:green;">
+            <li>
+              <h4>
+                <b style="color:white;">Dotabuff</b>
+              </h4>
+              Statistics
+            </li>
+          </a>
+          <a href="https://www.opendota.com/" target="_blank" style="color:green;">
+            <li>
+              <h4>
+                <b style="color:white;">Opendota</b>
+              </h4>
+              Statistics (Formerly known as Yasp)
+            </li>
+          </a>
+          <a href="http://www.trackdota.com/" target="_blank" style="color:green;">
+            <li>
+              <h4>
+                <b style="color:white;">Trackdota</b>
+              </h4>
+              Livestatistics for professional DotA
+            </li>
+          </a>
+          <a href="http://www.gosugamers.net/" target="_blank" style="color:green;">
+            <li>
+              <h4>
+                <b style="color:white;">Gosugamers</b>
+              </h4>
+              News, schedules and more!
+            </li>
+          </a>
+        </ul>
+        <hr>
+      </div>
+      <div class="row">
+        <h4 style="color:white;">Tutorials & Guides</h4>
+        <hr>
+        <ul>
+          <% DotaGuide.last(5).reverse.each do |guide| %>
+          <a href="<%= guide.url %>" target="_blank" style="color:orange;">
+            <li><h4>
+            <b style="color:white;"><%= guide.title %></b>
+          </h4></li>
+          </a>
+          <% end %>
+        </ul>
         <hr>
       </div>
     </div>
