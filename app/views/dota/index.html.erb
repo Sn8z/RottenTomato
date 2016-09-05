@@ -32,17 +32,19 @@
               </table>
         </div>
 
-        <div class="row hidden-xs">
-          <h4 style="color:white;">Highlights</h4>
+        <div class="row">
           <hr>
-            <% DotaHighlight.last(6).each do |highlight| %>
-            <div class="col-lg-6 col-md-6">
-                <a href="<%= highlight.url %>" target="_blank">
-                    <img class="img-responsive shadow" src="<%= highlight.img %>">
-                    <p><%= highlight.title %></p>
-                </a>
+          <%= image_tag('youtube_logo.png', :class => "img-header") %>
+          <hr>
+          <% DotaYoutube.last(5).reverse.each do |video| %>
+            <div class="col-lg-12 col-md-12 col-xs-12">
+              <div class="embed-responsive embed-responsive-16by9">
+                <iframe class="embed-responsive-item" src="<%= video.embed %>" allowfullscreen>
+
+                </iframe>
+              </div>
             </div>
-            <% end %>
+          <% end %>
         </div>
     </div>
 
@@ -96,5 +98,23 @@
           </div>
         <% end %>
       </div>
+      <div class="row hidden-xs">
+        <h4 style="color:white;">Highlights</h4>
+        <hr>
+      </div>
+      <div class="row hidden-xs">
+          <% DotaHighlight.last(6).each_slice(2) do |highlights| %>
+          <% highlights.each do |highlight| %>
+          <div class="col-lg-6 col-md-6">
+              <a href="<%= highlight.url %>" target="_blank" style="color:#6441a5;">
+                  <img class="img-responsive shadow" src="<%= highlight.img %>" alt="<%= highlight.title %>">
+                  <p><%= highlight.title %></p>
+              </a>
+          </div>
+          <% end %>
+          <div class="clearfix"></div>
+          <% end %>
+      </div>
+
     </div>
 </div>

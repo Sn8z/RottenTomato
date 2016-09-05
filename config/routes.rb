@@ -1,9 +1,11 @@
 Rails.application.routes.draw do
   namespace :admin do
     resources :users
-resources :dota_news
-resources :dota_reddits
-resources :dota_streamers
+    resources :dota_news
+    resources :dota_reddits
+    resources :dota_streamers
+    resources :dota_highlights
+    resources :dota_youtubes
 
     root to: "users#index"
   end
