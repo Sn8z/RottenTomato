@@ -4,11 +4,11 @@ source 'https://rubygems.org'
 gem 'rails', '4.2.3'
 #Use postgres for as database
 gem 'pg'
-# Use SCSS for stylesheets
-gem 'sass-rails'
-gem 'bourbon'
 # bootstrap
-gem 'bootstrap-sass'
+gem 'bootstrap-sass', '~> 3.3.6'
+# Use SCSS for stylesheets
+gem 'sass-rails', '>= 3.2'
+gem 'bourbon'
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'
 # Use CoffeeScript for .js.coffee assets and views
