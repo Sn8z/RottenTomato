@@ -63,6 +63,20 @@
       </ul>
       <hr>
       </div>
+      <div class="row">
+        <h4>Tutorials & Guides</h4>
+        <hr>
+        <ul>
+          <% DotaGuide.last(5).reverse.each do |guide| %>
+          <a href="<%= guide.url %>" target="_blank" style="color:orange;">
+            <li><h4>
+            <b><%= guide.title %></b>
+          </h4></li>
+          </a>
+          <% end %>
+        </ul>
+        <hr>
+      </div>
     </div>
     <div class="col-sm-6">
       <div class="row">
@@ -132,11 +146,16 @@
     </div>
   </div>
   <div class="row">
+    <div class="match-box">
+    <table class="table shadow" style="width:100%;background:black;">
       <% DotaStreamer.last(6).each do |streamer|%>
-      <div class="streamer-box">
-          <%= streamer.name %> <small><%= streamer.viewers %> viewers</small>
-        </div>
+      <tr>
+        <td width="50%" align="left"><%= streamer.name %></td>
+        <td width="50%" align="right"><%= streamer.viewers %> viewers</td>
+      </tr>
     <% end %>
+  </table>
+</div>
   </div>
     <div class="row">
       <div class="sidebar-header">
@@ -154,180 +173,19 @@
         </div>
       <% end %>
     </div>
+    <div class="row">
+      <div class="sidebar-header">
+        <%= image_tag('twitch_clips_logo.png', :class => "img-header") %>
+      </div>
+    </div>
+    <div class="row">
+        <% DotaHighlight.last(6).each do |highlight| %>
+        <div class="col-lg-12 col-md-12">
+          <div class="embed-responsive embed-responsive-16by9">
+            <iframe class="embed-responsive-item" src="https://clips.twitch.tv/embed?clip=<%= highlight.url %>&autoplay=false" allowfullscreen></iframe>
+          </div>
+        </div>
+        <% end %>
+    </div>
   </div>
 </div>
-
-<!--
-    <div class="col-sm-4">
-        <%= render 'partials/search' %>
-        <div class="row">
-          <h3 style="color:white;">Live</h3>
-          <% if @live_matches.empty? %>
-              <hr>
-              <p style="color:white;">No matches</p>
-          <% else %>
-              <table class="table shadow" style="width:100%;background:black;">
-                  <% @live_matches.each do |match| %>
-                  <tr>
-                      <td width="40%" align="left">
-                          <b style="color: white;"><%= match.radiant.name %></b><br>
-                          <% league = get_dota_league(match.league_id) %>
-                          <a href="<%= league[1] %>" target="_blank"><%= league[0] %></a>
-                      </td>
-                      <td width="20%" align="center">
-                          <i style="color: white;">Best of
-                          <%= match.series_type * 2 + 1 %></i><br>
-                          <b style="color: white;">(<%= match.radiant.series_wins %>
-                          -
-                          <%= match.dire.series_wins %>)</b>
-                      </td>
-                      <td width="40%" align="right">
-                          <b style="color: white;"><%= match.dire.name %></b><br>
-                          <a href="http://www.trackdota.com/matches/<%= match.id %>" target="_blank">Trackdota</a>
-                      </td>
-                  </tr>
-                  <% end %>
-                <% end %>
-              </table>
-        </div>
-
-        <div class="row">
-          <hr>
-          <a href="https://www.youtube.com/" target="_blank">
-            <%= image_tag('youtube_logo.png', :class => "img-header") %>
-           </a>
-          <hr>
-          <% DotaYoutube.last(5).reverse.each do |video| %>
-            <div class="col-lg-12 col-md-12 col-xs-12">
-              <div class="embed-responsive embed-responsive-16by9">
-                <iframe class="embed-responsive-item" src="<%= video.embed %>" allowfullscreen></iframe>
-              </div>
-            </div>
-          <% end %>
-        </div>
-    </div>
-
-    <div class="col-sm-4">
-      <div class="row">
-        <a href="https://www.reddit.com/r/DotA2/" target="_blank">
-          <%= image_tag('dota_reddit_logo.png', :class => "img-header") %>
-        </a>
-        <hr>
-              <% DotaReddit.last(5).each do |post| %>
-              <a href="<%= post.url %>" target="_blank" style="color:red;">
-                <h4>
-                  <b style="color:white;"><%= post.title %></b>
-                </h4>
-                <%= post.upvotes %>
-                upvotes |
-                <%= post.comments %>
-                comments
-              </a>
-              <% end %>
-              <hr>
-      </div>
-      <div class="row">
-        <a href="http://www.thescoreesports.com/dota2/news" target="_blank">
-          <%= image_tag('thescore_logo_orange.png', :class => "img-header") %>
-        </a>
-        <hr>
-        <ul>
-        <% DotaNews.last(5).each do |news| %>
-        <a href="<%= news.url %>" target="_blank" style="color:blue;">
-          <li><h4>
-          <b style="color:white;"><%= news.title %></b>
-        </h4></li>
-        </a>
-        <% end %>
-      </ul>
-      <hr>
-      </div>
-      <div class="row">
-        <h4 style="color:white;">Useful resources</h4>
-        <hr>
-        <ul>
-          <a href="http://www.dotabuff.com/" target="_blank" style="color:green;">
-            <li>
-              <h4>
-                <b style="color:white;">Dotabuff</b>
-              </h4>
-              Statistics
-            </li>
-          </a>
-          <a href="https://www.opendota.com/" target="_blank" style="color:green;">
-            <li>
-              <h4>
-                <b style="color:white;">Opendota</b>
-              </h4>
-              Statistics (Formerly known as Yasp)
-            </li>
-          </a>
-          <a href="http://www.trackdota.com/" target="_blank" style="color:green;">
-            <li>
-              <h4>
-                <b style="color:white;">Trackdota</b>
-              </h4>
-              Livestatistics for professional DotA
-            </li>
-          </a>
-          <a href="http://www.gosugamers.net/" target="_blank" style="color:green;">
-            <li>
-              <h4>
-                <b style="color:white;">Gosugamers</b>
-              </h4>
-              News, schedules and more!
-            </li>
-          </a>
-        </ul>
-        <hr>
-      </div>
-      <div class="row">
-        <h4 style="color:white;">Tutorials & Guides</h4>
-        <hr>
-        <ul>
-          <% DotaGuide.last(5).reverse.each do |guide| %>
-          <a href="<%= guide.url %>" target="_blank" style="color:orange;">
-            <li><h4>
-            <b style="color:white;"><%= guide.title %></b>
-          </h4></li>
-          </a>
-          <% end %>
-        </ul>
-        <hr>
-      </div>
-    </div>
-
-    <div class="col-sm-4">
-      <div class="row">
-        <a href="https://www.twitch.tv/directory/game/Dota%202" target="_blank">
-          <%= image_tag('twitch_livestreams_logo.png', :class => "img-header") %>
-        </a>
-        <hr>
-        <% DotaStreamer.last(9).each do |streamer|%>
-          <div class="col-lg-4 col-md-4 col-xs-4">
-            <a href="<%= streamer.url %>" target="_blank" style="color:#6441a5;">
-                <img class="img-responsive shadow" src="<%= streamer.logo_src %>">
-                <p>
-                  <b><%= streamer.name %></b><br>
-                  <%= streamer.viewers %> viewers
-                </p>
-            </a>
-          </div>
-        <% end %>
-      </div>
-      <div class="row hidden-xs">
-        <hr>
-        <%= image_tag('twitch_clips_logo.png', :class => "img-header") %>
-        <hr>
-      </div>
-      <div class="row hidden-xs">
-          <% DotaHighlight.last(6).each do |highlight| %>
-          <div class="col-lg-12 col-md-12">
-            <div class="embed-responsive embed-responsive-16by9">
-              <iframe class="embed-responsive-item" src="https://clips.twitch.tv/embed?clip=<%= highlight.url %>&autoplay=false" allowfullscreen></iframe>
-            </div>
-            <p style="color:white;"><%= highlight.title %></p>
-          </div>
-          <% end %>
-      </div>
-    </div>
