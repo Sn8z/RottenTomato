@@ -1,4 +1,163 @@
-<div class="container">
+<div class="container side-shadow" style="background-color:white;padding-right:0px;">
+<div class="col-sm-8">
+  <div class="row">
+    <div class="col-sm-12">
+      <!-- Carousel -->
+      <div id="myCarousel" class="carousel slide" data-ride="carousel">
+            <!-- Indicators -->
+            <ol class="carousel-indicators">
+              <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+              <li data-target="#myCarousel" data-slide-to="1"></li>
+              <li data-target="#myCarousel" data-slide-to="2"></li>
+              <li data-target="#myCarousel" data-slide-to="3"></li>
+            </ol>
+
+            <!-- Wrapper for slides -->
+            <div class="carousel-inner" role="listbox">
+              <div class="item active">
+                <img class="img-responsive" src="https://assets.vg247.com/current//2014/08/dota-2-official.jpg">
+              </div>
+
+              <div class="item">
+                <img class="img-responsive" src="http://img06.deviantart.net/3c27/i/2015/235/6/4/dota_2__white____simple_wallpaper_by_aevonboy-d96t7ex.jpg">
+              </div>
+
+              <div class="item">
+                <img class="img-responsive" src="http://cdn.geckoandfly.com/wp-content/uploads/2014/10/frosty_diet_by_dcneil-d6s293j.jpg">
+              </div>
+
+              <div class="item">
+                <img class="img-responsive" src="https://images6.alphacoders.com/407/407108.jpg">
+              </div>
+            </div>
+
+            <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
+                <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+                <span class="sr-only">Previous</span>
+              </a>
+              <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
+                <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+                <span class="sr-only">Next</span>
+              </a>
+
+          </div>
+        <hr>
+    </div>
+  </div>
+  <div class="row">
+    <!-- Page content -->
+    <div class="col-sm-6">
+      <div class="row">
+        <a href="http://www.thescoreesports.com/dota2/news" target="_blank">
+          <%= image_tag('thescore_logo.png', :class => "img-header") %>
+        </a>
+        <hr>
+        <ul>
+        <% DotaNews.last(5).each do |news| %>
+        <a href="<%= news.url %>" target="_blank" style="color:blue;">
+          <li><h4>
+          <b><%= news.title %></b>
+        </h4></li>
+        </a>
+        <% end %>
+      </ul>
+      <hr>
+      </div>
+    </div>
+    <div class="col-sm-6">
+      <div class="row">
+      <a href="https://www.reddit.com/r/DotA2/" target="_blank">
+        <%= image_tag('reddit_logo.png', :class => "img-header") %>
+      </a>
+      <hr>
+            <% DotaReddit.last(5).each do |post| %>
+            <a href="<%= post.url %>" target="_blank" style="color:red;">
+              <h4>
+                <b><%= post.title %></b>
+              </h4>
+              <%= post.upvotes %>
+              upvotes |
+              <%= post.comments %>
+              comments
+            </a>
+            <% end %>
+        <hr>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="col-sm-4 sidebar">
+  <!-- sidebar -->
+  <div class="row">
+    <div class="sidebar-header">
+      <i style="color:white;">Live</i>
+    </div>
+  </div>
+<div class="row">
+    <div class="match-box">
+    <% if @live_matches.empty? %>
+        <hr>
+        <p style="color:white;">No matches</p>
+    <% else %>
+        <table class="table shadow" style="width:100%;background:black;">
+            <% @live_matches.each do |match| %>
+            <tr>
+                <td width="40%" align="left">
+                    <b style="color: white;"><%= match.radiant.name %></b><br>
+                    <% league = get_dota_league(match.league_id) %>
+                    <a href="<%= league[1] %>" target="_blank"><%= league[0] %></a>
+                </td>
+                <td width="20%" align="center">
+                    <i style="color: white;">Bo
+                    <%= match.series_type * 2 + 1 %></i><br>
+                    <b style="color: white;">(<%= match.radiant.series_wins %>
+                    -
+                    <%= match.dire.series_wins %>)</b>
+                </td>
+                <td width="40%" align="right">
+                    <b style="color: white;"><%= match.dire.name %></b><br>
+                    <a href="http://www.trackdota.com/matches/<%= match.id %>" target="_blank">Trackdota</a>
+                </td>
+            </tr>
+            <% end %>
+          <% end %>
+        </table>
+      </div>
+    </div>
+    <div class="row">
+      <div class="sidebar-header">
+      <a href="https://www.twitch.tv/directory/game/Dota%202" target="_blank">
+        <%= image_tag('twitch_livestreams_logo.png', :class => "img-header") %>
+      </a>
+    </div>
+  </div>
+  <div class="row">
+      <% DotaStreamer.last(6).each do |streamer|%>
+      <div class="streamer-box">
+          <%= streamer.name %> <small><%= streamer.viewers %> viewers</small>
+        </div>
+    <% end %>
+  </div>
+    <div class="row">
+      <div class="sidebar-header">
+      <a href="https://www.youtube.com/" target="_blank">
+        <%= image_tag('youtube_logo.png', :class => "img-header") %>
+       </a>
+     </div>
+   </div>
+   <div class="row">
+      <% DotaYoutube.last(6).reverse.each do |video| %>
+        <div class="col-lg-6 col-md-6 col-xs-6">
+          <div class="embed-responsive embed-responsive-16by9">
+            <iframe class="embed-responsive-item" src="<%= video.embed %>" allowfullscreen></iframe>
+          </div>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>
+
+<!--
     <div class="col-sm-4">
         <%= render 'partials/search' %>
         <div class="row">
@@ -172,4 +331,3 @@
           <% end %>
       </div>
     </div>
-</div>
