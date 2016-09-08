@@ -6,7 +6,7 @@
       <div id="myCarousel" class="carousel slide" data-ride="carousel">
             <!-- Indicators -->
             <ol class="carousel-indicators">
-              <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+              <li data-target="#myCarousel" data-slide-to="0"></li>
               <li data-target="#myCarousel" data-slide-to="1"></li>
               <li data-target="#myCarousel" data-slide-to="2"></li>
               <li data-target="#myCarousel" data-slide-to="3"></li>
@@ -15,7 +15,9 @@
             <!-- Wrapper for slides -->
             <div class="carousel-inner" role="listbox">
               <div class="item active">
-                <img class="img-responsive" src="https://assets.vg247.com/current//2014/08/dota-2-official.jpg">
+                <a href="/csgo" target="_blank">
+                  <img class="img-responsive" src="https://assets.vg247.com/current//2014/08/dota-2-official.jpg">
+                </a>
               </div>
 
               <div class="item">
@@ -40,9 +42,7 @@
               <span class="icon-next" aria-hidden="true"></span>
               <span class="sr-only">Next</span>
             </a>
-
           </div>
-        <hr>
     </div>
   </div>
   <div class="row">
@@ -50,7 +50,7 @@
     <div class="col-sm-6">
       <div class="row">
         <a href="http://www.thescoreesports.com/dota2/news" target="_blank">
-          <%= image_tag('thescore_logo.png', :class => "img-header") %>
+          <h3 style="color:black;">theScore eSports</h3>
         </a>
         <hr>
         <ul>
@@ -82,7 +82,7 @@
     <div class="col-sm-6">
       <div class="row">
       <a href="https://www.reddit.com/r/DotA2/" target="_blank">
-        <%= image_tag('reddit_logo.png', :class => "img-header") %>
+        <h3 style="color:black;">/r/DotA2</h3>
       </a>
       <hr>
             <% DotaReddit.last(5).each do |post| %>
@@ -151,8 +151,8 @@
     <table class="table shadow" style="width:100%;background:black;">
       <% DotaStreamer.last(6).each do |streamer|%>
       <tr>
-        <td width="50%" align="left"><%= streamer.name %></td>
-        <td width="50%" align="right"><%= streamer.viewers %> viewers</td>
+        <td width="50%" align="left"><b style="color:#6441a5;"><%= streamer.name %></b></td>
+        <td width="50%" align="right"><i style="color:white;"><%= streamer.viewers %> viewers</i></td>
       </tr>
     <% end %>
   </table>

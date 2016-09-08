@@ -3,7 +3,7 @@ task :update_streamers => :environment do
   require 'rss'
   #DotA 2
   #DotaStreamers
-  streamers = JSON.parse(open("https://api.twitch.tv/kraken/streams?game=DotA%202&limit=9").read)
+  streamers = JSON.parse(open("https://api.twitch.tv/kraken/streams?game=DotA%202&limit=6").read)
   streamers["streams"].each do |streamer|
     dota_streamer = DotaStreamer.new
     dota_streamer.url = streamer["channel"]["url"]
