@@ -11,10 +11,57 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160905182140) do
+ActiveRecord::Schema.define(version: 20160910104604) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "csgo_guides", force: :cascade do |t|
+    t.string   "title"
+    t.string   "url"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "csgo_highlights", force: :cascade do |t|
+    t.string   "url"
+    t.string   "img"
+    t.string   "title"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "csgo_news", force: :cascade do |t|
+    t.string   "url"
+    t.string   "title"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "csgo_reddits", force: :cascade do |t|
+    t.string   "url"
+    t.string   "title"
+    t.integer  "upvotes"
+    t.integer  "comments"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "csgo_streamers", force: :cascade do |t|
+    t.string   "url"
+    t.string   "logo_src"
+    t.string   "name"
+    t.string   "description"
+    t.integer  "viewers"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
+
+  create_table "csgo_youtubes", force: :cascade do |t|
+    t.string   "embed"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "dota_guides", force: :cascade do |t|
     t.string   "title"
