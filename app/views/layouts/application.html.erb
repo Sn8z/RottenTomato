@@ -21,8 +21,8 @@
         </div>
         <div class="navbar-collapse collapse" id="bs-example-navbar-collapse-1">
           <ul class="nav navbar-nav">
-            <li><a href="/csgo">Counterstrike</a></li>
-            <li><a href="/dota2">DotA 2</a></li>
+            <li class="<%= 'active' if params[:controller] == 'csgo' %>"><a href="/csgo">Counterstrike</a></li>
+            <li class="<%= 'active' if params[:controller] == 'dota' %>"><a href="/dota2">DotA 2</a></li>
           </ul>
           <ul class="nav navbar-nav navbar-right">
             <% if user_signed_in? %>
@@ -54,6 +54,7 @@
     <div class="footer-right">
       <a href="#"><%= image_tag('icons/fb.png', :class => "img-responsive") %></a>
       <a href="#"><%= image_tag('icons/twitter.png', :class => "img-responsive") %></a>
+      <a href="#"><%= image_tag('icons/youtube.png', :class => "img-responsive") %></a>
       <a href="#"><%= image_tag('icons/insta.png', :class => "img-responsive") %></a>
     </div>
 
