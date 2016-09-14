@@ -156,11 +156,11 @@
     <div class="match-box">
     <table class="table shadow" style="width:100%;background:black;">
       <% DotaStreamer.last(6).each do |streamer|%>
-      <tr>
-        <td width="50%" align="left"><b style="color:#6441a5;"><%= streamer.name %></b></td>
-        <td width="50%" align="right"><i style="color:white;"><%= streamer.viewers %> viewers</i></td>
-      </tr>
-    <% end %>
+        <tr>
+          <td width="50%" align="left"><b><a href="<%= streamer.url %>" style="color:#6441a5;" target="_blank"><%= streamer.name %></a></b></td>
+          <td width="50%" align="right"><i style="color:white;"><%= streamer.viewers %> viewers</i></td>
+        </tr>
+      <% end %>
   </table>
 </div>
   </div>
