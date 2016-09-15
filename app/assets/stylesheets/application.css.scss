@@ -49,7 +49,7 @@ main {
     display: flex;
     justify-content: center;
     align-items: center;
-    background: url('/assets/banner.png') center center no-repeat scroll;
+    background: image-url('banner.png') center center no-repeat scroll;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     background-size: cover;
@@ -306,6 +306,7 @@ main {
   color: white;
   border-color: #B82601;
 }
+
 @media (min-width: 768px) {
   .navbar-custom {
     padding: 25px 0;
