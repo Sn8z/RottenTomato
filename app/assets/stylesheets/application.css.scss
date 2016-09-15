@@ -49,8 +49,7 @@ main {
     display: flex;
     justify-content: center;
     align-items: center;
-    background: black;
-    /*  background: url('https://static.pexels.com/photos/51415/pexels-photo-51415.jpeg') center center no-repeat scroll; */
+    background: url('/assets/banner.png') center center no-repeat scroll;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     background-size: cover;
