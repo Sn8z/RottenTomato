@@ -43,6 +43,24 @@ main {
   color: black !important;
 }
 
+.alert-box {
+    width: 100%;
+    height: auto;
+    padding: 5px;
+    text-align: center;
+    color: white;
+    background: #B82601;
+}
+
+.notice-box {
+    width: 100%;
+    height: auto;
+    padding: 5px;
+    text-align: center;
+    color: white;
+    background: #062F4F;
+}
+
 .landing-header {
     height: 400px;
     text-align: center;

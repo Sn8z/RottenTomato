@@ -45,6 +45,16 @@
   </header>
 
   <main>
+    <% if notice %>
+      <div class="notice-box">
+        <%= notice %>
+      </div>
+    <% end %>
+    <% if alert %>
+      <div class="alert-box">
+        <%= alert %>
+      </div>
+    <% end %>
     <%= yield %>
   </main>
 
@@ -84,7 +94,22 @@
           <h4 class="modal-title">Contact</h4>
         </div>
         <div class="modal-body">
-          <p>placeholder@mail.com</p>
+          <div class="row">
+            <div class="col-sm-6">
+              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed
+                do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                Ut enim ad minim veniam, quis nostrud exercitation ullamco
+                laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure
+                 dolor in reprehenderit in voluptate velit esse cillum dolore eu
+                  fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+                  proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+            </div>
+            <div class="col-sm-6">
+              <p><b>Email</b><br>placeholder@mail.com</p>
+              <p><b>Email</b><br>placeholder@mail.com</p>
+              <p><b>Email</b><br>placeholder@mail.com</p>
+            </div>
+          </div>
         </div>
         <div class="modal-footer">
 
@@ -102,7 +127,22 @@
           <h4 class="modal-title">Donate</h4>
         </div>
         <div class="modal-body">
-          <p>Donate here</p>
+          <div class="row">
+            <div class="col-sm-6">
+              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed
+                do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                Ut enim ad minim veniam, quis nostrud exercitation ullamco
+                laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure
+                 dolor in reprehenderit in voluptate velit esse cillum dolore eu
+                  fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+                  proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+            </div>
+            <div class="col-sm-6">
+              <p><b>Paypal</b><br>Holla Holla</p>
+              <p><b>Patreon</b><br>Holla Holla</p>
+              <p><b>Other</b><br>Holla Holla</p>
+            </div>
+          </div>
         </div>
         <div class="modal-footer">
 
@@ -120,7 +160,24 @@
           <h4 class="modal-title">About</h4>
         </div>
         <div class="modal-body">
-          <p>Some info about the page and myself of course</p>
+          <div class="row">
+          <div class="col-sm-6">
+            <h2>What is PlaceHolder?</h2>
+            <p>Holla Holla</p>
+            <h2>Who is PlaceHolder?</h2>
+            <p>Holla Holla</p>
+            <h2>How does it work?</h2>
+            <p>Holla Holla</p>
+          </div>
+          <div class="col-sm-6">
+            <h2>How does PlaceHolder earn money?</h2>
+            <p>Holla Holla</p>
+            <h2>I want to contribute!</h2>
+            <p>Holla Holla</p>
+            <h2>I really like this site and want to collaborate!</h2>
+            <p>Holla Holla</p>
+          </div>
+        </div>
         </div>
         <div class="modal-footer">
 
