@@ -30,7 +30,7 @@ html *
 
 .logo-gaming {
   font-family: 'Quicksand', sans-serif !important;
-  color: $ink;
+  color: $ember;
 }
 
 body {
@@ -266,13 +266,13 @@ main {
 .footer-distributed .footer-right{
 	float: right;
 	margin-top: 6px;
-	max-width: 250px;
+	max-width: 300px;
 }
 
 .footer-distributed .footer-right a{
 	display: inline-block;
-	width: 35px;
-	height: 35px;
+  height: 60px;
+	width: 60px;
 	background-color: transparent;
 	border-radius: 2px;
 	font-size: 20px;
