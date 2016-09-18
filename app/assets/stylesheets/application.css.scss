@@ -15,9 +15,22 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
+$ember: #B82601;
+$ink: #062F4F;
+
 html *
 {
-   font-family: 'Noto Sans', sans-serif !important;
+  font-family: 'Noto Sans', sans-serif !important;
+}
+
+.logo-follow {
+  font-family: 'Noto Sans', sans-serif !important;
+  color: white;
+}
+
+.logo-gaming {
+  font-family: 'Quicksand', sans-serif !important;
+  color: $ink;
 }
 
 body {
@@ -67,7 +80,7 @@ main {
     display: flex;
     justify-content: center;
     align-items: center;
-    background: image-url('banner.png') center center no-repeat scroll;
+    background: image-url('banner-dark.jpg') center center no-repeat scroll;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     background-size: cover;
