@@ -130,7 +130,6 @@ main {
   background: -ms-linear-gradient(left, rgba(28,88,133,1) 0%, rgba(6,47,79,1) 100%);
   background: linear-gradient(to right, rgba(28,88,133,1) 0%, rgba(6,47,79,1) 100%);
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#1c5885', endColorstr='#062f4f', GradientType=1 );
-  border: 0 !important;
 }
 
 .sidebar-csgo {
@@ -142,7 +141,6 @@ main {
   background: -ms-linear-gradient(left, rgba(28,88,133,1) 0%, rgba(6,47,79,1) 100%);
   background: linear-gradient(to right, rgba(28,88,133,1) 0%, rgba(6,47,79,1) 100%);
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#1c5885', endColorstr='#062f4f', GradientType=1 );
-  border: 0 !important;
 }
 
 .sidebar-dota {
@@ -154,7 +152,6 @@ main {
   background: -ms-linear-gradient(left, rgba(179,47,14,1) 0%, rgba(184,37,1,1) 100%);
   background: linear-gradient(to right, rgba(179,47,14,1) 0%, rgba(184,37,1,1) 100%);
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#1c5885', endColorstr='#062f4f', GradientType=1 );
-  border: 0 !important;
 }
 
 .match-box  {
@@ -177,7 +174,6 @@ main {
 .news-header {
   width: 100%;
   height: auto;
-  margin-top: 5px;
   padding: 10px;
   background-color:rgba(0, 0, 0, 1);
 }
@@ -188,7 +184,6 @@ main {
   background-color:rgba(0, 0, 0, 0.7);
   padding: 10px;
   border: 1px solid black;
-  margin-bottom: 5px;
 }
 
 .sidebar-header {
@@ -199,6 +194,13 @@ main {
   margin-left: 5px;
   margin-right: 5px;
   margin-top: 10px;
+}
+
+.youtube-embed {
+  padding-left: 5px;
+  padding-right: 5px;
+  margin-top: 5px;
+  margin-bottom: 5px;
 }
 
 .shadow {
@@ -240,10 +242,6 @@ main {
   height: 20px;
 }
 
-[class*="col-"] {
-    background-clip: padding-box;
-    border: 5px solid transparent;
-}
 
 .footer-distributed{
 	background-color: black;
@@ -403,14 +401,11 @@ main {
     background:rgba(0, 0, 0, 0.7);
     border: 1px solid black;
   }
-  [class*="col-"] {
-      background-clip: padding-box;
-      border: 0px;
-  }
-  .youtube-embed {
-    padding-left: 5px;
-    padding-right: 5px;
+  .news-header {
     margin-top: 5px;
+  }
+
+  .news-content {
     margin-bottom: 5px;
   }
 }

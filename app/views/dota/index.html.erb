@@ -95,7 +95,7 @@
         </div>
         <div class="news-content">
             <% DotaReddit.last(5).each do |post| %>
-            <a href="<%= post.url %>" target="_blank" style="color:red;">
+            <a class="ember" href="<%= post.url %>" target="_blank">
               <h4 style="color:white;">
                 <b><%= post.title %></b>
               </h4>
