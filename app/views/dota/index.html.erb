@@ -115,7 +115,7 @@
   <!-- sidebar -->
   <div class="row">
     <div class="sidebar-header">
-      <i style="color:white;">Live</i>
+      <h4 style="color:white;">Live</h4>
     </div>
   </div>
 <div class="row">
@@ -124,7 +124,7 @@
         <hr>
         <p style="color:white;">No matches</p>
     <% else %>
-        <table class="table shadow" style="width:100%;background:black;">
+        <table class="table" style="width:100%;">
             <% @live_matches.each do |match| %>
             <tr>
                 <td width="40%" align="left">
@@ -160,7 +160,7 @@
   </div>
   <div class="row">
     <div class="match-box">
-    <table class="table shadow" style="width:100%;background:black;">
+    <table class="table" style="width:100%;">
       <% DotaStreamer.last(6).each do |streamer|%>
         <tr>
           <td width="50%" align="left"><b><a href="<%= streamer.url %>" style="color:#6441a5;" target="_blank"><%= streamer.name %></a></b></td>
@@ -179,7 +179,7 @@
    </div>
    <div class="row">
       <% DotaYoutube.last(3).reverse.each do |video| %>
-        <div class="col-lg-12 col-md-12 col-xs-12">
+        <div class="col-lg-12 col-md-12 col-xs-12 youtube-embed">
           <div class="embed-responsive embed-responsive-16by9">
             <iframe class="embed-responsive-item" src="<%= video.embed %>" allowfullscreen></iframe>
           </div>
