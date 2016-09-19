@@ -56,6 +56,15 @@ main {
   color: black !important;
 }
 
+.ember {
+  color: $ember !important;
+}
+
+.spacer {
+  width: 100%;
+  height: 10px;
+}
+
 .alert-box {
     width: 100%;
     height: auto;
@@ -90,6 +99,22 @@ main {
 .tagline {
     text-shadow: 0 0 10px #000;
     color: #fff;
+}
+
+.content-container {
+    background-color:#414141;
+}
+
+.bg {
+  background-color:rgba(0, 0, 0, 0.8);
+  width: 100%;
+  height: auto;
+  padding: 5px;
+  border-top: 2px solid $ember;
+  color: white;
+  -webkit-box-shadow: 0px 0px 20px 5px rgba(0,0,0,0.75);
+  -moz-box-shadow: 0px 0px 20px 5px rgba(0,0,0,0.75);
+  box-shadow: 0px 0px 20px 5px rgba(0,0,0,0.75);
 }
 
 .img-center {
@@ -154,14 +179,7 @@ main {
   height: auto;
   margin-top: 5px;
   padding: 10px;
-  background: rgba(0,0,0,1);
-  background: -moz-linear-gradient(top, rgba(0,0,0,1) 0%, rgba(64,64,64,1) 44%, rgba(0,0,0,1) 100%);
-  background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(0,0,0,1)), color-stop(44%, rgba(64,64,64,1)), color-stop(100%, rgba(0,0,0,1)));
-  background: -webkit-linear-gradient(top, rgba(0,0,0,1) 0%, rgba(64,64,64,1) 44%, rgba(0,0,0,1) 100%);
-  background: -o-linear-gradient(top, rgba(0,0,0,1) 0%, rgba(64,64,64,1) 44%, rgba(0,0,0,1) 100%);
-  background: -ms-linear-gradient(top, rgba(0,0,0,1) 0%, rgba(64,64,64,1) 44%, rgba(0,0,0,1) 100%);
-  background: linear-gradient(to bottom, rgba(0,0,0,1) 0%, rgba(64,64,64,1) 44%, rgba(0,0,0,1) 100%);
-  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#000000', endColorstr='#000000', GradientType=0 );
+  background-color:rgba(0, 0, 0, 1);
   -webkit-border-top-left-radius: 5px;
   -webkit-border-top-right-radius: 5px;
   -moz-border-radius-topleft: 5px;
@@ -171,6 +189,7 @@ main {
 .news-content {
   width: 100%;
   height: auto;
+  background-color:rgba(0, 0, 0, 0.7);
   padding: 10px;
   border: 1px solid black;
   margin-bottom: 5px;

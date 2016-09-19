@@ -1,4 +1,4 @@
-<div class="container side-shadow" style="background-color:white;">
+<div class="container side-shadow content-container">
 <div class="col-sm-8">
   <div class="row">
       <!-- Carousel -->
@@ -54,7 +54,7 @@
         </div>
         <div class="news-content">
         <% CsgoNews.last(5).each do |news| %>
-        <a href="<%= news.url %>" target="_blank" style="color:black;">
+        <a href="<%= news.url %>" target="_blank" style="color:white;">
         <h4>
           <b><%= news.title %></b>
         </h4>
@@ -89,7 +89,7 @@
         </div>
         <div class="news-content">
             <% CsgoReddit.last(5).each do |post| %>
-            <a href="<%= post.url %>" target="_blank" style="color:black;">
+            <a href="<%= post.url %>" target="_blank" style="color:white;">
               <h4>
                 <b><%= post.title %></b>
               </h4>
