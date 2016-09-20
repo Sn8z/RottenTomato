@@ -24,5 +24,6 @@ Rails.application.routes.draw do
   devise_for :users
  root to: "home#index"
  get '/dota2', to: "dota#index"
+ get '/dota2/matches', to: "dota#matches"
  get '/csgo', to: "csgo#index"
 end
