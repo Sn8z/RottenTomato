@@ -23,6 +23,8 @@
           <ul class="nav navbar-nav">
             <li class="<%= 'active' if params[:controller] == 'csgo' %>"><a href="/csgo">Counterstrike</a></li>
             <li class="<%= 'active' if params[:controller] == 'dota' %>"><a href="/dota2">DotA 2</a></li>
+            <li class="<%= 'active' if params[:controller] == 'overwatch' %>"><a href="#">Overwatch</a></li>
+            <li class="<%= 'active' if params[:controller] == 'wow' %>"><a href="#">World of Warcraft</a></li>
           </ul>
           <ul class="nav navbar-nav navbar-right">
             <% if user_signed_in? %>
@@ -71,8 +73,9 @@
     <div class="footer-left">
 
       <p class="footer-links">
+        <!--
         <a href="#">Blog</a>
-         ·
+         ·-->
         <a href="#" data-toggle="modal" data-target="#donationModal">Donate</a>
          ·
         <a href="#" data-toggle="modal" data-target="#aboutModal">About</a>
@@ -96,18 +99,13 @@
         <div class="modal-body">
           <div class="row">
             <div class="col-sm-6">
-              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed
-                do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                Ut enim ad minim veniam, quis nostrud exercitation ullamco
-                laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure
-                 dolor in reprehenderit in voluptate velit esse cillum dolore eu
-                  fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-                  proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+              <p>If you have any questions, feedback or just wanna say hi
+              feel free to use any of the methods to the right. We will
+              respond asap!</p>
             </div>
             <div class="col-sm-6">
-              <p><b>Email</b><br>FollowGaming@mail.com</p>
-              <p><b>Email</b><br>FollowGaming@mail.com</p>
-              <p><b>Email</b><br>FollowGaming@mail.com</p>
+              <p><b>Email</b><br>marcus.sneitz@gmail.com</p>
+              <p><b>Facebook</b><br>?????</p>
             </div>
           </div>
         </div>
@@ -129,18 +127,14 @@
         <div class="modal-body">
           <div class="row">
             <div class="col-sm-6">
-              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed
-                do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                Ut enim ad minim veniam, quis nostrud exercitation ullamco
-                laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure
-                 dolor in reprehenderit in voluptate velit esse cillum dolore eu
-                  fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-                  proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+              <p>If you like what we have going here feel free to contribute.
+              Donations will be invested back into the site in some way.</p>
             </div>
             <div class="col-sm-6">
-              <p><b>Paypal</b><br>Holla Holla</p>
-              <p><b>Patreon</b><br>Holla Holla</p>
-              <p><b>Other</b><br>Holla Holla</p>
+              <p><b><a href="#">Paypal</a></b><br>For those of you who wants to donate a single time,
+              the amount is up to you.</p>
+              <p><b><a href="#">Patreon</a></b><br>If you like my blog more than the site itself becoming
+              a patreon will help me keep going and deliver content.</p>
             </div>
           </div>
         </div>
@@ -163,19 +157,32 @@
           <div class="row">
           <div class="col-sm-6">
             <h2>What is FollowGaming?</h2>
-            <p>Holla Holla</p>
+            <p>FollowGaming is a website dedicated to collecting the most relevant news
+            for some of the most popular games out there. We use a lot of different sources
+            to get a good variety between serious news and dank memes.</p>
             <h2>Who is FollowGaming?</h2>
-            <p>Holla Holla</p>
+            <p>At the moment it's just one person behind FollowGaming and that's me, Marcus Sneitz.
+            So who am I?<br>I'm a guy in my twenties who loves esports, gaming, computers and programming.
+          If you want to know more about me I will put up a blog post asap.</p>
             <h2>How does it work?</h2>
-            <p>Holla Holla</p>
+            <p>I want it to be very clear that FollowGaming doesn't do ANY type of webscraping since it's highly
+            unethical. We only fetch news and info from public APIs and RSS feeds, this is done by a task that runs
+            in intervals of about 2 minutes which means there won't be a 100% sync between FollowGaming and for example Reddit.</p>
           </div>
           <div class="col-sm-6">
-            <h2>How does FollowGaming earn money?</h2>
-            <p>Holla Holla</p>
+            <h2>Why don't you show news from < insert site >?</h2>
+            <p>More sources will be added as I find good ones. There are some big
+            sites that I would love to show news from but they don't have any public API or
+            RSS feed which makes it impossible. If you own a site with content related to gaming
+            and want to be included in FollowGaming send me an email so we can talk!</p>
             <h2>I want to contribute!</h2>
-            <p>Holla Holla</p>
-            <h2>I really like this site and want to collaborate!</h2>
-            <p>Holla Holla</p>cd Rott
+            <p>Great! We highly appreciate all kinds of contributions, feel free to contact us or send
+            a donation our way to keep us going.</p>
+            <h2>I like the site but can't afford a donation</h2>
+            <p>No problem, if you want to help out without costing you anything please make an
+            exception for us in your adblocker. We don't show any adds in our content
+            except for in the blog. We also have a few affiliates that you can find
+             in the footer so if you're going to buy new gear please use our links ;)</p>
           </div>
         </div>
         </div>

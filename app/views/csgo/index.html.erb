@@ -89,7 +89,7 @@
         </div>
         <div class="news-content">
             <% CsgoReddit.last(5).each do |post| %>
-            <a class="ember" href="<%= post.url %>" target="_blank" style="color:white;">
+            <a class="ink" href="<%= post.url %>" target="_blank">
               <h4 style="color:white;">
                 <b><%= post.title %></b>
               </h4>
@@ -108,7 +108,7 @@
 <div class="col-sm-4 sidebar-csgo">
   <!-- sidebar -->
     <div class="row">
-      <div class="sidebar-header">
+      <div class="sidebar-header sh-csgo">
       <a href="https://www.twitch.tv/directory/game/Counter-Strike%3A%20Global%20Offensive" target="_blank">
         <%= image_tag('twitch_logo.png', :class => "img-header") %>
       </a>
@@ -127,7 +127,7 @@
 </div>
   </div>
     <div class="row">
-      <div class="sidebar-header">
+      <div class="sidebar-header sh-csgo">
       <a href="https://www.youtube.com/" target="_blank">
         <%= image_tag('youtube_logo.png', :class => "img-header") %>
        </a>
