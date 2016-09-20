@@ -15,3 +15,25 @@
 //= require turbolinks
 //= require bootstrap-sprockets
 //= require_tree .
+
+var ready;
+ready = function() {
+  if(document.getElementById("dota-matches") != null){
+    loadDotaMatches();
+  }
+}
+
+function loadDotaMatches (){
+  $.ajax({
+    url: '/dota2/matches',
+    cache: false,
+    success: function(html) {
+      $('#dota-matches').fadeOut('slow', function() {
+        $(this).html(html);
+        $(this).fadeIn('slow');
+      });
+    }
+  });
+}
+
+$(document).on('turbolinks:load', ready);
