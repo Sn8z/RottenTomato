@@ -52,14 +52,19 @@ main {
   flex: 1;
 }
 
-.black  {
-  color: black !important;
-}
-
 .ember {
   color: $ember !important;
 }
+.ember-bg {
+  background-color: $ember !important;
+}
 
+.ink {
+  color: $ink !important;
+}
+.ink-bg {
+  background-color: $ink !important;
+}
 .spacer {
   width: 100%;
   height: 10px;
@@ -101,10 +106,6 @@ main {
     color: #fff;
 }
 
-.content-container {
-    background-color:#414141;
-}
-
 .bg {
   background-color:rgba(0, 0, 0, 0.8);
   width: 100%;
@@ -133,25 +134,11 @@ main {
 }
 
 .sidebar-csgo {
-  background: rgba(28,88,133,1);
-  background: -moz-linear-gradient(left, rgba(28,88,133,1) 0%, rgba(6,47,79,1) 100%);
-  background: -webkit-gradient(left top, right top, color-stop(0%, rgba(28,88,133,1)), color-stop(100%, rgba(6,47,79,1)));
-  background: -webkit-linear-gradient(left, rgba(28,88,133,1) 0%, rgba(6,47,79,1) 100%);
-  background: -o-linear-gradient(left, rgba(28,88,133,1) 0%, rgba(6,47,79,1) 100%);
-  background: -ms-linear-gradient(left, rgba(28,88,133,1) 0%, rgba(6,47,79,1) 100%);
-  background: linear-gradient(to right, rgba(28,88,133,1) 0%, rgba(6,47,79,1) 100%);
-  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#1c5885', endColorstr='#062f4f', GradientType=1 );
+  background: $ink;
 }
 
 .sidebar-dota {
-  background: rgba(28,88,133,1);
-  background: -moz-linear-gradient(left, rgba(179,47,14,1) 0%, rgba(184,37,1,1) 100%);
-  background: -webkit-gradient(left top, right top, color-stop(0%, rgba(179,47,14,1)), color-stop(100%, rgba(184,37,1,1)));
-  background: -webkit-linear-gradient(left, rgba(179,47,14,1) 0%, rgba(184,37,1,1) 100%);
-  background: -o-linear-gradient(left, rgba(179,47,14,1) 0%, rgba(184,37,1,1) 100%);
-  background: -ms-linear-gradient(left, rgba(179,47,14,1) 0%, rgba(184,37,1,1) 100%);
-  background: linear-gradient(to right, rgba(179,47,14,1) 0%, rgba(184,37,1,1) 100%);
-  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#1c5885', endColorstr='#062f4f', GradientType=1 );
+  background: $ember;
 }
 
 .match-box  {
@@ -176,6 +163,15 @@ main {
   height: auto;
   padding: 10px;
   background-color:rgba(0, 0, 0, 1);
+  border-top: 2px solid white;
+}
+
+.nh-csgo {
+  border-top: 2px solid $ink;
+}
+
+.nh-dota {
+  border-top: 2px solid $ember;
 }
 
 .news-content {
@@ -207,12 +203,6 @@ main {
   -webkit-box-shadow: 0px 0px 20px 5px rgba(0,0,0,0.75);
   -moz-box-shadow: 0px 0px 20px 5px rgba(0,0,0,0.75);
   box-shadow: 0px 0px 20px 5px rgba(0,0,0,0.75);
-}
-
-.side-shadow  {
-  -webkit-box-shadow: 0px 0px 40px 0px rgba(0,0,0,0.75);
-  -moz-box-shadow: 0px 0px 40px 0px rgba(0,0,0,0.75);
-  box-shadow: 0px 0px 40px 0px rgba(0,0,0,0.75);
 }
 
 .img-front {
@@ -297,6 +287,10 @@ main {
 
 /* menu */
 
+.dd-text  {
+  color: white !important;
+}
+
 .navbar-custom {
   background: #000000;
   font-weight: 700;
@@ -352,6 +346,9 @@ main {
 }
 
 @media (min-width: 768px) {
+  .dd-text  {
+    color: black !important;
+  }
   .navbar-custom {
     padding: 25px 0;
     -webkit-transition: padding 0.3s;
@@ -391,7 +388,7 @@ main {
 	}
 }
 
-@media (max-width: 768px) {
+@media (max-width: 600px) {
   .sidebar-lush, .sidebar-dota, .sidebar-csgo {
     background: rgba(0,0,0,0);
     padding-left: 10px;
