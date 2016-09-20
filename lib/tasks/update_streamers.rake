@@ -3,7 +3,7 @@ task :update_streamers => :environment do
   require 'rss'
   #DotA 2
   #DotaStreamers
-  streamers = JSON.parse(open("https://api.twitch.tv/kraken/streams?game=DotA%202&limit=6").read)
+  streamers = JSON.parse(open("https://api.twitch.tv/kraken/streams?game=DotA%202&limit=6", "Client-ID" => ENV.fetch("TWITCH_API_KEY")).read)
   streamers["streams"].each do |streamer|
     dota_streamer = DotaStreamer.new
     dota_streamer.url = streamer["channel"]["url"]
@@ -16,7 +16,7 @@ task :update_streamers => :environment do
 
   #CsGo
   #CsgoStreamers
-  streamers = JSON.parse(open("https://api.twitch.tv/kraken/streams?game=Counter-Strike%3A%20Global%20Offensive&limit=6").read)
+  streamers = JSON.parse(open("https://api.twitch.tv/kraken/streams?game=Counter-Strike%3A%20Global%20Offensive&limit=6", "Client-ID" => ENV.fetch("TWITCH_API_KEY")).read)
   streamers["streams"].each do |streamer|
     csgo_streamer = CsgoStreamer.new
     csgo_streamer.url = streamer["channel"]["url"]
