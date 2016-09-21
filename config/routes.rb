@@ -14,6 +14,8 @@ Rails.application.routes.draw do
     resources :csgo_youtubes
     resources :csgo_guides
 
+    resources :games
+
     root to: "users#index"
   end
 
