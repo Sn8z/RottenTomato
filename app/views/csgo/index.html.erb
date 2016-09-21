@@ -89,7 +89,7 @@
         </div>
         <div class="news-content">
             <% CsgoReddit.last(5).each do |post| %>
-            <a class="ink" href="<%= post.url %>" target="_blank">
+            <a href="<%= post.url %>" target="_blank" style="color:blue;">
               <h4 style="color:white;">
                 <b><%= post.title %></b>
               </h4>

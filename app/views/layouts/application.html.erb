@@ -23,8 +23,8 @@
           <ul class="nav navbar-nav">
             <li class="<%= 'active' if params[:controller] == 'csgo' %>"><a href="/csgo">Counterstrike</a></li>
             <li class="<%= 'active' if params[:controller] == 'dota' %>"><a href="/dota2">DotA 2</a></li>
-            <li class="<%= 'active' if params[:controller] == 'overwatch' %>"><a href="#">Overwatch</a></li>
-            <li class="<%= 'active' if params[:controller] == 'wow' %>"><a href="#">World of Warcraft</a></li>
+            <li class="<%= 'active' if params[:controller] == 'overwatch' %>"><a href="/overwatch">Overwatch</a></li>
+            <li class="<%= 'active' if params[:controller] == 'wow' %>"><a href="/wow">World of Warcraft</a></li>
           </ul>
           <ul class="nav navbar-nav navbar-right">
             <% if user_signed_in? %>
@@ -83,7 +83,7 @@
         <a href="#" data-toggle="modal" data-target="#contactModal">Contact</a>
       </p>
 
-      <%= render 'layouts/logo' %> <span style="color:white;">&copy; 2016</span>
+      <%= render 'layouts/logo' %>
     </div>
 
   </footer>
