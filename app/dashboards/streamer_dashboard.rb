@@ -1,6 +1,6 @@
 require "administrate/base_dashboard"
 
-class GameDashboard < Administrate::BaseDashboard
+class StreamerDashboard < Administrate::BaseDashboard
   # ATTRIBUTE_TYPES
   # a hash that describes the type of each of the model's fields.
   #
@@ -8,14 +8,13 @@ class GameDashboard < Administrate::BaseDashboard
   # which determines how the attribute is displayed
   # on pages throughout the dashboard.
   ATTRIBUTE_TYPES = {
-    news: Field::HasMany,
-    guides: Field::HasMany,
-    reddits: Field::HasMany,
-    streamers: Field::HasMany,
-    youtubes: Field::HasMany,
+    game: Field::BelongsTo,
     id: Field::Number,
+    url: Field::String,
+    logo_src: Field::String,
     name: Field::String,
-    description: Field::Text,
+    description: Field::String,
+    viewers: Field::Number,
     created_at: Field::DateTime,
     updated_at: Field::DateTime,
   }.freeze
@@ -26,23 +25,22 @@ class GameDashboard < Administrate::BaseDashboard
   # By default, it's limited to four items to reduce clutter on index pages.
   # Feel free to add, remove, or rearrange items.
   COLLECTION_ATTRIBUTES = [
-    :news,
-    :guides,
-    :reddits,
-    :streamers,
+    :game,
+    :id,
+    :url,
+    :logo_src,
   ].freeze
 
   # SHOW_PAGE_ATTRIBUTES
   # an array of attributes that will be displayed on the model's show page.
   SHOW_PAGE_ATTRIBUTES = [
-    :news,
-    :guides,
-    :reddits,
-    :streamers,
-    :youtubes,
+    :game,
     :id,
+    :url,
+    :logo_src,
     :name,
     :description,
+    :viewers,
     :created_at,
     :updated_at,
   ].freeze
@@ -51,19 +49,18 @@ class GameDashboard < Administrate::BaseDashboard
   # an array of attributes that will be displayed
   # on the model's form (`new` and `edit`) pages.
   FORM_ATTRIBUTES = [
-    :news,
-    :guides,
-    :reddits,
-    :streamers,
-    :youtubes,
+    :game,
+    :url,
+    :logo_src,
     :name,
     :description,
+    :viewers,
   ].freeze
 
-  # Overwrite this method to customize how games are displayed
+  # Overwrite this method to customize how streamers are displayed
   # across all pages of the admin dashboard.
   #
-  # def display_resource(game)
-  #   "Game ##{game.id}"
+  # def display_resource(streamer)
+  #   "Streamer ##{streamer.id}"
   # end
 end

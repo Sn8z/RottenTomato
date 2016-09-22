@@ -11,103 +11,51 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160921140622) do
+ActiveRecord::Schema.define(version: 20160922153935) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "csgo_guides", force: :cascade do |t|
-    t.string   "title"
-    t.string   "url"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  create_table "csgo_news", force: :cascade do |t|
-    t.string   "url"
-    t.string   "title"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  create_table "csgo_reddits", force: :cascade do |t|
-    t.string   "url"
-    t.string   "title"
-    t.integer  "upvotes"
-    t.integer  "comments"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  create_table "csgo_streamers", force: :cascade do |t|
-    t.string   "url"
-    t.string   "logo_src"
-    t.string   "name"
-    t.string   "description"
-    t.integer  "viewers"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
-  end
-
-  create_table "csgo_youtubes", force: :cascade do |t|
-    t.string   "embed"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  create_table "dota_guides", force: :cascade do |t|
-    t.string   "title"
-    t.string   "url"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  create_table "dota_matches", force: :cascade do |t|
-    t.string   "team_1"
-    t.string   "team_2"
-    t.integer  "score_1"
-    t.integer  "score_2"
-    t.datetime "time"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.string   "tournament"
-  end
-
-  create_table "dota_news", force: :cascade do |t|
-    t.string   "url"
-    t.string   "title"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  create_table "dota_reddits", force: :cascade do |t|
-    t.string   "url"
-    t.string   "title"
-    t.integer  "upvotes"
-    t.integer  "comments"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  create_table "dota_streamers", force: :cascade do |t|
-    t.string   "url"
-    t.string   "logo_src"
-    t.string   "name"
-    t.string   "description"
-    t.integer  "viewers"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
-  end
-
-  create_table "dota_youtubes", force: :cascade do |t|
-    t.string   "embed"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
   create_table "games", force: :cascade do |t|
     t.string   "name"
     t.text     "description"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
+
+  create_table "guides", force: :cascade do |t|
+    t.string   "url"
+    t.string   "title"
+    t.integer  "game_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "news", force: :cascade do |t|
+    t.string   "url"
+    t.string   "title"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer  "game_id"
+  end
+
+  create_table "reddits", force: :cascade do |t|
+    t.string   "url"
+    t.string   "title"
+    t.integer  "upvotes"
+    t.integer  "comments"
+    t.integer  "game_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "streamers", force: :cascade do |t|
+    t.string   "url"
+    t.string   "logo_src"
+    t.string   "name"
+    t.string   "description"
+    t.integer  "viewers"
+    t.integer  "game_id"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
   end
@@ -132,5 +80,12 @@ ActiveRecord::Schema.define(version: 20160921140622) do
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
   add_index "users", ["username"], name: "index_users_on_username", unique: true, using: :btree
+
+  create_table "youtubes", force: :cascade do |t|
+    t.string   "embed"
+    t.integer  "game_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
 end

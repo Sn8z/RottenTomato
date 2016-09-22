@@ -59,7 +59,7 @@
           </a>
         </div>
         <div class="news-content">
-        <% DotaNews.last(5).each do |news| %>
+        <% Game.find(1).news.last(5).each do |news| %>
         <a href="<%= news.url %>" target="_blank" style="color:white;">
           <h4>
           <b><%= news.title %></b>
@@ -75,7 +75,7 @@
         </div>
         <div class="news-content">
         <ul>
-          <% DotaGuide.last(5).reverse.each do |guide| %>
+          <% Game.find(1).guides.last(5).reverse.each do |guide| %>
           <a href="<%= guide.url %>" target="_blank" style="color:orange;">
             <li><h4>
             <b><%= guide.title %></b>
@@ -94,7 +94,7 @@
           </a>
         </div>
         <div class="news-content">
-            <% DotaReddit.last(5).each do |post| %>
+            <% Game.find(1).reddits.last(5).each do |post| %>
             <a class="ember" href="<%= post.url %>" target="_blank">
               <h4 style="color:white;">
                 <b><%= post.title %></b>
@@ -139,7 +139,7 @@
   <div class="row">
     <div class="match-box">
     <table class="table" style="width:100%;">
-      <% DotaStreamer.last(6).each do |streamer|%>
+      <% Game.find(1).streamers.last(6).each do |streamer|%>
         <tr>
           <td width="50%" align="left"><b><a href="<%= streamer.url %>" style="color:#6441a5;" target="_blank"><%= streamer.name %></a></b></td>
           <td width="50%" align="right"><i style="color:white;"><%= streamer.viewers %> viewers</i></td>
@@ -156,7 +156,7 @@
      </div>
    </div>
    <div class="row">
-      <% DotaYoutube.last(3).reverse.each do |video| %>
+      <% Game.find(1).youtubes.last(3).reverse.each do |video| %>
         <div class="col-lg-12 col-md-12 col-xs-12 youtube-embed">
           <div class="embed-responsive embed-responsive-16by9">
             <iframe class="embed-responsive-item" src="<%= video.embed %>" allowfullscreen></iframe>
