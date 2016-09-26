@@ -96,9 +96,9 @@
         <div class="news-content">
             <% Game.find(1).reddits.last(5).each do |post| %>
             <a class="ember" href="<%= post.url %>" target="_blank">
-              <h4 style="color:white;">
+              <h5 style="color:white;">
                 <b><%= post.title %></b>
-              </h4>
+              </h5>
               <%= post.upvotes %>
               upvotes |
               <%= post.comments %>
@@ -108,6 +108,15 @@
             <% end %>
           </div>
       </div>
+      <div class="row">
+        <div class="news-header nh-dota">
+          <h4 style="color:white;">Artwork</h4>
+        </div>
+        <div class="news-content">
+          <!-- Artwork grid -->
+          Coming soon...
+        </div>
+    </div>
     </div>
   </div>
 </div>
