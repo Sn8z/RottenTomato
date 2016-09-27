@@ -1,90 +1,182 @@
-<div class="landing-header shadow">
-  <div class="container">
-        <div class="row">
-            <div class="col-lg-12">
-              <h1 class="tagline">
-                <%= render 'layouts/logo' %>
-              </h1>
-              <p class="tagline">The greatest place for gaming news in one place</p>
+<div class="container">
+<div class="col-sm-8">
+  <div class="row">
+      <!-- Carousel -->
+      <div id="myCarousel" class="carousel slide" data-ride="carousel">
+            <!-- Indicators -->
+            <ol class="carousel-indicators">
+              <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+              <li data-target="#myCarousel" data-slide-to="1"></li>
+              <li data-target="#myCarousel" data-slide-to="2"></li>
+              <li data-target="#myCarousel" data-slide-to="3"></li>
+            </ol>
+
+            <!-- Wrapper for slides -->
+            <div class="carousel-inner" role="listbox">
+              <div class="item active">
+                  <%= image_tag('banner.jpg', :class => "img-responsive") %>
+                  <div class="carousel-caption">
+                    <h1><%= render 'layouts/logo' %></h1>
+                    <p>The greatest place for gaming news in one place</p>
+                  </div>
+              </div>
+
+              <div class="item">
+                <a href="/csgo" target="_blank">
+                  <%= image_tag('https://global-offensive.com/wp-content/uploads/sites/2/2014/02/counter-strike-global-offensive-game-hd-wallpaper-1920x1080-8976.jpg', :class => "img-responsive") %>
+                  <div class="carousel-caption">
+                    <h1>Counterstrike</h1>
+                    <p>Lorem Ipsum</p>
+                  </div>
+                </a>
+              </div>
+
+              <div class="item">
+                <a href="/dota2" target="_blank">
+                  <%= image_tag('http://media.esportsedition.com/wp-content/uploads/2016/01/dota-2-logo-wallpaper-02.jpg', :class => "img-responsive") %>
+                  <div class="carousel-caption">
+                    <h1>DotA 2</h1>
+                    <p>Lorem Ipsum</p>
+                  </div>
+                </a>
+              </div>
+
+              <div class="item">
+                <a href="http://blog.dota2.com/2016/08/the-international-grand-champions/" target="_blank">
+                  <%= image_tag('news/aegis.jpg', :class => "img-responsive") %>
+                  <div class="carousel-caption">
+                    <h1>Lorem</h1>
+                    <p>Lorem Ipsum</p>
+                  </div>
+                </a>
+              </div>
             </div>
-          </div>
+
+            <!-- Controls -->
+            <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
+              <span class="icon-prev" aria-hidden="true"></span>
+              <span class="sr-only">Previous</span>
+            </a>
+            <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
+              <span class="icon-next" aria-hidden="true"></span>
+              <span class="sr-only">Next</span>
+            </a>
+    </div>
+  </div>
+  <div class="row">
+    <!-- Page content -->
+    <div class="col-sm-6">
+      <div class="row">
+        <div class="news-header nh-dota">
+          <h4><b style="color:white;">Recent <span class="ember">news</span></b></h4>
         </div>
-</div>
-
-
-<div class="container content-container">
-  <div class="spacer"></div>
-
-  <div class="bg">
-
-        <div class="row">
-            <div class="col-sm-8">
-                <h2><b>What <span class="ember">We</span> Do</b></h2>
-                <p>FollowGaming.com is your starting point on the web.</p>
-                <p>We gather news, rumours, matches and more for the most popular
-                  e-sports and games in one place.</p>
-                  <p>We<br> gotta<br> add<br> some<br> more<br> content<br> here!</p>
-                <p>Below you can find some of the games that we cover!</p>
-            </div>
-            <div class="col-sm-4">
-              <h2><b>Insta<span class="ember">gram</span></b></h2>
-
-              <div class="col-sm-6 img-grid">
-                <%= image_tag('alch_small.jpg', :class => "img-responsive img-grid") %>
-
-              </div>
-              <div class="col-sm-6 img-grid">
-                <%= image_tag('csgo_small.jpg', :class => "img-responsive img-grid") %>
-
-              </div>
-              <div class="col-sm-6 img-grid">
-                <%= image_tag('tracer.jpg', :class => "img-responsive img-grid") %>
-
-              </div>
-              <div class="col-sm-6 img-grid">
-                <%= image_tag('legion_small.jpg', :class => "img-responsive img-grid") %>
-
-              </div>
-            </div>
-          </div>
+        <div class="news-content">
+        <% @news.each do |news| %>
+        <a href="<%= news.url %>" target="_blank" style="color:white;">
+          <h4>
+          <b><%= news.title %></b>
+        </h4>
+        </a>
+        <hr>
+        <% end %>
+      </div>
+    </div>
+    <div class="row">
+      <div class="news-header nh-dota">
+        <h4 style="color:white;">Artwork</h4>
+      </div>
+      <div class="news-content">
+        <% 6.times do %>
+        <div class="col-sm-6 img-grid">
+          <%= image_tag('alch_small.jpg', :class => "img-responsive") %>
         </div>
-        <!-- /.row -->
-        <div class="spacer"></div>
-
-        <div class="row">
-            <div class="col-sm-3">
-              <a class="ember" href="/csgo">
-              <div class="bg">
-                <%= image_tag('csgo_small.jpg', :class => "img-responsive img-center") %>
-                <h2><b>Counterstrike</b></h2>
-              </div>
-            </a>
-          </div>
-            <div class="col-sm-3">
-              <a class="ember" href="/dota2">
-              <div class="bg">
-                <%= image_tag('alch_small.jpg', :class => "img-responsive img-center") %>
-                <h2><b>DotA 2</b></h2>
-              </div>
-            </a>
-          </div>
-            <div class="col-sm-3">
-              <a class="ember" href="/overwatch">
-              <div class="bg">
-                <%= image_tag('tracer.jpg', :class => "img-responsive img-center") %>
-                <h2><b>Overwatch</b></h2>
-              </div>
-            </a>
-          </div>
-          <div class="col-sm-3">
-            <a class="ember" href="/wow">
-            <div class="bg">
-              <%= image_tag('legion_small.jpg', :class => "img-responsive img-center") %>
-              <h2><b>WoW</b></h2>
-            </div>
+        <% end %>
+        <div style="clear:both;"></div>
+      </div>
+  </div>
+    </div>
+    <div class="col-sm-6">
+      <div class="row">
+        <div class="news-header nh-dota">
+          <a href="https://www.reddit.com/r/DotA2/" target="_blank">
+            <h4><b style="color:white;">Reddit <span class="ember">/r/Gaming</span></b></h4>
           </a>
         </div>
-        </div>
-        <!-- /.row -->
+        <div class="news-content">
+            <% @reddit.each do |post| %>
+            <a class="ember" href="<%= post.url %>" target="_blank">
+              <h5 style="color:white;">
+                <b><%= post.title %></b>
+              </h5>
+              <%= post.upvotes %>
+              upvotes |
+              <%= post.comments %>
+              comments
+            </a>
+            <hr>
+            <% end %>
+          </div>
+      </div>
     </div>
-    <br>
+  </div>
+</div>
+<div class="col-sm-4 sidebar-start">
+  <!-- sidebar -->
+  <!--
+  <div class="row">
+    <div class="sidebar-header">
+      <h2><b style="color:white;">Recent <span class="ember">posts</span></b></h2>
+    </div>
+  </div>
+  <div class="row">
+    <div class="match-box">
+    <hr>
+    <h4 style="color:white;">Razer Blackwidow Review</h4>
+    <hr>
+    <h4 style="color:white;">Dealing with ladder anxiety</h4>
+    <hr>
+    <h4 style="color:white;">Rage</h4>
+    <hr>
+    <h4 style="color:white;">Skinkmacka</h4>
+    <hr>
+  </div>
+  </div>
+-->
+    <div class="row">
+      <div class="sidebar-header sh-dota">
+      <a href="https://www.twitch.tv/directory/game/Dota%202" target="_blank">
+        <%= image_tag('twitch_logo.png', :class => "img-header") %>
+      </a>
+    </div>
+  </div>
+  <div class="row">
+    <div class="match-box">
+    <table class="table" style="width:100%;">
+      <% @streamers.each do |streamer|%>
+        <tr>
+          <td width="50%" align="left"><b><a href="<%= streamer.url %>" style="color:#6441a5;" target="_blank"><%= streamer.name %></a></b></td>
+          <td width="50%" align="right"><i style="color:white;"><%= streamer.viewers %> viewers</i></td>
+        </tr>
+      <% end %>
+  </table>
+</div>
+  </div>
+    <div class="row">
+      <div class="sidebar-header sh-dota">
+      <a href="https://www.youtube.com/" target="_blank">
+        <%= image_tag('youtube_logo.png', :class => "img-header") %>
+       </a>
+     </div>
+   </div>
+   <div class="row">
+     <% @youtube.each do |video| %>
+        <div class="col-lg-12 col-md-12 col-xs-12 youtube-embed">
+          <div class="embed-responsive embed-responsive-16by9">
+            <iframe class="embed-responsive-item" src="<%= video.embed %>" allowfullscreen></iframe>
+          </div>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>
+</div>

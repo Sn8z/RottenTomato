@@ -16,24 +16,40 @@
               <div class="item active">
                 <a href="http://www.thescoreesports.com/dota2/news/8270-dota-2-fall-2016-roster-tracker" target="_blank">
                   <%= image_tag('news/roster_tracker.jpg', :class => "img-responsive") %>
+                  <div class="carousel-caption">
+                    <h1>322</h1>
+                    <p>Lorem Ipsum</p>
+                  </div>
                 </a>
               </div>
 
               <div class="item">
                 <a href="http://blog.dota2.com/2016/08/roster-lock-process/" target="_blank">
                   <%= image_tag('news/roster_lock.jpg', :class => "img-responsive") %>
+                  <div class="carousel-caption">
+                    <h1>322</h1>
+                    <p>Lorem Ipsum</p>
+                  </div>
                 </a>
               </div>
 
               <div class="item">
                 <a href="http://www.dota2.com/darkrift" target="_blank">
                   <%= image_tag('news/dark_rift.png', :class => "img-responsive") %>
+                  <div class="carousel-caption">
+                    <h1>322</h1>
+                    <p>Lorem Ipsum</p>
+                  </div>
                 </a>
               </div>
 
               <div class="item">
                 <a href="http://blog.dota2.com/2016/08/the-international-grand-champions/" target="_blank">
                   <%= image_tag('news/aegis.jpg', :class => "img-responsive") %>
+                  <div class="carousel-caption">
+                    <h1>322</h1>
+                    <p>Lorem Ipsum</p>
+                  </div>
                 </a>
               </div>
             </div>
@@ -55,11 +71,11 @@
       <div class="row">
         <div class="news-header nh-dota">
           <a href="http://www.thescoreesports.com/dota2/news" target="_blank">
-            <%= image_tag('thescore_logo_orange.png', :class => "img-header") %>
+            <h4><b style="color:white;">Recent <span class="ember">news</span></b></h4>
           </a>
         </div>
         <div class="news-content">
-        <% Game.find(1).news.last(5).each do |news| %>
+        <% @news.each do |news| %>
         <a href="<%= news.url %>" target="_blank" style="color:white;">
           <h4>
           <b><%= news.title %></b>
@@ -71,11 +87,11 @@
     </div>
       <div class="row">
         <div class="news-header nh-dota">
-          <h4 style="color:white;">Tutorials & Guides</h4>
+          <h4><b style="color:white;">Tutorials <span class="ember">&</span> Guides</b></h4>
         </div>
         <div class="news-content">
         <ul>
-          <% Game.find(1).guides.last(5).reverse.each do |guide| %>
+          <% @guides.each do |guide| %>
           <a href="<%= guide.url %>" target="_blank" style="color:orange;">
             <li><h4>
             <b><%= guide.title %></b>
@@ -94,7 +110,7 @@
           </a>
         </div>
         <div class="news-content">
-            <% Game.find(1).reddits.last(5).each do |post| %>
+            <% @reddit.each do |post| %>
             <a class="ember" href="<%= post.url %>" target="_blank">
               <h5 style="color:white;">
                 <b><%= post.title %></b>
@@ -113,8 +129,12 @@
           <h4 style="color:white;">Artwork</h4>
         </div>
         <div class="news-content">
-          <!-- Artwork grid -->
-          Coming soon...
+          <% 6.times do %>
+          <div class="col-sm-6 img-grid">
+            <%= image_tag('alch_small.jpg', :class => "img-responsive") %>
+          </div>
+          <% end %>
+          <div style="clear:both;"></div>
         </div>
     </div>
     </div>
@@ -148,7 +168,7 @@
   <div class="row">
     <div class="match-box">
     <table class="table" style="width:100%;">
-      <% Game.find(1).streamers.last(6).each do |streamer|%>
+      <% @streamers.each do |streamer|%>
         <tr>
           <td width="50%" align="left"><b><a href="<%= streamer.url %>" style="color:#6441a5;" target="_blank"><%= streamer.name %></a></b></td>
           <td width="50%" align="right"><i style="color:white;"><%= streamer.viewers %> viewers</i></td>
@@ -165,7 +185,7 @@
      </div>
    </div>
    <div class="row">
-      <% Game.find(1).youtubes.last(3).reverse.each do |video| %>
+      <% @youtube.each do |video| %>
         <div class="col-lg-12 col-md-12 col-xs-12 youtube-embed">
           <div class="embed-responsive embed-responsive-16by9">
             <iframe class="embed-responsive-item" src="<%= video.embed %>" allowfullscreen></iframe>

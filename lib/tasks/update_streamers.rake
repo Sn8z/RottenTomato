@@ -1,6 +1,21 @@
 task :update_streamers => :environment do
   require 'open-uri'
   require 'rss'
+
+  #Gaming
+  streamers = JSON.parse(open("https://api.twitch.tv/kraken/streams?limit=6", "Client-ID" => ENV.fetch("TWITCH_API_KEY")).read)
+  streamers["streams"].each do |streamer|
+    gaming_streamer = Streamer.new
+    gaming_streamer.logo_src = streamer["preview"]["medium"]
+    gaming_streamer.url = streamer["channel"]["url"]
+    gaming_streamer.name = streamer["channel"]["display_name"]
+    gaming_streamer.description = streamer["channel"]["status"].size > 40 ? streamer["channel"]["status"][0..39] + "..." : streamer["channel"]["status"]
+    gaming_streamer.viewers = streamer["viewers"]
+    gaming_streamer.game_id = 5;
+    gaming_streamer.save!
+  end
+
+
   #DotA 2
   #DotaStreamers
   streamers = JSON.parse(open("https://api.twitch.tv/kraken/streams?game=DotA%202&limit=6", "Client-ID" => ENV.fetch("TWITCH_API_KEY")).read)

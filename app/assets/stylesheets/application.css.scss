@@ -52,9 +52,15 @@ main {
   flex: 1;
 }
 
+.filler {
+  width: 100%;
+  height: 100%;
+  background: green;
+}
+
 .img-grid {
   margin: 0px !important;
-  padding: 0px !important;
+  padding: 5px !important;
 }
 
 .ember {
@@ -144,6 +150,10 @@ main {
 
 .sidebar-dota {
   background: $ember;
+}
+
+.sidebar-start {
+  background: black;
 }
 
 .match-box  {
@@ -474,4 +484,36 @@ main {
     transform: scaleY(1.0);
     -webkit-transform: scaleY(1.0);
   }
+}
+
+.carousel-caption {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    padding: 15px;
+    background: #333333;
+    background: rgba(0, 0, 0, 0.75);
+}
+
+.carousel-caption p {
+    margin-bottom: 0;
+}
+
+.carousel-indicators {
+  bottom: 75px;
+}
+
+@media screen and (max-width: 700px){
+    .carousel-caption p {
+        font-size: 13px;
+    }
+    .carousel-caption {
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.55);
+    }
+    .carousel-indicators {
+      bottom: 10px;
+    }
 }

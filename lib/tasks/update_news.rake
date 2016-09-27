@@ -1,6 +1,30 @@
 task :update_news => :environment do
   require 'open-uri'
   require 'rss'
+
+  #Gaming
+  #GamingReddit
+  reddit = JSON.parse(open("https://www.reddit.com/r/gaming/hot/.json?limit=5", "User-Agent" => "Gaming Rails").read)["data"]["children"]
+  reddit.each do |post|
+    gaming_reddit = Reddit.new
+    gaming_reddit.url = "https://www.reddit.com" + post["data"]["permalink"]
+    gaming_reddit.title = post["data"]["title"]
+    gaming_reddit.upvotes = post["data"]["ups"]
+    gaming_reddit.comments = post["data"]["num_comments"]
+    gaming_reddit.game_id = 5;
+    gaming_reddit.save!
+  end
+
+  #GamingNews
+  rssNews = RSS::Parser.parse(open('http://www.rssmix.com/u/8207664/rss.xml').read, false).items[0..4]
+  rssNews.each do |news|
+    gaming_news = News.new
+    gaming_news.url = news.link
+    gaming_news.title = news.title
+    gaming_news.game_id = 5;
+    gaming_news.save!
+  end
+
   #DotA 2
   #DotaReddit
   reddit = JSON.parse(open("https://www.reddit.com/r/dota2/hot/.json?limit=5", "User-Agent" => "Dota2 Rails").read)["data"]["children"]
