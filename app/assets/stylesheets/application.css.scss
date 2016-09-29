@@ -179,6 +179,7 @@ main {
   padding: 10px;
   background-color:rgba(0, 0, 0, 1);
   border-top: 2px solid white;
+  text-align: center;
 }
 
 .nh-csgo {
@@ -484,6 +485,17 @@ main {
     transform: scaleY(1.0);
     -webkit-transform: scaleY(1.0);
   }
+}
+
+.home-carousel .item {
+  height: 450px;
+}
+
+.home-item img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    min-height: 450px;
 }
 
 .carousel-caption {

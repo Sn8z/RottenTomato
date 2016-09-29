@@ -2,7 +2,7 @@
 <div class="col-sm-12">
   <div class="row">
       <!-- Carousel -->
-      <div id="myCarousel" class="carousel slide" data-ride="carousel">
+      <div id="myCarousel" class="carousel slide home-carousel" data-ride="carousel">
             <!-- Indicators -->
             <ol class="carousel-indicators">
               <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
@@ -13,7 +13,7 @@
 
             <!-- Wrapper for slides -->
             <div class="carousel-inner" role="listbox">
-              <div class="item active">
+              <div class="item active home-item">
                   <%= image_tag('banner.jpg', :class => "img-responsive") %>
                   <div class="carousel-caption">
                     <h1><%= render 'layouts/logo' %></h1>
@@ -21,7 +21,7 @@
                   </div>
               </div>
 
-              <div class="item">
+              <div class="item home-item">
                 <a href="/csgo" target="_blank">
                   <%= image_tag('https://global-offensive.com/wp-content/uploads/sites/2/2014/02/counter-strike-global-offensive-game-hd-wallpaper-1920x1080-8976.jpg', :class => "img-responsive") %>
                   <div class="carousel-caption">
@@ -31,7 +31,7 @@
                 </a>
               </div>
 
-              <div class="item">
+              <div class="item home-item">
                 <a href="/dota2" target="_blank">
                   <%= image_tag('http://media.esportsedition.com/wp-content/uploads/2016/01/dota-2-logo-wallpaper-02.jpg', :class => "img-responsive") %>
                   <div class="carousel-caption">
@@ -41,7 +41,7 @@
                 </a>
               </div>
 
-              <div class="item">
+              <div class="item home-item">
                 <a href="http://blog.dota2.com/2016/08/the-international-grand-champions/" target="_blank">
                   <%= image_tag('news/aegis.jpg', :class => "img-responsive") %>
                   <div class="carousel-caption">
@@ -67,11 +67,11 @@
     <div class="col-sm-8">
       <div class="row">
         <div class="news-header nh-dota">
-          <h4><b style="color:white;">What <span class="ember">We</span> do</b></h4>
+          <h3><b style="color:white;">What <span class="ember">We</span> do</b></h3>
         </div>
         <div class="news-content">
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+          <p style="color:white;">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+          <p style="color:white;">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
           <div class="news-content">
             <% 4.times do %>
             <div class="col-sm-6 img-grid">
