@@ -1,5 +1,5 @@
 <div class="container">
-<div class="col-sm-8">
+<div class="col-sm-12">
   <div class="row">
       <!-- Carousel -->
       <div id="myCarousel" class="carousel slide" data-ride="carousel">
@@ -64,38 +64,45 @@
     </div>
   </div>
   <div class="row">
-    <!-- Page content -->
-    <div class="col-sm-6">
+    <div class="col-sm-8">
       <div class="row">
         <div class="news-header nh-dota">
-          <h4><b style="color:white;">Recent <span class="ember">news</span></b></h4>
+          <h4><b style="color:white;">What <span class="ember">We</span> do</b></h4>
         </div>
         <div class="news-content">
-        <% @news.each do |news| %>
-        <a href="<%= news.url %>" target="_blank" style="color:white;">
-          <h4>
-          <b><%= news.title %></b>
-        </h4>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+          <div class="news-content">
+            <% 4.times do %>
+            <div class="col-sm-6 img-grid">
+              <%= image_tag('alch_small.jpg', :class => "img-responsive") %>
+            </div>
+            <% end %>
+            <div style="clear:both;"></div>
+          </div>
+        </div>
+    </div>
+    </div>
+    <div class="col-sm-4 sidebar-start">
+      <div class="row">
+        <div class="news-header nh-dota">
+        <a href="https://www.twitch.tv/directory/game/Dota%202" target="_blank">
+          <%= image_tag('twitch_logo.png', :class => "img-header") %>
         </a>
-        <hr>
-        <% end %>
       </div>
     </div>
     <div class="row">
-      <div class="news-header nh-dota">
-        <h4 style="color:white;">Artwork</h4>
-      </div>
-      <div class="news-content">
-        <% 6.times do %>
-        <div class="col-sm-6 img-grid">
-          <%= image_tag('alch_small.jpg', :class => "img-responsive") %>
-        </div>
+      <div class="match-box">
+      <table class="table" style="width:100%;">
+        <% @streamers.each do |streamer|%>
+          <tr>
+            <td width="50%" align="left"><b><a href="<%= streamer.url %>" style="color:#6441a5;" target="_blank"><%= streamer.name %></a></b></td>
+            <td width="50%" align="right"><i style="color:white;"><%= streamer.viewers %> viewers</i></td>
+          </tr>
         <% end %>
-        <div style="clear:both;"></div>
-      </div>
+    </table>
   </div>
     </div>
-    <div class="col-sm-6">
       <div class="row">
         <div class="news-header nh-dota">
           <a href="https://www.reddit.com/r/DotA2/" target="_blank">
@@ -119,64 +126,4 @@
       </div>
     </div>
   </div>
-</div>
-<div class="col-sm-4 sidebar-start">
-  <!-- sidebar -->
-  <!--
-  <div class="row">
-    <div class="sidebar-header">
-      <h2><b style="color:white;">Recent <span class="ember">posts</span></b></h2>
-    </div>
-  </div>
-  <div class="row">
-    <div class="match-box">
-    <hr>
-    <h4 style="color:white;">Razer Blackwidow Review</h4>
-    <hr>
-    <h4 style="color:white;">Dealing with ladder anxiety</h4>
-    <hr>
-    <h4 style="color:white;">Rage</h4>
-    <hr>
-    <h4 style="color:white;">Skinkmacka</h4>
-    <hr>
-  </div>
-  </div>
--->
-    <div class="row">
-      <div class="sidebar-header sh-dota">
-      <a href="https://www.twitch.tv/directory/game/Dota%202" target="_blank">
-        <%= image_tag('twitch_logo.png', :class => "img-header") %>
-      </a>
-    </div>
-  </div>
-  <div class="row">
-    <div class="match-box">
-    <table class="table" style="width:100%;">
-      <% @streamers.each do |streamer|%>
-        <tr>
-          <td width="50%" align="left"><b><a href="<%= streamer.url %>" style="color:#6441a5;" target="_blank"><%= streamer.name %></a></b></td>
-          <td width="50%" align="right"><i style="color:white;"><%= streamer.viewers %> viewers</i></td>
-        </tr>
-      <% end %>
-  </table>
-</div>
-  </div>
-    <div class="row">
-      <div class="sidebar-header sh-dota">
-      <a href="https://www.youtube.com/" target="_blank">
-        <%= image_tag('youtube_logo.png', :class => "img-header") %>
-       </a>
-     </div>
-   </div>
-   <div class="row">
-     <% @youtube.each do |video| %>
-        <div class="col-lg-12 col-md-12 col-xs-12 youtube-embed">
-          <div class="embed-responsive embed-responsive-16by9">
-            <iframe class="embed-responsive-item" src="<%= video.embed %>" allowfullscreen></iframe>
-          </div>
-        </div>
-      <% end %>
-    </div>
-  </div>
-</div>
 </div>
