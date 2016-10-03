@@ -14,38 +14,26 @@
             <!-- Wrapper for slides -->
             <div class="carousel-inner" role="listbox">
               <div class="item active">
-                <a href="/csgo" target="_blank">
-                  <img class="img-responsive" src="http://cdn.wallpapersafari.com/24/19/gChL4v.jpg">
+                <a href="<%= @headlines[0].url %>" target="_blank">
+                  <img class="img-responsive" src="<%= @headlines[0].img %>">
                   <div class="carousel-caption">
-                    <h1>Lorem</h1>
-                    <p>Lorem Ipsum</p>
+                    <h1><%= @headlines[0].title %></h1>
+                    <p><%= @headlines[0].description %></p>
                   </div>
                 </a>
               </div>
 
+              <% @headlines[1..3].each do |headline| %>
               <div class="item">
-                <img class="img-responsive" src="https://i.ytimg.com/vi/QMWYuCerQms/maxresdefault.jpg">
+                <a href="<%= headline.url %>">
+                <img class="img-responsive" src="<%= headline.img %>">
                 <div class="carousel-caption">
-                  <h1>Lorem</h1>
-                  <p>Lorem Ipsum</p>
+                  <h1><%= headline.title %></h1>
+                  <p><%= headline.description %></p>
                 </div>
+              </a>
               </div>
-
-              <div class="item">
-                <img class="img-responsive" src="https://i.ytimg.com/vi/l-0V3Ij0yxk/maxresdefault.jpg">
-                <div class="carousel-caption">
-                  <h1>Lorem</h1>
-                  <p>Lorem Ipsum</p>
-                </div>
-              </div>
-
-              <div class="item">
-                <img class="img-responsive" src="http://cdn.wallpapersafari.com/39/66/zk4AHs.jpg">
-                <div class="carousel-caption">
-                  <h1>Lorem</h1>
-                  <p>Lorem Ipsum</p>
-                </div>
-              </div>
+              <% end %>
             </div>
 
             <!-- Controls -->

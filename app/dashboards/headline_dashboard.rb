@@ -1,6 +1,6 @@
 require "administrate/base_dashboard"
 
-class GameDashboard < Administrate::BaseDashboard
+class HeadlineDashboard < Administrate::BaseDashboard
   # ATTRIBUTE_TYPES
   # a hash that describes the type of each of the model's fields.
   #
@@ -8,17 +8,14 @@ class GameDashboard < Administrate::BaseDashboard
   # which determines how the attribute is displayed
   # on pages throughout the dashboard.
   ATTRIBUTE_TYPES = {
-    news: Field::HasMany,
-    guides: Field::HasMany,
-    reddits: Field::HasMany,
-    streamers: Field::HasMany,
-    youtubes: Field::HasMany,
-    headlines: Field::HasMany,
+    game: Field::BelongsTo,
     id: Field::Number,
-    name: Field::String,
-    description: Field::Text,
+    title: Field::String,
+    description: Field::String,
+    img: Field::String,
     created_at: Field::DateTime,
     updated_at: Field::DateTime,
+    url: Field::String,
   }.freeze
 
   # COLLECTION_ATTRIBUTES
@@ -27,46 +24,40 @@ class GameDashboard < Administrate::BaseDashboard
   # By default, it's limited to four items to reduce clutter on index pages.
   # Feel free to add, remove, or rearrange items.
   COLLECTION_ATTRIBUTES = [
-    :news,
-    :guides,
-    :reddits,
-    :streamers,
+    :game,
+    :id,
+    :title,
+    :description,
   ].freeze
 
   # SHOW_PAGE_ATTRIBUTES
   # an array of attributes that will be displayed on the model's show page.
   SHOW_PAGE_ATTRIBUTES = [
-    :news,
-    :guides,
-    :reddits,
-    :streamers,
-    :youtubes,
-    :headlines,
+    :game,
     :id,
-    :name,
+    :title,
     :description,
+    :img,
     :created_at,
     :updated_at,
+    :url,
   ].freeze
 
   # FORM_ATTRIBUTES
   # an array of attributes that will be displayed
   # on the model's form (`new` and `edit`) pages.
   FORM_ATTRIBUTES = [
-    :news,
-    :guides,
-    :reddits,
-    :streamers,
-    :youtubes,
-    :headlines,
-    :name,
+    :game,
+    :title,
     :description,
+    :img,
+    :url,
   ].freeze
 
-  # Overwrite this method to customize how games are displayed
+  # Overwrite this method to customize how headlines are displayed
   # across all pages of the admin dashboard.
   #
-  # def display_resource(game)
-  #   "Game ##{game.id}"
+  # def display_resource(headline)
+  #   "Headline ##{headline.id}"
   # end
 end

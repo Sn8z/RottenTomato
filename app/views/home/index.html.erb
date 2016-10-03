@@ -21,35 +21,17 @@
                   </div>
               </div>
 
+              <% @headlines.each do |headline| %>
               <div class="item home-item">
-                <a href="/csgo" target="_blank">
-                  <%= image_tag('https://global-offensive.com/wp-content/uploads/sites/2/2014/02/counter-strike-global-offensive-game-hd-wallpaper-1920x1080-8976.jpg', :class => "img-responsive") %>
+                <a href="<%= headline.url %>" target="_blank">
+                  <%= image_tag(headline.img, :class => "img-responsive") %>
                   <div class="carousel-caption">
-                    <h1>Counterstrike</h1>
-                    <p>Lorem Ipsum</p>
+                    <h1><%= headline.title %></h1>
+                    <p><%= headline.description %></p>
                   </div>
                 </a>
               </div>
-
-              <div class="item home-item">
-                <a href="/dota2" target="_blank">
-                  <%= image_tag('http://media.esportsedition.com/wp-content/uploads/2016/01/dota-2-logo-wallpaper-02.jpg', :class => "img-responsive") %>
-                  <div class="carousel-caption">
-                    <h1>DotA 2</h1>
-                    <p>Lorem Ipsum</p>
-                  </div>
-                </a>
-              </div>
-
-              <div class="item home-item">
-                <a href="http://blog.dota2.com/2016/08/the-international-grand-champions/" target="_blank">
-                  <%= image_tag('news/aegis.jpg', :class => "img-responsive") %>
-                  <div class="carousel-caption">
-                    <h1>Lorem</h1>
-                    <p>Lorem Ipsum</p>
-                  </div>
-                </a>
-              </div>
+              <% end %>
             </div>
 
             <!-- Controls -->

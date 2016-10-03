@@ -8,6 +8,7 @@ Rails.application.routes.draw do
     resources :youtubes
     resources :guides
     resources :streamers
+    resources :headlines
 
     root to: "users#index"
   end

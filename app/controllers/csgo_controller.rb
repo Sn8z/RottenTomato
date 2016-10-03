@@ -5,5 +5,6 @@ class CsgoController < ApplicationController
         @streamers = Game.find_by(:name => 'Counterstrike Global Offensive').streamers.last(6)
         @youtube = Game.find_by(:name => 'Counterstrike Global Offensive').youtubes.last(3).reverse
         @guides = Game.find_by(:name => 'Counterstrike Global Offensive').guides.last(5).reverse
+        @headlines = Game.find_by(:name => 'Counterstrike Global Offensive').headlines.last(4).reverse
     end
 end
