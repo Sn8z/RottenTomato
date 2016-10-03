@@ -72,15 +72,12 @@
           <h4><b style="color:white;">Tutorials <span style="color:blue;">&</span> Guides</b></h4>
         </div>
         <div class="news-content">
-        <ul>
           <% @guides.each do |guide| %>
-          <a href="<%= guide.url %>" target="_blank" style="color:orange;">
-            <li><h4>
-            <b><%= guide.title %></b>
-          </h4></li>
+          <a href="<%= guide.url %>" target="_blank" style="color:white;">
+            <h4><b><%= guide.title %></b></h4>
           </a>
+          <hr>
           <% end %>
-        </ul>
       </div>
     </div>
     </div>
