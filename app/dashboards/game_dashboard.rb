@@ -14,6 +14,7 @@ class GameDashboard < Administrate::BaseDashboard
     streamers: Field::HasMany,
     youtubes: Field::HasMany,
     headlines: Field::HasMany,
+    arts: Field::HasMany,
     id: Field::Number,
     name: Field::String,
     description: Field::Text,
@@ -42,6 +43,7 @@ class GameDashboard < Administrate::BaseDashboard
     :streamers,
     :youtubes,
     :headlines,
+    :arts,
     :id,
     :name,
     :description,
@@ -59,6 +61,7 @@ class GameDashboard < Administrate::BaseDashboard
     :streamers,
     :youtubes,
     :headlines,
+    :arts,
     :name,
     :description,
   ].freeze

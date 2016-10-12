@@ -1,0 +1,18 @@
+<div class="row">
+  <div class="news-header nh-dota">
+    <%= image_tag('devi-logo.png', :class => "img-header") %>
+  </div>
+  <div class="news-content">
+    <% @art.each do |artwork| %>
+    <div class="col-md-6 img-grid">
+      <div class="bg">
+        <a class="ember" href="<%= artwork.url %>" target="_blank">
+          <%= image_tag(artwork.img, :class => "img-responsive img-center") %>
+          <p><%= artwork.author %></p>
+        </a>
+      </div>
+    </div>
+    <% end %>
+    <div style="clear:both;"></div>
+  </div>
+</div>

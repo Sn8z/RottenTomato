@@ -11,7 +11,7 @@ task :update_streamers => :environment do
     gaming_streamer.name = streamer["channel"]["display_name"]
     gaming_streamer.description = streamer["channel"]["status"].size > 40 ? streamer["channel"]["status"][0..39] + "..." : streamer["channel"]["status"]
     gaming_streamer.viewers = streamer["viewers"]
-    gaming_streamer.game_id = 5;
+    gaming_streamer.game_id = Game.find_by(:name => 'Gaming').id;
     gaming_streamer.save!
   end
 
@@ -26,7 +26,7 @@ task :update_streamers => :environment do
     dota_streamer.name = streamer["channel"]["display_name"]
     dota_streamer.description = streamer["channel"]["status"].size > 40 ? streamer["channel"]["status"][0..39] + "..." : streamer["channel"]["status"]
     dota_streamer.viewers = streamer["viewers"]
-    dota_streamer.game_id = 1;
+    dota_streamer.game_id = Game.find_by(:name => 'Dota 2').id;
     dota_streamer.save!
   end
 
@@ -40,7 +40,7 @@ task :update_streamers => :environment do
     csgo_streamer.name = streamer["channel"]["display_name"]
     csgo_streamer.description = streamer["channel"]["status"].size > 40 ? streamer["channel"]["status"][0..39] + "..." : streamer["channel"]["status"]
     csgo_streamer.viewers = streamer["viewers"]
-    csgo_streamer.game_id = 2;
+    csgo_streamer.game_id = Game.find_by(:name => 'Counterstrike Global Offensive').id;
     csgo_streamer.save!
   end
 end

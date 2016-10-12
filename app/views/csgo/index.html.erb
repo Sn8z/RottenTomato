@@ -74,12 +74,12 @@
         <div class="news-content">
           <% @guides.each do |guide| %>
           <a href="<%= guide.url %>" target="_blank" style="color:white;">
-            <h4><b><%= guide.title %></b></h4>
+            <h5><b><%= guide.title %></b></h5>
           </a>
           <hr>
           <% end %>
+        </div>
       </div>
-    </div>
     </div>
     <div class="col-sm-6">
       <div class="row">
@@ -103,19 +103,6 @@
             <% end %>
           </div>
       </div>
-      <div class="row">
-        <div class="news-header nh-csgo">
-          <h4 style="color:white;"><b>Artwork</b></h4>
-        </div>
-        <div class="news-content">
-          <% 6.times do %>
-          <div class="col-sm-6 img-grid">
-            <%= image_tag('alch_small.jpg', :class => "img-responsive") %>
-          </div>
-          <% end %>
-          <div style="clear:both;"></div>
-        </div>
-    </div>
     </div>
   </div>
 </div>
