@@ -20,6 +20,4 @@ Rails.application.routes.draw do
  get '/dota2', to: "dota#index"
  get '/dota2/matches', to: "dota#matches"
  get '/csgo', to: "csgo#index"
- get '/overwatch', to: "overwatch#index"
- get '/wow', to: "wow#index"
 end
