@@ -51,7 +51,7 @@
             <div class="col-sm-8">
                 <div class="row">
                     <div class="news-header nh-dota">
-                        <h3>
+                        <h3 align='left'>
                             <b style="color:white;" class="ember">Live</b>
                         </h3>
                     </div>
@@ -61,31 +61,42 @@
                               <table width="100%">
                               <% 4.times do %>
                               <tr>
+                                  <td width='5%' align='left'>
+                                    <%= image_tag('game/dota-match.png', :class => "img-responsive") %>
+                                  </td>
+                                  </td>
                                   <td width='40%' align='left'>
-                                      <b style='color: white;'>Radiant</b><br>
-                                      <a href='#{league[1]}' target='_blank'>League</a>
-                                  <td width='20%' align='center'>
+                                      <b style='color: white;padding:5px;'>Na'Vi</b><br>
+                                      <a style='color: white;padding:5px;' href='#' target='_blank'>IEM Oakland</a>
+                                  <td width='15%' align='center'>
                                      <i style='color: white;'>Bo5</i><br>
-                                    <b style='color: white;'>0 - 2</b>
+                                    <b style='color: white;'>0 - 0</b>
                                   </td>
                                   <td width='40%' align='right'>
-                                    <b style='color: white;'>Dire</b><br>
+                                    <b style='color: white;'>SK Gaming</b><br>
+                                    <a href='http://www.trackdota.com/matches/#{match.id}' target='_blank'>
+                                      <div class='img-twitch'></div>
+                                    </a>
                                     <a href='http://www.trackdota.com/matches/#{match.id}' target='_blank'>
                                       <div class='img-trackdota'></div>
                                     </a>
                                   </td>
                               </tr>
+                              <tr>
+                                <td>
+                                  <br />
+                                </td>
+                              </tr>
                               <% end %>
-                            </table>
-                            </div>
+                            </table>                            </div>
                         </div>
                     </div>
                 </div>
                 <div class="row">
                     <div class="news-header nh-dota">
-                        <h3>
+                        <h4 align='left'>
                             <b style="color:white;">Upcoming Matches</b>
-                        </h3>
+                        </h4>
                     </div>
                     <div class="news-content">
                         <div class="row">
@@ -93,32 +104,40 @@
                               <table width="100%">
                               <% 4.times do %>
                               <tr>
+                                  <td width='5%' align='left'>
+                                    <%= image_tag('game/csgo-match.png', :class => "img-responsive") %>
+                                  </td>
+                                  </td>
                                   <td width='40%' align='left'>
-                                      <b style='color: white;'>Radiant</b><br>
-                                      <a href='#{league[1]}' target='_blank'>League</a>
-                                  <td width='20%' align='center'>
-                                     <i style='color: white;'>Bo5</i><br>
-                                    <b style='color: white;'>0 - 2</b>
+                                      <b style='color: white;padding:5px;'>OG</b><br>
+                                      <a style='color: white;padding:5px;' href='#{league[1]}' target='_blank'>League</a>
+                                  <td width='15%' align='center'>
+                                     <i style='color: white;'>Bo3</i><br>
+                                    <b style='color: white;'>45m 7s</b>
                                   </td>
                                   <td width='40%' align='right'>
-                                    <b style='color: white;'>Dire</b><br>
+                                    <b style='color: white;'>Evil Geniuses</b><br>
                                     <a href='http://www.trackdota.com/matches/#{match.id}' target='_blank'>
                                       <div class='img-trackdota'></div>
                                     </a>
                                   </td>
                               </tr>
+                              <tr>
+                                <td>
+                                  <br />
+                                </td>
+                              </tr>
                               <% end %>
-                            </table>
-                            </div>
+                            </table>                            </div>
                         </div>
 
                     </div>
                 </div>
                 <div class="row">
                     <div class="news-header nh-dota">
-                        <h3>
+                        <h4 align='left'>
                             <b style="color:white;">Recent results</b>
-                        </h3>
+                        </h4>
                     </div>
                     <div class="news-content">
                         <div class="row">
@@ -126,19 +145,28 @@
                               <table width="100%">
                               <% 4.times do %>
                               <tr>
+                                  <td width='5%' align='left'>
+                                    <%= image_tag('game/dota-match.png', :class => "img-responsive") %>
+                                  </td>
+                                  </td>
                                   <td width='40%' align='left'>
-                                      <b style='color: white;'>Radiant</b><br>
-                                      <a href='#{league[1]}' target='_blank'>League</a>
-                                  <td width='20%' align='center'>
+                                      <b style='color: white;padding:5px;'>Astralis</b><br>
+                                      <a style='color: white;padding:5px;' href='#{league[1]}' target='_blank'>League</a>
+                                  <td width='15%' align='center'>
                                      <i style='color: white;'>Bo5</i><br>
-                                    <b style='color: white;'>0 - 2</b>
+                                    <b style='color: white;'>3 - 2</b>
                                   </td>
                                   <td width='40%' align='right'>
-                                    <b style='color: white;'>Dire</b><br>
+                                    <b style='color: white;'>Virtus Pro</b><br>
                                     <a href='http://www.trackdota.com/matches/#{match.id}' target='_blank'>
                                       <div class='img-trackdota'></div>
                                     </a>
                                   </td>
+                              </tr>
+                              <tr>
+                                <td>
+                                  <br />
+                                </td>
                               </tr>
                               <% end %>
                             </table>

@@ -254,6 +254,17 @@ main {
   background-size: 100%;
   width: 20px;
   height: 20px;
+  float: right;
+  margin: 2px;
+}
+
+.img-twitch {
+  background: image-url('icons/twitch_icon.png');
+  background-size: 100%;
+  width: 20px;
+  height: 20px;
+  float: right;
+  margin: 2px;
 }
 
 .footer-distributed{
