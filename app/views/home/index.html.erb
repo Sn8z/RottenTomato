@@ -10,20 +10,21 @@
                     <li data-target="#myCarousel" data-slide-to="2"></li>
                     <li data-target="#myCarousel" data-slide-to="3"></li>
                     <li data-target="#myCarousel" data-slide-to="4"></li>
-                    <li data-target="#myCarousel" data-slide-to="5"></li>
                 </ol>
 
                 <!-- Wrapper for slides -->
                 <div class="carousel-inner" role="listbox">
-                    <div class="item active home-item">
-                        <%= image_tag('banner.jpg', :class => "img-responsive") %>
-                        <div class="carousel-caption">
-                            <h1><%= render 'layouts/logo' %></h1>
-                            <p>The greatest place for gaming news in one place</p>
-                        </div>
-                    </div>
+                  <div class="item active">
+                    <a href="<%= @headlines[0].url %>" target="_blank">
+                      <img class="img-responsive" src="<%= @headlines[0].img %>">
+                      <div class="carousel-caption">
+                        <h1><%= @headlines[0].title %></h1>
+                        <p><%= @headlines[0].description %></p>
+                      </div>
+                    </a>
+                  </div>
 
-                    <% @headlines.each do |headline| %>
+                    <% @headlines[1..4].each do |headline| %>
                     <div class="item home-item">
                         <a href="<%= headline.url %>" target="_blank">
                             <%= image_tag(headline.img, :class => "img-responsive") %>
