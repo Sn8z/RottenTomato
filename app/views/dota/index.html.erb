@@ -111,16 +111,74 @@
   <div class="row">
     <div class="sidebar-header sh-dota">
       <h4 style="color:white;">Live</h4>
-    </div>
-  </div>
-  <div class="row">
-    <div id="dota-matches" class="match-box">
-      <div class="spinner">
-        <div class="rect1"></div>
-        <div class="rect2"></div>
-        <div class="rect3"></div>
-        <div class="rect4"></div>
-        <div class="rect5"></div>
+      <div class="row">
+          <div class="col-sm-12">
+            <table width="100%">
+            <% 2.times do %>
+            <tr>
+                <td width='40%' align='left'>
+                    <b style='color: white;padding:5px;'>OG</b><br>
+                    <a style='color: white;padding:5px;' href='#' target='_blank'>Boston Major</a>
+                <td width='20%' align='center'>
+                   <i style='color: white;'>Bo5</i><br>
+                  <b style='color: white;'>0 - 0</b>
+                </td>
+                <td width='40%' align='right'>
+                  <b style='color: white;'>Ad Finem</b><br>
+                  <a href='http://www.trackdota.com/matches/#{match.id}' target='_blank'>
+                    <div class='img-twitch'></div>
+                  </a>
+                  <a href='http://www.trackdota.com/matches/#{match.id}' target='_blank'>
+                    <div class='img-trackdota'></div>
+                  </a>
+                </td>
+            </tr>
+            <% end %>
+          </table>
+          <h4 style="color:white;">Upcoming</h4>
+
+          <table width="100%">
+          <% 4.times do %>
+          <tr>
+              <td width='40%' align='left'>
+                  <b style='color: white;padding:5px;'>OG</b><br>
+                  <a style='color: white;padding:5px;' href='#{league[1]}' target='_blank'>League</a>
+              <td width='20%' align='center'>
+                 <i style='color: white;'>Bo3</i><br>
+                <b style='color: white;'>45m 7s</b>
+              </td>
+              <td width='40%' align='right'>
+                <b style='color: white;'>Evil Geniuses</b><br>
+                <a href='http://www.trackdota.com/matches/#{match.id}' target='_blank'>
+                  <div class='img-trackdota'></div>
+                </a>
+              </td>
+          </tr>
+          <% end %>
+        </table>
+        <h4 style="color:white;">Recent</h4>
+
+        <table width="100%">
+        <% 4.times do %>
+        <tr>
+            <td width='40%' align='left'>
+                <b style='color: white;padding:5px;'>OG</b><br>
+                <a style='color: white;padding:5px;' href='#{league[1]}' target='_blank'>League</a>
+            <td width='20%' align='center'>
+               <i style='color: white;'>Bo3</i><br>
+              <b style='color: white;'>2 - 2</b>
+            </td>
+            <td width='40%' align='right'>
+              <b style='color: white;'>Evil Geniuses</b><br>
+              <a href='http://www.trackdota.com/matches/#{match.id}' target='_blank'>
+                <div class='img-trackdota'></div>
+              </a>
+            </td>
+        </tr>
+        <% end %>
+      </table>
+      </div>
+
       </div>
     </div>
   </div>
