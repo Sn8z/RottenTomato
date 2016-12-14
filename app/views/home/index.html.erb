@@ -18,6 +18,7 @@
                     <a href="<%= @headlines[0].url %>" target="_blank">
                       <img class="img-responsive" src="<%= @headlines[0].img %>">
                       <div class="carousel-caption">
+                        (<%= @headlines[0].game.name %>)
                         <h1><%= @headlines[0].title %></h1>
                         <p><%= @headlines[0].description %></p>
                       </div>
@@ -29,8 +30,9 @@
                         <a href="<%= headline.url %>" target="_blank">
                             <%= image_tag(headline.img, :class => "img-responsive") %>
                             <div class="carousel-caption">
-                                <h1><%= headline.title %></h1>
-                                <p><%= headline.description %></p>
+                              (<%= headline.game.name %>)
+                              <h1><%= headline.title %></h1>
+                              <p><%= headline.description %></p>
                             </div>
                         </a>
                     </div>
