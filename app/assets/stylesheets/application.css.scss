@@ -548,15 +548,4 @@ main {
       left: 0;
       min-height: 450px;
   }
-  .affiliate-img {
-    -webkit-filter: grayscale(100%);
-    -webkit-transition: .5s;
-    -moz-transition: .5s;
-    -ms-transition: .5s;
-    -o-transition: .5s;
-    transition: .5s;
-  }
-  .affiliate-img:hover {
-    -webkit-filter: grayscale(0%);
-  }
 }
