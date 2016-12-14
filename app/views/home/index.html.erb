@@ -14,13 +14,12 @@
 
                 <!-- Wrapper for slides -->
                 <div class="carousel-inner" role="listbox">
-                  <div class="item active">
+                  <div class="item active home-item">
                     <a href="<%= @headlines[0].url %>" target="_blank">
                       <img class="img-responsive" src="<%= @headlines[0].img %>">
                       <div class="carousel-caption">
-                        (<%= @headlines[0].game.name %>)
                         <h1><%= @headlines[0].title %></h1>
-                        <p><%= @headlines[0].description %></p>
+                        <p><%= @headlines[0].description %><br /><span class="label label-danger"><%= @headlines[0].game.name %></span></p>
                       </div>
                     </a>
                   </div>
@@ -28,11 +27,11 @@
                     <% @headlines[1..4].each do |headline| %>
                     <div class="item home-item">
                         <a href="<%= headline.url %>" target="_blank">
-                            <%= image_tag(headline.img, :class => "img-responsive") %>
+                          <img class="img-responsive" src="<%= headline.img %>">
                             <div class="carousel-caption">
-                              (<%= headline.game.name %>)
                               <h1><%= headline.title %></h1>
-                              <p><%= headline.description %></p>
+                              <p><%= headline.description %><br /><span class="label label-danger"><%= headline.game.name %></span></p>
+                              <p></p>
                             </div>
                         </a>
                     </div>
