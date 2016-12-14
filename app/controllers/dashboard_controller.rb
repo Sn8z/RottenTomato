@@ -4,5 +4,7 @@ class DashboardController < ApplicationController
     @users = User.all
     @games = Game.all
     @headlines = Headline.all
+    @news = News.all
+    @streamers = Streamer.all
   end
 end
