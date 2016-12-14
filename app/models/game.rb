@@ -5,5 +5,4 @@ class Game < ActiveRecord::Base
   has_many :streamers, dependent: :destroy
   has_many :youtubes, dependent: :destroy
   has_many :headlines, dependent: :destroy
-  has_many :arts, dependent: :destroy
 end

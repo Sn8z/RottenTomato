@@ -1,0 +1,46 @@
+<div class="container">
+    <div class="row">
+      <h1>Dashboard</h1>
+    </div>
+    <div class="row">
+      <div class="col-sm-6">
+        <div class="row">
+          <h3>Games</h3>
+          <% @games.each do |game| %>
+            ID: <%= game.id %> <br />
+            Name: <%= game.name %> <br />
+            Description: <%= game.description %> <br />
+            News: <%= game.news.count %> <br />
+            Guides: <%= game.guides.count %> <br />
+            Reddit: <%= game.reddits.count %> <br />
+            Streamers: <%= game.streamers.count %> <br />
+            Youtube: <%= game.youtubes.count %> <br />
+            Headlines: <%= game.headlines.count %> <br />
+            <br />
+          <% end %>
+        </div>
+        <div class="row">
+          <h3>Headlines</h3>
+          <% @headlines.each do |headline| %>
+          ID: <%= headline.id %> <br />
+          Title: <%= headline.title %> <br />
+          Description: <%= headline.description %> <br />
+          Game: <%= headline.game.name %> <br />
+          <br />
+          <% end %>
+        </div>
+      </div>
+      <div class="col-sm-6">
+        <div class="row">
+          <h3>Users</h3>
+          <% @users.each do |user| %>
+            Username: <%= user.username %> <br />
+            ID: <%= user.id %> <br />
+            Email: <%= user.email %> <br />
+            Role: <%= user.role %> <br />
+            <br />
+          <% end %>
+        </div>
+      </div>
+    </div>
+</div>
