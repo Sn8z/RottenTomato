@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  team1: MyString
+  team1_score: MyString
+  team2: MyString
+  team2_score: MyString
+  game_id: 
+  tournament: MyString
+  twitch: MyString
+
+two:
+  team1: MyString
+  team1_score: MyString
+  team2: MyString
+  team2_score: MyString
+  game_id: 
+  tournament: MyString
+  twitch: MyString

@@ -3,5 +3,19 @@ class HomeController < ApplicationController
     @reddit = Game.find_by(:name => 'Gaming').reddits.last(5)
     @streamers = Game.find_by(:name => 'Gaming').streamers.last(6)
     @headlines = Headline.last(5).reverse
+    matches = Match.all
+    @live_matches, @upcoming_matches, @completed_matches = [], [], []
+    matches.each do |match|
+      case match.status
+      when "live"
+        @live_matches << match
+      when "upcoming"
+        @upcoming_matches << match
+      when "completed"
+        @completed_matches << match
+      else
+        @upcoming_matches << match        
+      end
+    end
   end
 end

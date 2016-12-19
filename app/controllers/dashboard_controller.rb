@@ -6,5 +6,6 @@ class DashboardController < ApplicationController
     @headlines = Headline.all
     @news = News.all
     @streamers = Streamer.all
+    @matches = Match.all
   end
 end

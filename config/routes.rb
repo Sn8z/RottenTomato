@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :matches
   namespace :admin do
     resources :users
     resources :games
@@ -8,6 +9,7 @@ Rails.application.routes.draw do
     resources :guides
     resources :streamers
     resources :headlines
+    resources :matches
     root to: "users#index"
   end
 
