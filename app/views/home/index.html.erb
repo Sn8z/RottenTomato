@@ -82,6 +82,11 @@
                                   <% end %>
                                 </td>
                             </tr>
+                            <tr>
+                              <td colspan="4">
+                                <hr />
+                              </td>
+                            </tr>
                             <% end %>
                           </table>
                         </div>
@@ -109,7 +114,7 @@
                                     <a style='color: white;padding:5px;' href='#' target='_blank'><%= match.tournament %></a>
                                 <td width='15%' align='center'>
                                    <i style='color: white;'>Bo<%= match.best_of %></i><br>
-                                  <b style='color: white;'><%= time_diff(Time.now, match.time) %></b>
+                                  <b style='color: white;'><%= time_diff(Time.now + 1.hour, match.time) %></b>
                                 </td>
                                 <td width='40%' align='right'>
                                   <b style='color: white;'><%= match.team2 %></b><br>
@@ -119,6 +124,11 @@
                                   </a>
                                   <% end %>
                                 </td>
+                            </tr>
+                            <tr>
+                              <td colspan="4">
+                                <hr />
+                              </td>
                             </tr>
                             <% end %>
                           </table>
@@ -152,6 +162,11 @@
                                 <td width='40%' align='right'>
                                   <b style='color: white;'><%= match.team2 %></b><br>
                                 </td>
+                            </tr>
+                            <tr>
+                              <td colspan="4">
+                                <hr />
+                              </td>
                             </tr>
                             <% end %>
                           </table>

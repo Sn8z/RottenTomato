@@ -39,6 +39,9 @@ By default, it renders:
     <main class="main-content" role="main">
       <%= content_for(:search) %>
       <%= render "flashes" -%>
+      <% Game.all.each do |game| %>
+      <%= game.id %> - <%= game.name %> |||||||
+      <% end %>
       <%= yield %>
     </main>
 
